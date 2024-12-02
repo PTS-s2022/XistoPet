@@ -77,25 +77,25 @@ $data['admin'] = $admin->displayAdmins($data);
                   <p><span>Cpf: </span><span class="CPF"><?= $admin['cpf'] ?></span></p><!-- CPF adm -->
                   <p><span>Tel: </span><span class="telefone"><?= $admin['telephone'] ?></span></p> <!-- telefone adm -->
                 </div>
-                <form action="../private/addAdmin.php" method="POST" class="situ-p">
-                  <input type="hidden" name="idAdmin" value="<?= $admin['id'] ?>">
-                  <input type="hidden" name="switch" value="alter">
-                  <p>Nível do administrador:</p>
-
-                  <select name="level" id="" class="select">
-                      <option value="2" <?php if($admin['level'] == 2):?> selected <?php endif;?>>Administrador</option>
-                      <option value="3" <?php if($admin['level'] == 3):?> selected <?php endif;?>>Administrador master</option>
-
+                <div class="flex-adm">
+                  <form action="../private/addAdmin.php" method="POST" class="situ-p">
+                    <input type="hidden" name="idAdmin" value="<?= $admin['id'] ?>">
+                    <input type="hidden" name="switch" value="alter">
+                    <p>Nível do administrador:</p>
+                    <select name="level" id="" class="select">
+                        <option value="2" <?php if($admin['level'] == 2):?> selected <?php endif;?>>Administrador</option>
+                        <option value="3" <?php if($admin['level'] == 3):?> selected <?php endif;?>>Administrador master</option>
                   
-                  </select>
-                  <button class="salvar">Salvar</button> <!-- BOTÃO SALVAR -->
+                    </select>
+                    <button class="salvar">Salvar</button> <!-- BOTÃO SALVAR -->
                   
-                </form>
-                <form action="../private/addAdmin.php" method="POST" class="situ-p">
-                  <input type="hidden" name="idAdmin" value="<?= $admin['id'] ?>">
-                  <input type="hidden" name="switch" value="delete">
-                  <button class="excluir">Excluir administrador</button> <!-- BOTÃO EXCLUIR -->
-                </form>
+                  </form>
+                  <form action="../private/addAdmin.php" method="POST" class="situ-p">
+                    <input type="hidden" name="idAdmin" value="<?= $admin['id'] ?>">
+                    <input type="hidden" name="switch" value="delete">
+                    <button class="excluir">Excluir administrador</button> <!-- BOTÃO EXCLUIR -->
+                  </form>
+                </div>
               </div> 
             <?php endforeach;?>
           <?php endif;?>
@@ -117,14 +117,16 @@ $data['admin'] = $admin->displayAdmins($data);
                   <input type="number" name="number" id="tel" class="input-add">
                 </div>
               </div>
-              <div class="situ-p">
-                <p>Nível do administrador:</p>
-                <select name="level" id="" class="select">
-                  <option value="2" >Administrador</option>
-                  <option value="3" >Administrador master</option>
-                </select>
-                <button class="salvar">Cadastrar</button>
-                <button class="excluir">Cancelar</button>
+              <div class="flex-adm">
+                <div class="situ-p">
+                  <p>Nível do administrador:</p>
+                  <select name="level" id="" class="select">
+                    <option value="2" >Administrador</option>
+                    <option value="3" >Administrador master</option>
+                  </select>
+                  <button class="salvar">Cadastrar</button>
+                  <button class="excluir">Cancelar</button>
+                </div>
               </div>
             </form> 
 

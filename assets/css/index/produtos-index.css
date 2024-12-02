@@ -160,9 +160,11 @@
     background-color: var(--amarelo);
     border: none;
     border-radius: 5px;
-    /* padding: 8px; */
-    width: 90%;
+    padding: 8px;
+    max-width: 100%;
+    min-width: 80%;
     margin: auto;
+    margin-top: 5px;
     justify-content: center;
     color: var(--branco);
   }
