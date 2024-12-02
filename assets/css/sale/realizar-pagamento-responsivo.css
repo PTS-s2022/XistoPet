@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+
+@media screen and (max-width: 800px){
+
+    body{
+        height: 100vh;
+    }
+
+    header{
+        margin-bottom: 5px;
+    }
+
+    .logo{
+        font-size: 150%;
+    }
+
+    .titulo{
+        order: 0;
+    }
+
+    .titulo > span{
+        margin: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .flex{
+        width: 100%;
+    }
+
+    .formularios{
+        order: 2;
+        width: 100%;
+        gap: 0%;
+    }
+
+    aside{
+        max-width: 100%;
+    }
+
+
+    .info{
+        max-width: 100%;
+        border-radius: 0%;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.308);
+        box-shadow: none;
+    }
+
+
+
+    .concluido{
+        display: inline;
+        max-width: 100%;
+        border-radius: 0%;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.308);
+        box-shadow: none;
+    }
+
+    div.edt{
+        display: block;
+        font-size: 1.4rem;
+    }
+
+    .select-endereco{
+        max-width: 100%;
+    }
+
+    .select-adress{
+        max-width: 100%;
+    }
+
+    div.edt-adress{
+        max-width: 30%;
+    }
+
+    div.edt-adress > i{
+        font-size: 60%;
+    }
+    
+
+    .flex-pag{
+        gap: 30px;
+    }
+
+    .titulo3{
+         margin-bottom: 20px;
+    }
+
+
+    .resumo-compra{
+        order: 1;
+        display: flex;
+        width: 100%;
+    }
+
+    .box{
+        border-radius: 0%;
+        box-shadow: none;
+        border-top: 1px solid rgba(128, 128, 128, 0.308);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.308);
+    }
+
+    footer{
+        margin-top: 20px;
+    }
+
+    footer > div > a{
+        display: block;
+        padding-top: 10px;
+    }
+
+ 
+
+
+
+    #confirm{
+        width: 100%;
+    }
+
+
+    .boleto{
+        width: 90%;
+    }
+
+    .adc-cartao{
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .buttons{
+        width: 100%;
+    }
+
+    .btn{
+        width: 100%;
+    }
+
+    #copy{
+        width: 100%;
+    }
+
+    .container-qrcode{
+        width: 40%;
+    }
+
+    .qrcode{
+        height: 20vh;
+    }
+
+
+}
+

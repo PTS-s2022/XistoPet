@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+
+@media screen and (max-width: 800px){
+
+    body{
+        height: 100vh;
+    }
+
+   
+
+    
+    .titulo{
+        order: 0;
+
+    }
+
+    .titulo > span{
+        margin: 10px;
+        font-size: 1.5rem;
+    }
+    
+    .flex{
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .formularios{
+        order: 1;
+        width: 100%;
+        gap: 0%;
+        padding: 0;
+        margin: 0;
+    }
+
+    aside{
+        max-width: 100%;
+    }
+
+
+    .info{
+        width: 100%;
+        /* border-radius: 0%; */
+        /* border-bottom: 1px solid rgba(128, 128, 128, 0.308); */
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .confirmar{
+        width: 100%;
+    }
+
+    .all{
+        width: 100%;
+    }
+
+    .confirmacao{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+
+    .concluido{
+        display: inline;
+        max-width: 100%;
+        border-radius: 0%;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.308);
+        box-shadow: none;
+    }
+
+    
+
+
+
+
+
+
+
+  menu {
+    width: 0%;
+    margin: 0%;
+    padding: 0%;
+  }
+    
+      a > img {
+        /* ICONES */
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+      }
+    
+      main {
+        display: none;
+        margin: 0px;
+      }
+
+
+
+
+
+
+
+    
+
+    .img-vazio{
+        width: 70%;
+    }
+
+    .vazio{
+        width: 100%;
+    }
+
+
+    .img-produto{
+        width: 20%;
+        height: 70%;
+    }
+
+    .nome-produto{
+        font-size: 1em;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.5em;
+        max-height: 3em; /* 2 linhas * line-height */
+    }
+
+    .col-1{
+        width: 50%;
+    }
+
+    .div-quantidade{
+        width: 100%;
+    }
+
+    .bx-trash{
+        font-size: 1.5em;
+    }
+
+    .valor-produto{
+        font-size: 1em;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .resumo-compra{
+        order: 2;
+        display: flex;
+        width: 100%;
+    }
+
+    .box{
+        border-radius: 0%;
+        box-shadow: none;
+        border-top: 1px solid rgba(128, 128, 128, 0.308);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.308);
+    }
+
+    footer{
+        margin-top: 20px;
+    }
+
+    footer > div > a{
+        display: block;
+        padding-top: 10px;
+    }
+
+
+
+
+
+
+
+
+    .flex-relacionados{
+        overflow: auto;
+    }
+
+    .anterior, .proximo, .bolinha{
+        display: none;
+    }
+
+    .relacionados{
+        margin-top: 20px;
+    }
+    .products{
+        min-width: 50%;
+    }
+}
+

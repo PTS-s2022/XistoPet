@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+:root{
+    --branco: white;
+    --azure: rgba(224, 253, 253, 0.836);
+    --preto: black;
+    --principal: #0296C5;
+    --principal-escuro: #067495;
+    --amarelo: #f7a800ce;
+    --amarelo-hover: #faab00;
+    --cinza: rgb(107, 106, 106);
+    --destaque: #1d023be7;
+    --cor1: #f6f6f6;
+    --cor2: rgb(77, 158, 77);
+    --cor3: #fff;
+    --cor4: #eee;
+    --cor5: rgba(131, 130, 130, 0.404);
+    --cor6: green;
+    --cor7: rgba(204, 204, 204, 0.363);
+    --cor8: #37c980;
+    --cor-letra1: white;
+    --cor-letra2: #666;
+}
+
+@media screen and (max-width: 800px){
+
+    .filtrar{
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .filtrar > span{
+        color: var(--cor-letra2);
+    }
+
+    .filtrar > select{
+        border-radius: 5px;
+    }
+
+    .categorias{
+        display: none;
+    }
+
+    .principal{
+        width: 100%;
+    }
+
+    .products-list{
+        justify-content: center;
+    }
+
+    .responsivo{
+        margin-left: 20px;
+    }
+    
+    .titulo-p{
+        font-size: 1.2rem;
+    }
+
+    .produto{
+        width: 120px;
+        padding: 15px;
+    }
+
+    .btn-adicionar{
+        font-size: 0.7rem;
+    }
+
+}

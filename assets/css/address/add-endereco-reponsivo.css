@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 834px) {
+ 
+    body{
+      overflow-x: hidden;
+    }
+  
+  .info {
+    margin-left: 10px;
+  }
+
+  footer{
+    position: relative;
+  }
+
+  footer > div > a {
+    display: block;
+    padding-top: 10px;
+  }
+
+  #alert2{
+    /* width: 90%; */
+    font-size: 25px;
+  }
+
+
+  /* tela adicionar endereço */
+
+  .select-adress{
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .salvar-adress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .salvar-adress > button{
+    margin: 10px auto auto auto;
+    width: 100%;
+  }
+
+
+  .adicionar-enderecos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    padding-top: 10px;
+    min-width: 100vw;
+    margin: 0;
+    width: 90%;
+  }
+  
+  .linha {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  .input-enderecos,
+  .input-enderecos-no-reqired{
+    width: 100%;
+  }
+
+  .text-box {
+    width: 100%;
+  }
+
+  .add-endereco-div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+
+}

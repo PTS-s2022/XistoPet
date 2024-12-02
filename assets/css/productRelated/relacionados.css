@@ -1,0 +1,243 @@
+:root{
+    --branco: white;
+    --azure: rgba(224, 253, 253, 0.836);
+    --preto: black;
+    --principal: #0296C5;
+    --principal-escuro: #067495;
+    --amarelo: #f7a800ce;
+    --amarelo-hover: #faab00;
+    --cinza: rgb(107, 106, 106);
+    --destaque: #1d023be7;
+    --cor1: #f6f6f6;
+    --cor2: rgb(77, 158, 77);
+    --cor3: #fff;
+    --cor4: #eee;
+    --cor5: rgba(131, 130, 130, 0.404);
+    --cor6: green;
+    --cor7: rgba(204, 204, 204, 0.363);
+    --cor8: #37c980;
+    --cor-letra1: white;
+    --cor-letra2: #666;    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    /* overflow-x: hidden; */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: var(--azure);
+}
+
+.tudo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.description{   /* CONFIGURAÇÕES DA DIV */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+}
+
+.adc-carrinho{   /* DIV IMG PRODUTO*/
+    display: flex;
+    background-color: var(--branco);
+    padding: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    width: 50%;
+}
+
+#img-produto{
+  max-width: 30%;
+  max-height: 20vh;
+  min-width: 30%;
+  min-height: 20vh;
+}
+
+.texto-adc-carrinho{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmado-adc{
+    display: flex;
+    gap: 5px;
+    /* background-color: #0298c57d; */
+    /* background-color: #f7a90074; */
+    color: var(--cor5);
+    padding: 15px;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+.confirmado-adc > i {
+    font-size: 1.3em;
+}
+
+.container{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--branco);
+    padding: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.subtotal{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.container-btn{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.a-formatado{
+    text-decoration: none;
+}
+
+.btn{
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--branco);
+    font-size: 1em;
+    transition: .5s;
+    width: 100%;
+}
+
+.btn-principal{
+    background-color: var(--principal);
+}
+
+.btn-principal:hover{
+    background-color: var(--principal-escuro);
+}
+
+.btn-amarelo{
+    background-color: var(--amarelo);
+
+}
+
+.btn-amarelo:hover{
+    background-color: var(--amarelo-hover);
+}
+
+
+.container-produtos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.produtos-relacionados{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    /* display: flex;
+    flex-wrap: wrap; */
+    gap: 15px;
+    width: 80%;
+    /* justify-content: center; */
+  }
+  
+  .products{  /* DIV PRODUTOS */
+    width: 230px;
+    height: 300px;
+    /* max-width: 100vw; */
+    /* max-height: 90vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--branco);
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    padding: 0px 5px 0px 5px;
+    transition: 1s;
+    position: relative;
+  }
+
+  
+  .nome-p{
+    font-size: 1.1  em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1em;
+    color: var(--cor-letra2);
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+  
+  
+  
+  .img-products{  /* DIV IMAGEM PRODUTOS */
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+  
+  .img-products > img{   /* IMAGEM PRODUTOS */
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+  }
+  
+  .preco-flex{
+    display: flex;
+    font-size: small;
+    margin-top: 10px;
+  }
+
+  .preco, .traco{     /* PREÇO PRODUTO */
+    font-weight: bold;
+    color: var(--principal);
+    font-size: larger;
+    margin: 0%;
+  }
+
+  .traco{
+    padding: 0 5px;
+  }
+  
+  
+  .btn-adic{      /* BTN ADICIONAR AO CARRINHO*/
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+  }

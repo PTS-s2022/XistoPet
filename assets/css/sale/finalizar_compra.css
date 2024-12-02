@@ -1,0 +1,561 @@
+@charset "UTF-8";
+
+:root{
+  --branco: white;
+  --azure: rgba(224, 253, 253, 0.836);
+  --preto: black;
+  --principal: #0296C5;
+  --principal-escuro: #067495;
+  --amarelo: #f7a800ce;
+  --amarelo-hover: #faab00;
+  --cinza: rgb(107, 106, 106);
+  --destaque: #1d023be7;
+  --cor1: #f6f6f6;
+  --cor2: rgb(77, 158, 77);
+  --cor3: #fff;
+  --cor4: #eee;
+  --cor5: rgb(131, 130, 130);
+  --cor6: green;
+  --cor7: #ccc;
+  --cor8: #37c980;
+  --cor-letra1: white;
+  --cor-letra2: #666;
+
+  --font-normal: 1em;
+  --font-media: 1.3em;
+  --font-titulo: 1.5em;
+}
+
+a{
+  text-decoration: none;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0%;
+  padding: 0%;
+  background-color: var(--azure);
+}
+
+/* CABEÇALHO */
+header{  
+  background-color: var(--principal);
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.089);
+  position: sticky;
+  top: 0px;
+  margin-bottom: 50px;
+  height: 13vh;
+  z-index: 4;
+}
+
+nav{   /* CONTEUDO DO CABEÇALHO */ 
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding: 0%;
+  height: 100%;
+}
+
+.logo {
+    font-family:'Carter One', cursive;
+    font-size: 36px;
+    text-decoration: none;
+    color: var(--branco);
+    margin-left: 5%;
+  }
+
+  .voltar{  /* VOLTAR PARA O CARRINHO */
+    text-decoration: none;
+    color: var(--branco);
+    font-weight: 600;
+    margin-right: 5%;
+  }
+
+  .voltar > i{  /* ICONE */
+    margin-right: 5px;
+  }
+/* FIM DO CABEÇALHO */  
+
+
+
+/* CONTEUDO DA PAGINA */
+.flex{  /* DIV QUE ORGANIZA AS DIVS DO CONTEUDO*/
+  display: flex;
+  width: 95%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+
+/* TITULO DO CONTEUDO GERAL */
+.titulo{  
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.titulo > span{
+  margin-left: 50px;
+  color: var(--cor-letra2);
+  font-weight: bold;
+  font-size: var(--font-titulo);
+}
+/* TITULO DO CONTEUDO GERAL */
+
+
+/* FORMULARIOS */
+.formularios{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form{
+  width: 100%;
+}
+/* FORMULARIOS */
+
+
+
+/* TITULOS DOS CAMPOS */
+.titulo2{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.titulo2 > span{
+  color: var(--cor-letra2);
+  font-weight: bold;
+  font-size: var(--font-normal);
+}
+
+.titulo2 > i{
+  color: var(--principal);
+  font-size: var(--font-titulo);
+  margin-right: 5px;
+}
+/* TITULOS DOS CAMPOS */
+
+
+
+.info{  /* ESTILIZAÇÃO DAS DIVS DOS CAMPOS */
+    width: 90%;
+    background-color: var(--branco);
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.24);
+  }
+  
+
+
+  /* CAMPO ENDEREÇOS */
+  /* div q engloba os endereços existentes */
+  .select-endereco{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* selecionar o endereço dps de salvo */
+  .select-adress {
+    padding: 10px;
+    border: 1px solid var(--cinza);
+    border-radius: 7px;
+    width: 90vw;
+    margin: 0 0px 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    overflow: hidden; 
+  }
+  
+  /* input radio escondido pertencente ao label */
+  .radio {
+    display: none;
+  }
+  
+
+  /* div de cada linha dos endereços, incluindo o edt e a lixeira */
+  .select-endereco > label{
+    display: flex;
+    width: 100%;
+  }
+  
+  .nome-endereco{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%; 
+    padding:5px;
+    font-size: 100%;
+    color: var(--cor-letra2);
+  }
+  
+  /* label direcionado para o input endereco */
+  div.select-adress > label {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--cinza);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+  }
+  
+  /* quando o radio estiver checado mudara a cor do label */
+  .radio:checked + div.select-adress > label {
+    border: 1px solid var(--principal);
+    transition: 0.5s;
+  }
+  
+  /* quando o radio estiver checado mudara a cor da div dentro do label */
+  .radio:checked + div.select-adress > label > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--principal);
+    transition: 0.2s;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  /* deixa a div q fica em volta do nome do endereço com a cor principal */
+  .radio:checked + div.select-adress {
+    border: 1px solid var(--principal);
+    transition: 0.1s;
+  }
+  
+  /* editar e apagar emdereço */
+  div.edt {
+    width: 10%;
+    font-size: 35px;
+    color: var(--principal);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+  }
+  
+  /* div que engloba os botões de salvar e cancelar */
+  div.salvar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 30px;
+    margin-top: 10px;
+  }
+  
+  .btn {  /* BOTÃO EDITAR DADOS */
+    border: none;
+    background-color: var(--principal);
+    color: white;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: var(--font-normal);
+  }
+  
+  .btn:hover {
+    background-color: var(--principal-escuro);
+  }
+ /* FIM DO CAMPO ENDEREÇOS */ 
+
+
+
+/* CAMPO DESCONTO */
+  .desconto{  /* INPUT DO CODIGO DE DESCONTO  */
+    padding: 10px;
+    border: 1px solid var(--cor-letra2);
+    border-radius: 7px;
+    width: 100%;
+    margin: 0 0px 20px 0;
+    outline: none;
+  }
+
+  .desconto:focus, .desconto:not(:placeholder-shown){
+    border: 1px solid var(--principal);
+  }
+
+
+/* CAMPO DESCONTO */
+
+
+
+/* CAMPO FRETE */
+  .frete{ /* DIV */
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* .frete > span{
+    width: 80%;
+  } */
+
+  .frete-gr { /* SPAN */
+    width: 20%;
+    color: var(--cor8);
+    font-weight: bold;
+    font-size: 1rem;
+    vertical-align: top;
+    text-align: end;
+    padding: 0%;
+  }
+/* CAMPO FRETE */
+
+
+
+/* CAMPO METODO DE PAGAMENTO */
+  .metodo{ /* DIV DO CAMPO */
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+
+  .flex-pag{  /* DIV METODO DE PAGAMENTO*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  /* INPUT METODO DE PAGAMENTO */
+  .radio-pag{
+    display: none;
+  }
+
+  .radio-pag:checked + .label-pag {
+    border: 1px solid var(--principal);
+    transition: 0.5s;
+    background-color: var(--azure);
+    color: var(--principal-escuro);
+  }
+
+  .radio-pag:checked + .label-pag > i{
+    color: var(--principal-escuro);
+  }
+  /* INPUT METODO DE PAGAMENTO */
+
+
+  /* ESTILIZAÇÃO DA LABEL DO INPUT RADIO */
+  .label-pag{   
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cinza);
+    border-radius: 20px;
+  }
+
+
+  .label-pag > i {  /* ICONE */
+    color: var(--cinza);
+  }
+  /* ESTILIZAÇÃO DA LABEL DO INPUT RADIO */
+
+  .adc-cartao{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* BOTÃO CONFIRMAR COMPRA */
+  #confirm{  
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 0.8rem;
+    color: var(--branco);
+    background-color: var(--amarelo);
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  #confirm:hover{
+    background-color: var(--amarelo-hover);
+  }
+  /* BOTÃO CONFIRMAR COMPRA */
+/* FIM DO CAMPO METODO DE PAGAMENTO */
+
+
+/* DIV QUE APARECE QUANDO OS FORMS ESTIVEREM PREENCHIDOS */
+  .concluido{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 20px 20px;
+    background-color: var(--branco);
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.24);
+  }
+
+  .concluido > span{
+    color: var(--cor5);
+  }
+
+  .concluido > span > i{
+    color: var(--principal);
+    font-size: 1.2rem;
+    margin-left: 5px;
+  }
+
+  .titulo3{
+    display: flex;
+    align-items: center;
+    color: var(--cor-letra2);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .titulo3 > i{
+    color: var(--cor6);
+    font-size: 1.5rem;
+    margin-right: 5px;
+  }
+/* DIV QUE APARECE QUANDO OS FORMS ESTIVEREM PREENCHIDOS */
+
+
+  
+/* CAMPO RESUMO DA COMPRA*/
+ .resumo-compra{  /*DIV*/
+    width: 20%;
+ }
+
+  aside {
+    width: 100%;
+    position: sticky;
+    top: 100px;
+  }
+
+  .box {
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.24);
+    padding: 10px;
+  }
+  
+  .box .title {
+    padding: 15px 20px;
+    font-size: 18px;
+    text-align: center;
+    color: var(--destaque);
+    font-weight: bold;
+  }
+  
+  .conteudo {
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  
+  .conteudo div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .s2{
+    font-weight: bolder;
+    color: var(--destaque);
+  }
+
+  .s1{
+    font-weight: bold;
+    color: var(--cor-letra2);
+  }
+  
+  .divisor{
+    border: 1px solid #e8f3ee;
+    margin: 1rem 0;
+  }
+/* FIM DO CAMPO RESUMO DA COMPRA */
+/* FIM DO CONTEUDO DO CONTEUDO DA PAGINA */
+
+  
+ 
+  
+
+
+
+
+
+
+/* para o js  */
+
+#botao{/* para o botao de finalizar compra  descer quando o cartao for selecionado */
+  position: absolute;
+  transform: translate(0%, 0%);
+  right: 0%;
+  /* bottom: 5%; */
+}
+
+#aparecer{ /* para aparecer o cartao */
+  display: none;
+  height: 0;
+  transition: .5s;
+}
+
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+
+::-webkit-scrollbar-thumb{
+  width: 5px;
+  background-color: var(--amarelo);
+  border-radius: 10px;
+}
+
+
+.none{
+  text-decoration: none;
+  color: var(--principal);
+  background-color: transparent;
+  border: none;
+}
+
+
+.btn-amarelo{
+  background-color: var(--amarelo);
+}
+
+.btn-amarelo:hover{
+  background-color: var(--amarelo-hover);
+}
+
+.mensage{
+  /* color: rgb(253, 68, 68); */
+  margin: 10px;
+  font-size: 1em;
+}

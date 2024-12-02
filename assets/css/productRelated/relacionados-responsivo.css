@@ -1,0 +1,50 @@
+@media screen and (max-width: 850px){
+    .description{
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .adc-carrinho{
+        width: 100%;
+    }
+
+    #img-produto{
+        max-height: 15vh;
+        min-height: 15vh;
+    }
+
+    .texto-adc-carrinho{
+        padding: 5px;
+    }
+
+    .confirmado-adc{
+        font-size: .7
+        .8em;
+    }
+
+    .confirmado-adc > i {
+        display: flex;
+        align-items: center;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+
+
+    .produtos-relacionados{
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .products{
+        width: 150px;
+    }
+
+    .preco, .traco{
+        font-size: 12px;
+    }
+}

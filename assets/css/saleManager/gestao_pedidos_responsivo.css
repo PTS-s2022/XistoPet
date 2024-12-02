@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 834px) {
+    #burguer {
+      display: none;
+    }
+}
+
+@media screen and (max-width: 1000px){
+
+    header{
+        margin-bottom: 10px;
+    }
+
+    .list::-webkit-scrollbar{
+        display: none;
+    }
+
+    .flex{
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+
+    .titulo{
+        font-size: 1em;
+        margin: 0%;
+    }
+
+    .card1{
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        border-bottom: 1px solid #6666666f;
+        border-radius: 0;
+    }
+
+    .list{
+        height: auto;
+    }
+
+    #list{
+        display: none;
+        flex-direction: column;
+    }
+
+    .empty{
+        height: 35vh;
+        width: 60%;
+    }
+
+    .card2{
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        padding: 5px;
+    }
+
+    .card3{
+        padding: 5px;
+        width: 95%;
+        justify-content: space-between;
+    }
+
+    .info{
+        width: 40%;
+        gap: 3px;
+    }
+
+    .info > p{
+        font-size: 0.7em;
+    }
+
+    .situ-p{
+        width: 35%;
+        gap: 6px;
+    }
+
+    .situ-p > p{
+        display: none;
+    }
+
+    .salvar{
+        font-size: 0.7em;
+        width: 100%;
+        padding: 2px;
+    }
+
+    .excluir{
+        font-size: 0.7em;
+        width: 100%;
+        padding: 2px;
+    }
+
+    .select{
+        width: 100%;
+        padding: 0px;
+        font-size: 0.7em;
+    }
+}

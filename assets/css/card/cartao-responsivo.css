@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 834px) {
+  #burguer {
+    display: block;
+  }
+
+  #menu {
+    display: block;
+  }
+
+  .hide {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 834px) {
+
+
+  header {
+    padding: 0%;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  #esconde {
+    display: none;
+    height: 0%;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  menu {
+    width: 0%;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  ul {
+    text-align: left;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  .nav-list {
+    /* LINKS DAS OUTRAS TELAS */
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    /* margin: 0%; */
+    width: 100%;
+    padding-left: 0%;
+    box-shadow: 7px 6px 6px rgba(0, 0, 0, 0.103);
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--branco);
+    justify-content: space-around;
+    font-size: smaller;
+    transition: 0.5s;
+    z-index: 7;
+  }
+
+
+
+
+
+
+  
+  a > img {
+    /* ICONES */
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  main {
+    display: none;
+    margin: 0px;
+  }
+
+  .info {
+    margin-left: 10px;
+  }
+
+  footer > div > a {
+    display: block;
+    padding-top: 10px;
+  }
+
+
+
+
+  /* tela adicionar endereço */
+
+  
+  .adicionar-enderecos > div {
+    display: block;
+  }
+
+  .text-box {
+    width: 100%;
+  }
+
+  .add-endereco {
+    justify-content: start;
+  }
+
+  .adicionar-enderecos {
+    width: 90%;
+  }
+}
