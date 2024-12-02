@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash; // Obtém o ID da âncora
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        const headerOffset = 50; // Altura do cabeçalho
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+  
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth' // Rolagem suave
+        });
+      }
+    }
+  });
+
+
+
+
 let clicar = document.querySelector("#clicar");
 let comentario = document.querySelector("#adicionar2");
 let all2 = document.querySelector("#all2");

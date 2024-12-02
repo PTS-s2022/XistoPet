@@ -262,22 +262,16 @@ if(isset($_SESSION['user']['client'])){
 
 <!-- INFORMAÇÕES ADICIONAIS DO PRODUTO -->
 <div class="description" id="block"> 
-    <h1 class="h1-desc">Descrição do produto:</h1> 
+    <h1 class="h1-desc" id="descricao">Descrição do produto:</h1> 
     <p><?= $data['description'] ?></p>
 </div> <!-- FIM DAS INFORMAÇÕES ADICIONAIS -->
 
 
-<div class="alert" id="alert">
-    <div class="linha-alert">
-        <i class='bx bx-error'></i>
-        <div id="alert2"></div>
-    </div>
-    <div class="vazio" id="tempo"></div>
-</div>
+
 <?php if(isset($data['assess'])):?>
     <?php if($data['assess']):?>
         <!-- avalição -->
-        <div class="description2" id="block" > 
+        <div class="description2" id="block"> 
             <h1 class="h1-desc" id="avaliar">Avalie o Produto</h1> 
             <div class="flex2">
                 <div class="estrela">        
@@ -298,6 +292,14 @@ if(isset($_SESSION['user']['client'])){
     <?php endif;?>
 <?php endif;?>
     
+
+<div class="alert" id="alert">
+    <div class="linha-alert">
+        <i class='bx bx-error'></i>
+        <div id="alert2"></div>
+    </div>
+    <div class="vazio" id="tempo"></div>
+</div>
 
 
 <?php
