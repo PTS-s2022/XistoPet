@@ -37,7 +37,7 @@ $data['sale'] = $sale->displaySale($data);
 
 </head>
 
-<body>
+<body onload="Carregado()">
 
 <?php
   require_once('../libs/header.php');
@@ -66,7 +66,7 @@ $data['sale'] = $sale->displaySale($data);
           <div > <!-- LISTA DE PRODUTOS DO PEDIDO -->
             <div class="topo-card">
               <div class="dados-da-compra">
-                <p><?= $sale['saleDate']?></p> <?php if($sale['status'] == 'Aguardando pagamento'):?><a href="vendaFinalizada.php?idSale=<?= $sale['id'] ?>"><?php endif; ?><p><?= $sale['status']?></p></a>
+                <p class="date"><?= $sale['saleDate']?></p> <?php if($sale['status'] == 'Aguardando pagamento'):?><a href="vendaFinalizada.php?idSale=<?= $sale['id'] ?>"><?php endif; ?><p><?= $sale['status']?></p></a>
               </div>
             </div>
 
@@ -107,4 +107,5 @@ $data['sale'] = $sale->displaySale($data);
             require_once('../libs/footer.html');
         ?>
 <body>
+  <script src="../assets/js/saleManager/pedidos.js"></script>
 </html>

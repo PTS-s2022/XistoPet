@@ -216,12 +216,16 @@ p{
   gap: 10px;
 }
 
+.container-alto{
+  min-height: 60vh;
+}
+
 .info-add {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px; /* Espaçamento entre as duas colunas */
-  width: 50%; /* Ajuste o tamanho desejado */
+  width: 70%; /* Ajuste o tamanho desejado */
   justify-content: flex-start; /* Alinha os blocos ao início */
 }
 

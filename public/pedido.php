@@ -73,7 +73,7 @@ $data['sale'] = $sale->displaySaleItem($data);
         <?php if(!$data['sale']['item']['assess']):?>
           <div class="div-interna filha-2"><!--segundo bloquinho-->
             <p>Gostou da sua compra?</p>
-            <p><a href="produto.php?idProduct=<?= $data['sale']['item']['product']['id']?>&&saleItem=<?= $data['idSaleItem']?>" class="link" class="a-pedro">Avalie seu produto</a></p>
+            <p><a href="produto.php?idProduct=<?= $data['sale']['item']['product']['id']?>&&saleItem=<?= $data['idSaleItem']?>#descricao" class="link" class="a-pedro">Avalie seu produto</a></p>
           </div> <!--fim do segundo bloquinho-->
         <?php endif;?>
       </div>
