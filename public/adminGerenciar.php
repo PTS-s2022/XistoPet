@@ -73,8 +73,8 @@ $data['admin'] = $admin->displayAdmins($data);
                 <div class="imagem"><img src="..\assets\css\admin\img\perfil.png" ></div> <!-- IMAGEM DO PRODUTO -->
                 <div class="info">
                   <p class="name"><?= $admin['name'] ?></p>  <!-- NOME DO adm -->
-                  <p><span>Email:</span> <?= $admin['email'] ?></p><!-- email adm -->
-                  <p><span>Cpf: </span><span class="CPF"><?= $admin['cpf'] ?></span></p><!-- CPF adm -->
+                  <p><span>Email: </span> <?= $admin['email'] ?></p><!-- email adm -->
+                  <p><span>Cpf: </span><span class="cpf"><?= $admin['cpf'] ?></span></p><!-- CPF adm -->
                   <p><span>Tel: </span><span class="telefone"><?= $admin['telephone'] ?></span></p> <!-- telefone adm -->
                 </div>
                 <div class="flex-adm">
@@ -140,7 +140,21 @@ $data['admin'] = $admin->displayAdmins($data);
           </div>
       </div>
   </div> <!-- FIM DO CONTEUDO DA PÁGINA -->
+  <?php 
+  require_once('../libs/footer.html'); 
+  ?>
 <body>
   <script src="..\assets\js\admin\gestao_administrador.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 
+  <script>
+    $("#CEP").mask("00000-000");
+    $(".cpf").mask("000.000.000-00");
+    $("#cartao").mask("0000 0000 0000 0000");
+    $('.telefone').mask('(00) 00000-0000');
+                    
+
+
+  </script>
 </html>

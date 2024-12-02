@@ -7,9 +7,6 @@ require_once("../vendor/autoload.php");
 $cart = new Cart;
 
 session_start();
-if($_SERVER['REQUEST_METHOD'] != "POST"){
-  die("acesso negado.");
-}
 
 
 if(!isset($_SESSION['user']['client'])){
@@ -23,14 +20,6 @@ if(!isset($_SESSION['user']['client'])){
   die();
 }
 
-if(isset($_POST['op']) && isset($_POST['amount'])){
-  $data = [
-    'idProduct' => $_POST['idProduct'],
-    'idProductSize' => $_POST['op'],
-    'amount' => $_POST['amount']
-  ];
-
-}
 if(isset($_SESSION['idProductSize']) && isset($_SESSION['amount'])){
   $data = [
     'idProduct' => $_SESSION['idProduct'],
@@ -41,6 +30,21 @@ if(isset($_SESSION['idProductSize']) && isset($_SESSION['amount'])){
   unset($_SESSION['idProductSize']);
   unset($_SESSION['amount']);
 }
+else{
+  if($_SERVER['REQUEST_METHOD'] != "POST"){
+    die("acesso negado.");
+  }
+}
+
+if(isset($_POST['op']) && isset($_POST['amount'])){
+  $data = [
+    'idProduct' => $_POST['idProduct'],
+    'idProductSize' => $_POST['op'],
+    'amount' => $_POST['amount']
+  ];
+
+}
+
 
 $data['idClient'] = $_SESSION['user']['client'];
 

@@ -134,7 +134,7 @@ p{
   font-weight: bold;
   font-size: 1.2em;
   width: 50%;
-  /* height: 40vh; */
+  height: 30vh;
   justify-content: center;
   margin: auto;
 }
@@ -261,7 +261,7 @@ p{
   font-weight: bold;
 }
 
-.info > p > span:not(.telefone, .CPF){
+.info > p > span:not(.telefone, .cpf){
   font-weight: bold;
 }
 
@@ -310,6 +310,18 @@ p{
   background-color: var(--principal-escuro);
   color: var(--branco);
   padding: 5px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 /* FIM DO CONTEUDO DA PAGINA */ 

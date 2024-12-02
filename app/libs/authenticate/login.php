@@ -150,7 +150,7 @@ class Login
       
       case 'addProduto':
 
-        return  "Location: ../public/adicionaProdCarrinho.php";
+        return  "Location: ..\private\adicionaProdCarrinho.php";
         break;
         case 'notificacoes':
 

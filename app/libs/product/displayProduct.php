@@ -332,7 +332,6 @@ Class DisplayProduct
     ];
 
     $selectProduct = $this->product->selectProduct($value);
-
     if(!$selectProduct){
       return false;
     }
@@ -341,9 +340,11 @@ Class DisplayProduct
     foreach ($selectProduct as $k => $product) {
       if(isset($data['idProduct'])){
         if ($product->id == $data['idProduct']) {
+          
           continue;
         }
       }
+      $data['selectProduct'] = [];
       $image['idProduct'] =  $product->id;
       $selectProductSize = $this->productSize->selectProductSize($product->id);
       $productImage = $this->dataImage($image);
@@ -357,7 +358,7 @@ Class DisplayProduct
           ]
       ];
     }
-    if(!$data['selectProduct'][0]){
+    if(!$data['selectProduct']){
       return false;  
     }
     return $data['selectProduct'];
