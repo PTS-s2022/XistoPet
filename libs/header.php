@@ -1,9 +1,21 @@
 <?php
+
+use app\libs\client\Client;
+
 $cart = '../public/carrinho.php' ;
 if(isset($_SESSION['user']['admin'])){  
     $cart = "../public/vendaGerenciar.php";
 }
 
+if(isset($_SESSION['user']['client'])){  
+    $client = new Client;
+    $data['idClient'] = $_SESSION['user']['client'];
+    $data['notification'] = $client->dataNotification($data);
+    $count = null;
+    if($data['notification']){
+        $count = count($data['notification']);
+    }
+}
 ?>
 
 
@@ -22,19 +34,21 @@ if(isset($_SESSION['user']['admin'])){
       </form> <!-- FIM DA BARRA DE PESQUISA -->
      
       <div class="nav-list"> 
-          <a id="notificacao"> <i class='bx bx-bell'><div class="ball-notifi"><span class="num-notifi">11</span></div></i></a> <!-- TELA PEDIDOS -->
+      <?php if(isset($data['notification'])): ?><a id="notificacao"> <i class='bx bx-bell'><div class="ball-notifi"><span class="num-notifi"><?= $count ?></span></div></i></a> <!-- TELA PEDIDOS --><?php endif;?>
           <a href="<?= $cart ?>"><i class='bx bx-cart'></i></a> <!-- TELA PEDIDOS -->
           <a href="../public/perfil.php"><i class='bx bx-user'></i></a> <!-- TELA CARRINHO -->
       </div>
   </nav>  <!-- FIM DAS INFORMAÇÕES DO CABEÇALHO -->
+  <?php if(isset($data['notification'])): ?>
   <div class="notificacao" id="div-notificacao"> <!-- div que faz as notificaçoes aparecerem, o fundo branco -->
       <div class="container-notificacoes"><!-- Div que engloba todas as notificaçoes -->
+      <?php if(!$data['notification']): ?>
           <div class="linha-notificacoes">
               <div class="sem-notificacao">
                   <img src="../assets/css/header/imagens/empty-folder.png" alt="empty-folder.png é o nome da imagem" class="notifi-vazio">Ainda não possui notificações
               </div>
           </div>
-
+      <?php else:?>
 
           <div class="linha-notificacoes"> <!-- cada uma das linhas das notificaçoes -->
               <img src="imagens/racao.webp" alt="" class="produto-notifi">
@@ -48,16 +62,17 @@ if(isset($_SESSION['user']['admin'])){
                   </div>
               </div>
           </div>
-
+      <?php endif;?>       
 
        
           <div class="linha-notificacoes"> <!-- aqui vai ter o link para a tela de notificações -->
-              <a href="#" class="link-notificacao">Click aqui para ver todas as notificações</a>
+              <a href="notificacao.php" class="link-notificacao">Click aqui para ver todas as notificações</a>
           </div>
       </div>
-
+      
       <!--  -->
   </div>
+  <?php endif;?>
 </header>   <!-- FIM DO CABEÇALHO -->
 
 <script src="../assets/js/header/notificacao.js"></script>
