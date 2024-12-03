@@ -475,9 +475,7 @@ a.footer-texto:hover{
 
 
 
-dialog::backdrop{
-  background-color: #66666643;
-}
+
 
 dialog{
   position: fixed;
@@ -486,12 +484,9 @@ dialog{
   /* padding: 20px;  */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   border-radius: 10px; 
-  border: none;
+  border: 1px solid red;
   outline: none;
   width: 40%;
-  /* display: flex;
-  justify-content: start;
-  align-items: center; */
 }
 
 .div-erro{
@@ -514,7 +509,7 @@ dialog{
 .div-btn-erro{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   width: 100%;
 }
 
