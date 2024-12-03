@@ -1,3 +1,37 @@
+<?php
+
+use app\libs\product\DisplayProduct;
+use app\libs\supplier\Supplier;
+
+require_once("../vendor/autoload.php");
+require_once("../config.php");
+
+$product = new DisplayProduct;
+$supplier = new Supplier;
+
+session_start();
+
+if(!isset($_SESSION['user']['admin'])){
+  header("Location: index.php");
+  die();
+}
+if(!isset($_GET['idProduct'])){
+    header('Location: produtoGerenciar.php');
+    die();
+}
+$data['idProduct'] = $_GET['idProduct'];
+
+$data['product'] = $product->displayProduct1($data);
+
+if(!$data['product']){
+  header("Location: index.php");
+}
+
+$data['supplier'] = $supplier->displaySuppliers();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,43 +49,47 @@
     require_once('../libs/header.php');
   ?>     
 
-    <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
+  <?php if(isset($_SESSION['ERROR'])):?>
     <input type="hidden" name="inputErro" id="entrada-erro" value="1">
     <dialog id="erro">
         <h1 class="titulo-erro">Dados incorretos</h1>
         <div>
-            <p class="p-erro">Preencha todos os campos corretamente</p>
+            <p class="p-erro"><?= $_SESSION['ERROR'] ?></p>
         </div>
         <div class="div-btn-erro">
             <button id="fechar">Fechar</button>
         </div>
     </dialog>
+  <?php unset($_SESSION['ERROR']);?>
+  <?php endif; ?>
 
   <div class="container-alto">
       <div class="flex"> <!-- CONTEUDO DA PÁGINA -->
         <p class="titulo1"><span>Gerenciar estoque</span></p>
           
-        <form action="" class="card"> <!-- GERENCIAR administrador -->
+        <form action="../private/addEstoque.php" method='POST' class="card"> <!-- GERENCIAR administrador -->
             <div class="div-select">
                 <select name="Fornecedor" id="" class="select" required>
                     <option value="" disabled selected>Selecione um Fornecedor</option>
-                    <option value="1">PetLove</option>
+                    <?php if($data['supplier']):?>
+                        <?php foreach ($data['supplier'] as $key => $supplier): ?>
+                            <option value="<?= $supplier['id'] ?>"><?= $supplier['id'] ?> - <?= $supplier['name'] ?></option>
+                        <?php endforeach;?>
+                    <?php endif; ?>
+                    
                 </select>
             </div>
             <div class="content">
-                <div class="image"><img src="../imagem/1_Ração_Whiskas_Carne_para_Gatos_Adultos_Castrados_1.jpg" alt=""></div>
+                <div class="image"><img src="../imagem/<?= $data['product']['image'][0]['image']?>" alt=""></div>
                 <div class="list">
-                    <div class="input">
-                        <span class="tamanho">10Kg</span><input type="number" name="" id="" class="input-estoque" placeholder="Preencha o estoque">
-                    </div>
-                    <div class="input">
-                        <span class="tamanho">10Kg</span><input type="number" name="" id="" class="input-estoque" placeholder="Preencha o estoque">
-                    </div>
-                    <div class="input">
-                        <span class="tamanho">10Kg</span><input type="number" name="" id="" class="input-estoque" placeholder="Preencha o estoque">
-                    </div>
-                    <div class="input">
-                        <span class="tamanho">10Kg</span><input type="number" name="" id="" class="input-estoque" placeholder="Preencha o estoque">
+                    <?php foreach($data['product']['size'] as $k => $size):?>
+                        <div class="input">   
+                            <input type="hidden" name="idProductSize<?= $k?>" value="<?= $size['id']?>">
+                            <span class="tamanho"><?= $size['size']?></span><input type="number" name="stock<?= $k ?>" id="" class="input-estoque" placeholder="Preencha o estoque">
+                        </div>
+                    <?php endforeach;?>
+                    <div>
+                        <input type="hidden" name="idProduct" value="<?= $data['idProduct']?>">
                     </div>
                 </div>
             </div>

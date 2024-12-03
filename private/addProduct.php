@@ -50,7 +50,8 @@ else{
   switch ($data['switch']) {
     case 'add':
       
-      $product->addProduct($data);
+      $error = $product->addProduct($data);
+
       break;
     
     case 'alter':

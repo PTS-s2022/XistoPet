@@ -1,14 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Gerenciar estoque</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    
-</body>
-</html>
+<?php 
+
+namespace app\libs\product;
+
+use app\database\models\ProductStock as ModelsProductStock;
+use app\database\models\SupplierStock as ModelsSupplierStock;
+
+class ProductStock
+{
+
+  public readonly ModelsProductStock $productStock;
+  public readonly ModelsSupplierStock $supplierStock;
+
+  public function __construct()
+  {
+    $this->productStock = new ModelsProductStock;
+    $this->supplierStock = new ModelsSupplierStock;
+  }
+
+  public function addStock($data){
+    if(!$data['form']['idSupplier']){
+        return 'Selecione um fornecedor!';
+    }
+
+    foreach ($data['form']['size'] as $k => $size) {
+        if($size['stock']){
+            $foundStock = $this->productStock->findBy('produto', $size['id']);
+
+            $value = [
+                'idSupplier' => $data['form']['idSupplier'],
+                'idProductSizeStock' => $foundStock[0]->id,
+                'stock' => $size['stock']
+            ];
+            $this->supplierStock->insert($value);
+
+            $ammountStock = $foundStock[0]->qtdtotal;
+
+            $ammountStock += $size['stock'];
+
+            $value = [
+                'idProductSize' => $size['id'],
+                'stock' => $ammountStock
+            ];
+            $this->productStock->update($value);
+
+        }
+        
+    }
+
+  }
+
+}

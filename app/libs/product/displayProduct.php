@@ -668,6 +668,8 @@ Class DisplayProduct
       }
     }
     
+    header('Location: ../public/estoque.php?idProduct='. $foundProduct[0]->id);
+    die();
   }
 
 
