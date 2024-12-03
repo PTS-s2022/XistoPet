@@ -1,3 +1,19 @@
+<?php
+
+require_once("../vendor/autoload.php");
+
+session_start();
+
+if(!isset($_SESSION['user']['client'])){
+    header("Location: index.php");
+    die();
+}
+
+if(isset($_GET['controler'])){
+    $_SESSION['CONTROLER'] = 1;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

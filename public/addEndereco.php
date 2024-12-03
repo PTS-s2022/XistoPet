@@ -15,6 +15,10 @@ if(!isset($_SESSION['user']['client'])){
     die();
 }
 
+if(isset($_GET['controler'])){
+    $_SESSION['CONTROLER'] = 1;
+}
+
 $data = [
     'switch' => 'add'
 ];

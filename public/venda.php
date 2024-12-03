@@ -109,15 +109,15 @@ if($data['switch']['switch'] == 'product'){
                                         </label>
                                     </div>
                                     <div class="edt">
-                                        <a href="" class="none"><i class="bx bx-edit-alt"></i></a>
-                                        <a href="" class="none"><i class="bx bx-trash"></i></a>
+                                        <a href="addEndereco.php?address=<?= $address->id?>" class="none"><i class="bx bx-edit-alt"></i></a>
+                                        <a href="../private/verificarEndereco.php?address=<?= $address->id?>" class="none"><i class="bx bx-trash"></i></a>
                                     </div>
                                 </label>
                             <?php endforeach; ?>
                         <?php endif; ?>
                         <!-- salvar endereço -->
                         <div class="salvar">   
-                            <a href="addEndereco.php" class="btn a-formatado">Adicionar outro</a>
+                            <a href="addEndereco.php?controler=1" class="btn a-formatado">Adicionar outro</a>
                             <button class="btn btn-amarelo">Continuar</button>
                         </div>
                     </div>
@@ -206,10 +206,12 @@ if($data['switch']['switch'] == 'product'){
 
 
                             <!-- Mensagem caso nao tenha cartao cadastrado -->
+                        <?php if(!$data['client']['card']):?>
+            
                             <div class="mensage">
                                  <span>Você não tem nenhum cartão cadastrado</span>
                              </div>
-
+                        <?php else: ?>
                             <?php foreach ($data['client']['card'] as $k => $card): ?>
                                 <label for="cartao<?= $k ?>"> 
                                     <input type="radio" name="card" id="cartao<?= $k ?>" class="radio" value="<?= $card->id ?>"/> 
@@ -220,13 +222,13 @@ if($data['switch']['switch'] == 'product'){
                                         </label>
                                     </div>
                                     <div class="edt">
-                                        <a href="" class="none"><i class="bx bx-edit-alt"></i></a>
-                                        <a href="" class="none"><i class="bx bx-trash"></i></a>
+                                        <a href="../private/verificarCartao.php?card=<?= $card->id ?>" class="none"><i class="bx bx-trash"></i></a>
                                     </div>
                                 </label>
                             <?php endforeach?>
+                        <?php endif; ?>
                             <div class="adc-cartao">   
-                                <a href="../public/addCartao.php" class="btn" id="btn-cartao">Adicionar outro</a>
+                                <a href="../public/addCartao.php?controler=1" class="btn" id="btn-cartao">Adicionar outro</a>
                                 
                             </div>
                         </div>

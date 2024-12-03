@@ -61,6 +61,10 @@ switch ($data['switch']) {
    
 }
 
-
+if(isset($_SESSION['CONTROLER'])){
+  unset($_SESSION['CONTROLER']);
+  header('Location: ../public/venda.php');
+  die();
+}
 header('Location: ../public/perfil.php');
 ?>
