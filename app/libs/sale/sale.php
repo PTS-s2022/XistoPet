@@ -315,6 +315,7 @@ Class Sale
     $data['sale'] = [
       'saleDate' => $foundSale[0]->dateVenda,
       'deliveryDate' => $foundSale[0]->dateEntrega,
+      'status' => $foundSale[0]->status,
       'item' => [
         'id' => $foundSaleItem[0]->id,
         'quantity' => $foundSaleItem[0]->quantidade,
