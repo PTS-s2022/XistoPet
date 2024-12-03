@@ -21,7 +21,7 @@
           
         <div class="card"> <!-- GERENCIAR administrador -->
     
-            
+            <a href=""></a>
         </div>
       </div> <!-- FIM DO CONTEUDO DA PÁGINA -->
   </div>
