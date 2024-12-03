@@ -37,7 +37,7 @@ $data['sale'] = $sale->displaySale($data);
 
 </head>
 
-<body>
+<body onload="Carregado()">
 
 <?php
   require_once('../libs/header.php');
@@ -107,13 +107,5 @@ $data['sale'] = $sale->displaySale($data);
             require_once('../libs/footer.html');
         ?>
 <body>
-  <script>
-    let Data = document.querySelectorAll(".date");
-    Data.forEach(function(DataNum, index){
-      DataValue = DataNum.innerHTML;
-      let data_brasileira = DataValue.split('-').reverse().join('/');
-      DataNum.innerHTML = data_brasileira;
-
-    })
-  </script>
+  <script src="../assets/js/saleManager/pedidos.js"></script>
 </html>
