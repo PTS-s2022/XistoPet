@@ -57,7 +57,8 @@ if(isset($_SESSION['user']['client'])){
             
                 <?php switch ($notification['type']):
                     case 'avaliar': ?>
-                        <img src="..\imagem\1_Ração_Whiskas_Carne_para_Gatos_Adultos_Castrados_1.jpg" alt="" class="produto-notifi">
+                        <div class="imagem-notificacao-header"><i class='bx bxs-star'></i></div> <!-- aqui é o incone para a notificacao -->
+
                         
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
@@ -85,7 +86,7 @@ if(isset($_SESSION['user']['client'])){
                         </div>    
                         <?php break;
                     case 'pedidoACaminho': ?>
-                        <div class="imagem-notidicacao"><i class='bx bx-accessibility'></i></div> <!-- aqui é o incone para a notificacao -->
+                        <div class="imagem-notificacao-header"><i class='bx bx-accessibility'></i></div> <!-- aqui é o incone para a notificacao -->
     
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
@@ -99,7 +100,8 @@ if(isset($_SESSION['user']['client'])){
 
                         <?php break;
                     case 'pedidoEntregue': ?>
-                        <img src="..\imagem\1_Ração_Whiskas_Carne_para_Gatos_Adultos_Castrados_1.jpg" alt="" class="produto-notifi">
+                        <div class="imagem-notificacao-header"><i class='bx bxs-flag-checkered'></i></div> <!-- aqui é o incone para a notificacao -->
+                       
                         
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
@@ -113,7 +115,8 @@ if(isset($_SESSION['user']['client'])){
                         <?php break;
 
                     case 'pedidoCancelado': ?>
-                        <img src="..\imagem\1_Ração_Whiskas_Carne_para_Gatos_Adultos_Castrados_1.jpg" alt="" class="produto-notifi">
+                        <div class="imagem-notificacao-header"><i class='bx bx-run'></i></div> <!-- aqui é o incone para a notificacao -->
+                        
                         
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
