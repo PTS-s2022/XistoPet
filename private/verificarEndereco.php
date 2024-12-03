@@ -14,9 +14,6 @@ if(!isset($_SESSION['user']['client'])){
   header("Location: login.php");
 }
 
-if($_SERVER['REQUEST_METHOD'] != "POST"){
-  die("acesso negado.");
-}
 
 if(isset($_POST['switch'])){
   $data['switch'] = 'add';
