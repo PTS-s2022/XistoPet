@@ -49,6 +49,19 @@ if($data['switch'] == 'alter'){
 <?php
   require_once('../libs/header.php');
 ?>   
+
+    <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
+    <input type="hidden" name="inputErro" id="entrada-erro" value="1">
+    <dialog id="erro">
+        <h1 class="titulo-erro">Dados incorretos</h1>
+        <div>
+            <p class="p-erro">Preencha todos os campos corretamente</p>
+        </div>
+        <div class="div-btn-erro">
+            <button id="fechar">Fechar</button>
+        </div>
+    </dialog>
+
 <?php switch ($data['switch']):
     case 'add': ?>
         <div class="principal">
@@ -105,4 +118,6 @@ if($data['switch'] == 'alter'){
     ?>
 </body>
 <script src="..\assets\js\category\add-categoria.js"></script>
+<script src='../assets/js/error/erro.js'></script>  <!-- script do erro -->
+
 </html>

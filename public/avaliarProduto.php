@@ -12,6 +12,18 @@ if(!isset($_SESSION['usuario'])){
   <title>Login</title>
 </head>
 <body>
+    <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
+    <input type="hidden" name="inputErro" id="entrada-erro" value="1">
+    <dialog id="erro">
+        <h1 class="titulo-erro">Dados incorretos</h1>
+        <div>
+            <p class="p-erro">Preencha todos os campos corretamente</p>
+        </div>
+        <div class="div-btn-erro">
+            <button id="fechar">Fechar</button>
+        </div>
+    </dialog>
+
 <a href="index.php"><h3>index</h3></a><br>
 <?php
   if(isset($_SESSION["ERRORAVALIAR"])){
@@ -29,4 +41,6 @@ if(!isset($_SESSION['usuario'])){
   <input type="submit" value="Avaliar">
   </form>
 </body>
+<script src='../assets/js/error/erro.js'></script>  <!-- script do erro -->
+
 </html>

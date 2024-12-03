@@ -14,6 +14,18 @@
   require_once('../libs/header.php');
 ?>   
 
+ <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
+ <input type="hidden" name="inputErro" id="entrada-erro" value="0">
+    <dialog id="erro">
+        <h1 class="titulo-erro">Dados incorretos</h1>
+        <div>
+            <p class="p-erro">Preencha todos os campos corretamente</p>
+        </div>
+        <div class="div-btn-erro">
+            <button id="fechar">Fechar</button>
+        </div>
+    </dialog>
+
 
     <div class="principal"> <!-- INICIO DO CONTEUDO PRINCIPAL -->
        
@@ -206,6 +218,8 @@ require_once('../libs/footer.html');
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 <script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script><script  src="../assets/js/card/cartao.js"></script>
 <script src="../assets/js/card/menu.js"></script>
+<script src='../assets/js/error/erro.js'></script>  <!-- script do erro -->
+
 
 </body>
 </html>
