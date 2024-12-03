@@ -7,6 +7,7 @@ use app\libs\sale\Sale as Sale;
 use app\database\models\Sale as modelsSale;
 use app\database\models\SaleItem as modelsSaleItem;
 use app\database\models\SaleStatus as modelsSaleStatus;
+use app\libs\client\Client;
 use app\libs\product\DisplayProduct;
 
 Class SaleMenager
@@ -17,6 +18,7 @@ Class SaleMenager
   public readonly modelsSaleStatus $saleStatus;
   public readonly DisplayProduct $product;
   public readonly ProductStock $productStock;
+  public readonly Client $client;
 
 
   public function __construct()
@@ -58,6 +60,43 @@ Class SaleMenager
     ];
     
     $this->saleModels->updateSaleMenager($value);
+
+    $client = new Client;
+    switch ($value['status']) {
+      case '3':
+        $value = [
+          'type' => 2,
+          'saleItem' => null,
+          'sale' => $data['form']['idSale'],
+          'idClient' => $data['sale']['client']
+        ];
+
+        $client->aadNotification($value);
+        break;
+      
+      case '4':
+        $value = [
+          'type' => 3,
+          'saleItem' => null,
+          'sale' => $data['form']['idSale'],
+          'idClient' => $data['sale']['client']
+        ];
+
+        $client->aadNotification($value);
+        break;
+      case '5':
+        $value = [
+          'type' => 4,
+          'saleItem' => null,
+          'sale' => $data['form']['idSale'],
+          'idClient' => $data['sale']['client']
+        ];
+
+        $client->aadNotification($value);
+        break;
+    }
+
+
     
   }
 
@@ -93,6 +132,18 @@ Class SaleMenager
     ];
     
     $this->saleModels->deleteSaleMenager($value);
+    
+
+    $client = new Client;
+
+    $value = [
+      'type' => 5,
+      'saleItem' => null,
+      'sale' => $data['sale'][0]['id'],
+      'idClient' => $data['sale'][0]['client']
+    ];
+
+    $client->aadNotification($value);
     
   }
 
@@ -138,7 +189,8 @@ Class SaleMenager
       'priceTotal' => $foundSale[0]->valorTotal,
       'status' => $foundSale[0]->status,
       'saleDate' => $foundSale[0]->dateVenda,
-      'deliveryDate' => $foundSale[0]->dateEntrega
+      'deliveryDate' => $foundSale[0]->dateEntrega,
+      'client' => $foundSale[0]->cliente
     ];
     
     return $data['sale'];
