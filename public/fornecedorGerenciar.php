@@ -1,3 +1,26 @@
+<?php
+
+use app\libs\supplier\Supplier;
+
+require_once("../vendor/autoload.php");
+require_once("../config.php");
+
+
+
+$supplier = new Supplier;
+
+
+session_start();
+
+if(!isset($_SESSION['user']['admin'])){
+  header("Location: index.php");
+  die();
+}
+
+
+$data['supplier'] = $supplier->displaySuppliers();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +56,11 @@
       
       
               <div class="list" id="list"> <!-- LISTA DE fornecedor -->
-      
-                  <div class="user"><img src="..\assets\css\admin\img\do-utilizador.png" alt="" class="img-user"><a class="visto list-administrador"><p>Jean domingues</p></a></div>
+              <?php if($data['supplier']):?>
+                <?php foreach ($data['supplier'] as $key => $supplier): ?>
+                  <div class="user"><img src="..\assets\css\admin\img\do-utilizador.png" alt="" class="img-user"><a class="visto list-administrador"><p><?= $supplier['name'] ?></p></a></div>
+                <?php endforeach;?>
+              <?php endif; ?>
                   <div class="user"><img src="..\assets\css\admin\img\add-perfil.png" alt="" class="img-user-add"><a class="visto list-administrador"><p>Adicionar</p></a></div>
               </div>
           </div>
@@ -42,19 +68,25 @@
               <p class="titulo"><span>Gerenciar fornecedores</span></p>
       
               <div class="list"> <!-- LISTA DE PRODUTOS DO administrador -->
-      
-               <form class="card3"> <!-- aqui é cada linha de produto -->
-                  <div class="imagem"><img src="..\assets\css\admin\img\perfil.png" ></div> <!-- IMAGEM aleatoria -->
-                  <div class="info">
-                    <p class="name">Jean domingues</p>  <!-- NOME DO fornecedor -->
-                    <p><span>CNPJ: </span><span class="cnpj">12345678000195</span></p><!-- cnpj fornecedor -->
-                    <p><span>Tel: </span><span class="telefone">1299999999</span></p> <!-- telefone fornecedor -->
-                  </div>
-                  <div class="situ-p">
-                    <button class="excluir">Excluir</button> <!-- BOTÃO EXCLUIR -->
-                  </div>
-                </form>
-                <form class="card3" action="#">
+                <?php if($data['supplier']):?>
+                  <?php foreach ($data['supplier'] as $key => $supplier): ?>
+
+                    <form class="card3" action="../private/addSupplier.php" method="POST"> <!-- aqui é cada linha de produto -->
+                      <div class="imagem"><img src="..\assets\css\admin\img\perfil.png" ></div> <!-- IMAGEM aleatoria -->
+                      <div class="info">
+                        <p class="name"><?= $supplier['name'] ?></p>  <!-- NOME DO fornecedor -->
+                        <p><span>CNPJ: </span><span class="cnpj"><?= $supplier['cnpj'] ?></span></p><!-- cnpj fornecedor -->
+                        <p><span>Tel: </span><span class="telefone"><?= $supplier['telephone'] ?></span></p> <!-- telefone fornecedor -->
+                        <input type="hidden" name="switch" value="delete">
+                        <input type="hidden" name="idSupplier" value="<?= $supplier['id'] ?>">
+                      </div>
+                      <div class="situ-p">
+                        <button class="excluir">Excluir</button> <!-- BOTÃO EXCLUIR -->
+                      </div>
+                    </form>
+                  <?php endforeach;?>
+                <?php endif; ?>
+                <form class="card3" action="../private/addSupplier.php" method="POST">
                   <div class="imagem"><img src="..\assets\css\admin\img\perfil.png" ></div>
       
                   <div class="info-add">
@@ -64,8 +96,9 @@
                       <p>CNPJ:</p>
                     </div>
                     <div class="info-input">
-                      <input type="text" name="nome" id="nome" class="input-add">
-                      <input type="number" name="tel" id="tel" class="input-add">
+                      <input type="hidden" name="switch" value="add">
+                      <input type="text" name="name" id="nome" class="input-add">
+                      <input type="number" name="telephone" id="tel" class="input-add">
                       <input type="number" name="cnpj" class="input-add">
                     </div>
                   </div>

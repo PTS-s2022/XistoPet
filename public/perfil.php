@@ -95,7 +95,7 @@ switch ($data['nivel']) {
                 <?php else:?>
                     <li><a class="item" href="../public/produtoGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar Produtos</a></li><br>
                     <li><a class="item" href="../public/vendaGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar Pedidos</a></li><br>
-                    <li><a class="item" href="../public/fornecedorGerenciar2.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar fornecedor</a></li><br>
+                    <li><a class="item" href="../public/fornecedorGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar fornecedor</a></li><br>
                     <?php if($data['nivel'] == 3):?>
                         <li><a class="item" href="../public/adminGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar Admintradores</a></li><br>
                     <?php endif;?>
