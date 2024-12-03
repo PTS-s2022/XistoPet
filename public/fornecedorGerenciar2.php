@@ -31,7 +31,7 @@
       
               <div class="list"> <!-- LISTA DE PRODUTOS DO administrador -->
       
-               <div class="card3"> <!-- aqui é cada linha de produto -->
+               <form class="card3"> <!-- aqui é cada linha de produto -->
                   <div class="imagem"><img src="..\assets\css\admin\img\perfil.png" ></div> <!-- IMAGEM aleatoria -->
                   <div class="info">
                     <p class="name">Jean domingues</p>  <!-- NOME DO fornecedor -->
@@ -41,7 +41,7 @@
                   <div class="situ-p">
                     <button class="excluir">Excluir</button> <!-- BOTÃO EXCLUIR -->
                   </div>
-                </div>
+                </form>
                 <form class="card3" action="#">
                   <div class="imagem"><img src="..\assets\css\admin\img\perfil.png" ></div>
       
