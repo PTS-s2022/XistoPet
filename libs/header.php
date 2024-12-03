@@ -62,7 +62,7 @@ if(isset($_SESSION['user']['client'])){
                         
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
-                                <h1 class="titulo-notifi">Gostaria de avaliar sua compra?</h1> 
+                            <h1 class="titulo-notifi"><a href="../public/pedido.php?idSaleItem=<?= $notification['item']?>">Gostaria de avaliar sua compra?</a></h1> 
                                 <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
@@ -77,7 +77,7 @@ if(isset($_SESSION['user']['client'])){
                     
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
-                            <h1 class="titulo-notifi">Seu pagamento foi confirmado</h1> 
+                            <h1 class="titulo-notifi"><a href="../public/pedidos.php#<?= $notification['sale']?>">Seu pagamento foi confirmado</a></h1> 
                             <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
@@ -90,7 +90,7 @@ if(isset($_SESSION['user']['client'])){
     
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
-                                <h1 class="titulo-notifi">Seu pedido esta a caminho</h1> 
+                                <h1 class="titulo-notifi"><a href="../public/pedidos.php#<?= $notification['sale']?>">Seu pedido esta a caminho</a></h1> 
                                 <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
@@ -105,7 +105,7 @@ if(isset($_SESSION['user']['client'])){
                         
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
-                            <h1 class="titulo-notifi">Seu pedido foi entregue</h1> 
+                            <h1 class="titulo-notifi"><a href="../public/pedidos.php#<?= $notification['sale']?>">Seu pedido foi entregue</a></h1> 
                             <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
