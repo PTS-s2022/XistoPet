@@ -76,7 +76,7 @@ $data['notification'] = $client->dataNotifications($data);
                     </div>
                 </div>
                 <div class="bottom-notidicacao"> 
-                  <div class="texto-notidicacao"><a href="../public/pedido.php?id#<?= $notification['sale']?>">Ver mais </a></div>
+                  <div class="texto-notidicacao"><a href="../public/pedido.php?idSaleItem=<?= $notification['item']?>">Ver mais </a></div>
                 </div>
               </div> 
 

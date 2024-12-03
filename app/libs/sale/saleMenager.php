@@ -45,10 +45,13 @@ Class SaleMenager
 
 
   public function updateSale($data){
-    $data['sale'] = $this->dataSale($data);
+    $data['sale'][0] = $this->dataSale($data);
     if(!$data['sale']){
       return true;
     }
+    $data['sale'] = $this->dataSaleItems($data);
+
+
     if($data['sale']['status'] == $data['form']['status'] || !$data['form']['status']){
       return true;
     }
@@ -68,7 +71,7 @@ Class SaleMenager
           'type' => 2,
           'saleItem' => null,
           'sale' => $data['form']['idSale'],
-          'idClient' => $data['sale']['client']
+          'idClient' => $data['sale'][0]['client']
         ];
 
         $client->aadNotification($value);
@@ -79,7 +82,7 @@ Class SaleMenager
           'type' => 3,
           'saleItem' => null,
           'sale' => $data['form']['idSale'],
-          'idClient' => $data['sale']['client']
+          'idClient' => $data['sale'][0]['client']
         ];
 
         $client->aadNotification($value);
@@ -89,10 +92,22 @@ Class SaleMenager
           'type' => 4,
           'saleItem' => null,
           'sale' => $data['form']['idSale'],
-          'idClient' => $data['sale']['client']
+          'idClient' => $data['sale'][0]['client']
         ];
 
         $client->aadNotification($value);
+
+        foreach ($data['sale'][0]['item'] as $k => $item) {
+
+          $value = [
+            'type' => 1,
+            'saleItem' => $item['id'],
+            'sale' => null,
+            'idClient' => $data['sale'][0]['client']
+          ];
+          $client->aadNotification($value);
+ 
+        }
         break;
     }
 
@@ -229,6 +244,39 @@ Class SaleMenager
 
       } 
     }
+    return $data['sale'];
+
+    
+  }
+
+  public function dataSaleItem($data){
+      $value = [
+        'idSale' => $data['sale']['id']
+      ];
+
+      $foundSaleItem = $this->saleItem->selectItem($value);
+      if(!$foundSaleItem){
+        return false;
+
+      }
+      
+      foreach ($foundSaleItem as $a => $saleItem) {
+        $value = [
+          'idProductSize' => $saleItem->produto
+        ];
+        $foundProduct = $this->product->selectProduct1($value);
+
+
+        $data['sale']['item'][$a] = [
+          'id' => $saleItem->id,
+          'quantity' => $saleItem->quantidade,
+          'price' => $saleItem->subTotal,
+          'assess' => $saleItem->avaliar,
+          'product' => $foundProduct
+        ];
+
+      } 
+    
     return $data['sale'];
 
     
