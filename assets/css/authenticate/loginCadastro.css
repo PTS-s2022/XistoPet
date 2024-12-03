@@ -44,6 +44,7 @@ a {
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--color-branco-2);
+  overflow: hidden;
 }
 
 #olho{
@@ -291,6 +292,11 @@ input:valid ~ label {
   font-style: normal;
   font-size: 10px;
   padding: 5px;
+}
+
+
+.termos > a{
+  font-size: 1.5  em;
 }
 
 .textos a {
