@@ -562,9 +562,6 @@ nav{   /* CONTEUDO DO CABEÇALHO */
   /* color: rgb(253, 68, 68); */
   margin:10px 0 10px 0;
   font-size: 1em;
-<<<<<<< HEAD
-  color: var(--cor5);
-=======
 }
 
 
@@ -621,5 +618,4 @@ dialog{
 
 .div-btn-erro > button:hover{
   background-color: var(--amarelo-hover);
->>>>>>> ecc407c6d93e3ac08ac2d6d943bc7e3bf8ba8193
 }
