@@ -475,7 +475,9 @@ a.footer-texto:hover{
 
 
 
-
+dialog::backdrop{
+  background-color: transparent;
+}
 
 dialog{
   position: fixed;
@@ -504,6 +506,7 @@ dialog{
 }
 .p-erro{
   font-size: 1.3em;
+  padding-left: 5px;
 }
 
 .div-btn-erro{

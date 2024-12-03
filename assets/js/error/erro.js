@@ -8,12 +8,12 @@ if(inputErro.value == 0){
 
 } else if(inputErro.value == 1){
     erro.showModal();
-    body.style.filter = "blur(5px)";
-    body.style.overflowY = "hidden";
+    html.style.filter = "blur(5px)";
+    html.style.overflowY = "hidden";
 }
 
 fechar.addEventListener("click", function(){
     erro.close();
-    body.style.filter = "";
-    body.style.overflowY = "auto";
+    html.style.filter = "";
+    html.style.overflowY = "auto";
 })

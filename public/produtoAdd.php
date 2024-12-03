@@ -32,7 +32,12 @@ $data['category'] = $displayProduct->displayCategories();
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
-<input type="hidden" name="inputErro" id="entrada-erro" value="1">
+<body onload="carregado()">
+<?php
+  require_once('../libs/header.php');
+?>
+    <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
+    <input type="hidden" name="inputErro" id="entrada-erro" value="0">
     <dialog id="erro">
         <h1 class="titulo-erro">Dados incorretos</h1>
         <div>
@@ -42,13 +47,6 @@ $data['category'] = $displayProduct->displayCategories();
             <button id="fechar">Fechar</button>
         </div>
     </dialog>
-<body onload="carregado()">
-<?php
-  require_once('../libs/header.php');
-?>
-<!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
-    
-
 
     <div class="principal"> <!-- DIV PRINCIPAL -->
         <p class="titulo"><span>Adicionar produto</span></p>

@@ -42,7 +42,7 @@ $data['category'] = $displayProduct->displayCategories();
 <?php
   require_once('../libs/header.php');
 ?>
-
+    <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
     <input type="hidden" name="inputErro" id="entrada-erro" value="1">
     <dialog id="erro">
         <h1 class="titulo-erro">Dados incorretos</h1>

@@ -55,6 +55,18 @@ if(isset($_GET['address'])){
     require_once('../libs/header.php');
   ?>   
 
+    <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
+    <input type="hidden" name="inputErro" id="entrada-erro" value="0">
+    <dialog id="erro">
+        <h1 class="titulo-erro">Dados incorretos</h1>
+        <div>
+            <p class="p-erro">Preencha todos os campos corretamente</p>
+        </div>
+        <div class="div-btn-erro">
+            <button id="fechar">Fechar</button>
+        </div>
+    </dialog>
+
     <div class="principal"> <!-- INICIO DO CONTEUDO PRINCIPAL -->
          <!-- TITULO DO CONTEUDO DA PAGINA -->
 
@@ -181,6 +193,8 @@ require_once('../libs/footer.html');
 <script src="../assets/js/address/cep.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+<script src='../assets/js/error/erro.js'></script>  <!-- script do erro -->
+
 
 <script>
 $("#CEP").mask("00000-000");
