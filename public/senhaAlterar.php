@@ -55,7 +55,7 @@ if(!isset($_SESSION['user'])){
                 <div class="inputs">
                     <!-- <label for="senha">Senha</label> -->
                     <input type="password" name="passwordNewVerify" class="senha" required />
-                    <label for="senha">repetir nova senha</label>
+                    <label for="senha">Repetir nova senha</label>
                     <div class="olho"><img src="../assets\css\alterPassword\imagens\olhoFechado.png" alt="" class="img-olho"></div>
 
                 </div>

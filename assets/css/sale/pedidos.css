@@ -310,6 +310,10 @@ p{
   
 }
 
+.comprar:hover{
+  background-color: var(--amarelo-hover);
+}
+
 .avalia{
   width: 50%;
   height: 40px;
@@ -324,6 +328,9 @@ p{
   justify-content: center;
 }
 
+.avalia:hover{
+  background-color: var(--principal-escuro);
+}
 
 .bottom{
   width: 97%;
@@ -332,6 +339,11 @@ p{
   align-items: center;
   
 }
+
+.date{
+  color: var(--cor7);
+}
+
 
 .bottom .texto{
   display: flex;

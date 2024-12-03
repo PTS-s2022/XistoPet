@@ -126,7 +126,7 @@ if($data['switch']['switch'] == 'product'){
             <div class="info"> <!-- DIV QUE CONTÉM O CONTEUDO DO FORM -->
                 <div class="titulo2"><i class='bx bxs-truck'></i><span>Frete</span></div>
                 <div class="frete">
-                    <span>A chegada do seu pedido está prevista para 16/04 </span>
+                    <span>A chegada do seu pedido está prevista para 12/12 </span>
                     <div class="frete-gr">Grátis</div>
                 </div>
             </div>
@@ -134,8 +134,8 @@ if($data['switch']['switch'] == 'product'){
 
             <form action="../private/verificarVenda.php" method="post" class="form"> <!-- FORM CUPOM DE DESCONTO -->
             <div class="info"> <!-- DIV QUE CONTÉM O CONTEUDO DO FORM -->
-                <div class="titulo2"><i class='bx bxs-discount'></i><span>Cpf</span></div>
-                <input type="text" class="desconto" name="cpf" placeholder="Entre com o seu cpf">
+                <div class="titulo2"><i class='bx bx-credit-card-front'></i><span>CPF</span></div>
+                <input type="text" class="desconto" name="cpf" placeholder="Entre com o seu CPF">
                 <div class="salvar">
                     <button class="btn btn-amarelo">Continuar</button>
                 </div>
@@ -154,7 +154,7 @@ if($data['switch']['switch'] == 'product'){
             <div class="info"> <!-- DIV QUE CONTÉM O CONTEUDO DO FORM -->
                 <div class="titulo2"><i class='bx bxs-truck'></i><span>Frete</span></div>
                 <div class="frete">
-                    <span>A chegada do seu pedido está prevista para 16/04 </span>
+                    <span>A chegada do seu pedido está prevista para 12/12 </span>
                     <div class="frete-gr">Grátis</div>
                 </div>
             </div>
@@ -219,7 +219,7 @@ if($data['switch']['switch'] == 'product'){
                                 
                             </div>
                         </div>
-                        <div id="botao"><button id="confirm">Finalizar Compra</button></div> <!-- BOTÃO FINALIZAR COMPRA -->
+                        <div id="botao"><button id="confirm" >Finalizar Compra</button></div> <!-- BOTÃO FINALIZAR COMPRA -->
                     </div>
                 </div>
             </form>

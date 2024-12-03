@@ -94,7 +94,7 @@ $data['toy'] = $product->selectProducts($value);
 
           <p class="hero-text">Venda com até 40% de desconto hoje</p>
 
-          <a href="#" class="btn">comprar</a> <!-- link -->
+          <a href="#" class="btn">Comprar</a> <!-- link -->
 
         </div>
       </section>
@@ -294,12 +294,12 @@ $data['toy'] = $product->selectProducts($value);
                 <p class="traco">-</p>
                 <p class="preco formatar-preco"><?= $product['price']['max'] ?></p>
               </div>
-              <a class="btn-adic" href="produto.php?idProduct=<?= $product['id'] ?>"> <button class="nada-branco">Visualizar</button></a> <!-- ver se vai ter q colocar um a -->
+              <a class="btn-adic" href="produto.php?idProduct=<?= $product['id'] ?>"> Visualizar</a> <!-- ver se vai ter q colocar um a -->
               </div>
             <?php endforeach; ?>
 
             <div class="products"> <!-- PRODUTO -->
-              <a href="pesquisar.php?category=<?= 1?>"><button class="btn-adic">Ver Mais </button></a>
+              <a class="btn-adic" href="pesquisar.php?category=<?= 1?>">Ver Mais</a>
             </div>
           </div>
           <div class="anterior" id="anterior"><i class='bx bx-left-arrow-alt'></i></div><!-- seta para voltar -->
@@ -369,11 +369,11 @@ $data['toy'] = $product->selectProducts($value);
                 <p class="traco">-</p>
                 <p class="preco formatar-preco"><?= $product['price']['max'] ?></p>
               </div>
-              <a class="btn-adic" href="produto.php?idProduct=<?= $product['id'] ?>"> <button class="nada-branco">Visualizar</button></a> <!-- ver se vai ter q colocar um a -->
+              <a class="btn-adic" href="produto.php?idProduct=<?= $product['id'] ?>"> Visualizar</a> <!-- ver se vai ter q colocar um a -->
               </div>
             <?php endforeach; ?>
             <div class="products"> <!-- PRODUTO -->
-              <a href="pesquisar.php?category=<?= 2?>"><button class="btn-adic">Ver Mais </button></a>
+              <a class="btn-adic" href="pesquisar.php?category=<?= 2?>">Ver Mais</a>
             </div>
           </div>
           <div class="anterior" id="anterior-2"><i class='bx bx-left-arrow-alt'></i></div><!-- seta para voltar -->
@@ -405,11 +405,11 @@ $data['toy'] = $product->selectProducts($value);
                 <p class="traco">-</p>
                 <p class="preco formatar-preco"><?= $product['price']['max'] ?></p>
               </div>
-              <a class="btn-adic" href="produto.php?idProduct=<?= $product['id'] ?>"> <button class="nada-branco">Visualizar</button></a> <!-- ver se vai ter q colocar um a -->
+              <a class="btn-adic" href="produto.php?idProduct=<?= $product['id'] ?>"> Visualizar</a> <!-- ver se vai ter q colocar um a -->
               </div>
             <?php endforeach; ?>
             <div class="products"> <!-- PRODUTO -->
-              <a href="pesquisar.php?category=<?= 3?>"><button class="btn-adic">Ver Mais </button></a>
+              <a class="btn-adic" href="pesquisar.php?category=<?= 3?>">Ver Mais </a>
             </div>
           </div>
           <div class="anterior-3" id="anterior-3"><i class='bx bx-left-arrow-alt'></i></div><!-- seta para voltar -->

@@ -130,7 +130,7 @@ nav{   /* CONTEUDO DO CABEÇALHO */
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .titulo2 > span{
@@ -269,7 +269,7 @@ nav{   /* CONTEUDO DO CABEÇALHO */
     padding: 10px;
     width: 200px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    text-align: center;
     cursor: pointer;
     font-size: var(--font-normal);
   }
@@ -307,9 +307,10 @@ nav{   /* CONTEUDO DO CABEÇALHO */
     justify-content: space-between;
   }
 
-  /* .frete > span{
-    width: 80%;
-  } */
+  .frete > span{
+    color: var(--cor5);
+    margin: 0;
+  }
 
   .frete-gr { /* SPAN */
     width: 20%;
@@ -328,7 +329,6 @@ nav{   /* CONTEUDO DO CABEÇALHO */
   .metodo{ /* DIV DO CAMPO */
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 20px;
     justify-content: space-between;
     width: 100%;
     position: relative;
@@ -379,19 +379,19 @@ nav{   /* CONTEUDO DO CABEÇALHO */
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 10px; 
   }
 
   /* BOTÃO CONFIRMAR COMPRA */
   #confirm{  
     border: none;
     border-radius: 5px;
-    width: 200px;
-    font-size: 0.8rem;
+    width: 100%;
     color: var(--branco);
     background-color: var(--amarelo);
     padding: 10px;
     cursor: pointer;
+    font-size: var(--font-normal);
   }
 
   #confirm:hover{
@@ -419,9 +419,9 @@ nav{   /* CONTEUDO DO CABEÇALHO */
     color: var(--cor5);
   }
 
-  .concluido > span > i{
+  .concluido > span > a > i{
     color: var(--principal);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-left: 5px;
   }
 
@@ -510,9 +510,13 @@ nav{   /* CONTEUDO DO CABEÇALHO */
 
 #botao{/* para o botao de finalizar compra  descer quando o cartao for selecionado */
   position: absolute;
-  transform: translate(0%, 0%);
+  transform: translate(0%, 20%);
   right: 0%;
-  /* bottom: 5%; */
+  width: 200px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-size: var(--font-normal);
 }
 
 #aparecer{ /* para aparecer o cartao */
@@ -556,6 +560,7 @@ nav{   /* CONTEUDO DO CABEÇALHO */
 
 .mensage{
   /* color: rgb(253, 68, 68); */
-  margin: 10px;
+  margin:10px 0 10px 0;
   font-size: 1em;
+  color: var(--cor5);
 }

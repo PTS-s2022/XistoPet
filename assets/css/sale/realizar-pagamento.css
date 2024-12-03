@@ -159,6 +159,7 @@ nav{   /* CONTEUDO DO CABEÇALHO */
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.24);
   }
   
+  
 
 
   /* CAMPO ENDEREÇOS */
@@ -255,6 +256,10 @@ nav{   /* CONTEUDO DO CABEÇALHO */
     border-radius: 5px;
     cursor: pointer;
     font-size: var(--font-normal);
+  }
+
+  .btn:hover{
+    background-color: var(--principal-escuro);
   }
   
   
@@ -363,6 +368,7 @@ nav{   /* CONTEUDO DO CABEÇALHO */
     font-size: 20px;
     width: 100%;
     opacity: .5;
+    text-align: center;
   }
 
   .buttons{

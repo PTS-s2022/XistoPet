@@ -109,6 +109,7 @@
     text-overflow: ellipsis;
     line-height: 1.5em;
     max-height: 3em; /* 2 linhas * line-height */
+    margin: 10px 0px 10px 0px;
   }
 
   .titulo{  
@@ -140,7 +141,7 @@
   .preco-flex{
     display: flex;
     font-size: small;
-    margin-top: 10px;
+    margin: 10px 0px 10px 0px;
   }
 
   .preco, .traco{     /* PREÇO PRODUTO */
@@ -161,12 +162,16 @@
     border: none;
     border-radius: 5px;
     padding: 8px;
-    max-width: 100%;
-    min-width: 80%;
+    width: 100%;
     margin: auto;
-    margin-top: 5px;
     justify-content: center;
     color: var(--branco);
+    font-size: 1em;
+    
+  }
+
+  .btn-adic:hover{
+    background-color: var(--amarelo-hover);
   }
   
   .anterior-3 {

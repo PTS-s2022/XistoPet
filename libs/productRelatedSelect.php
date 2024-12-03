@@ -14,7 +14,7 @@
                     <p class="traco">-</p>
                     <p class="preco formatar-preco"><?= $product['price']['max']?></p>
                   </div>
-                  <a class="btn-adic" href="produto.php?idProduct=<?= $product['id']?>"> <button class="nada-branco">Visualizar</button></a> <!-- ver se vai ter q colocar um a -->
+                  <a class="btn-adic" href="produto.php?idProduct=<?= $product['id']?>">Visualizar</a> <!-- ver se vai ter q colocar um a -->
               </div>
           <?php endforeach;?>
           <div class="products"> <!-- PRODUTO -->

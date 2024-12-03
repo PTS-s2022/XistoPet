@@ -689,7 +689,7 @@ div.select-adress {
 }
 
 .titulo > span{
-  margin-left: 3%;
+  margin-left: 0.5%;
   color: var(--cor-letra2);
   font-weight: bold;
   font-size: var(--font-titulo);

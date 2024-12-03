@@ -151,6 +151,7 @@ a{
     margin: auto;
     justify-content: center;
     color: var(--branco);
+    font-size: 1em;
   }
   
   .btn-adic:hover{

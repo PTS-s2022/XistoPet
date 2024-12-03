@@ -200,8 +200,7 @@ section.hero {
   background-image: url('imgs/fundo-herder.png');
   display: flex;
   justify-content: end;
-  align-items: center;
-  text-align: center;
+ 
 
 }
 
@@ -292,11 +291,13 @@ h1 span {
   display: flex;
   align-items: center;
   gap: 30px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-snap-type: inline mandatory;
   padding-block-end: 20px;
   margin-block-end: -20px;
 }
+
+
 
 .scrollbar-item {
   min-width: 65%;
@@ -370,8 +371,9 @@ h1 span {
 /*-----------------------------------*\
   #SLIDER
 \*-----------------------------------*/
+
 .slider{
-  margin-top: 50px;
+  padding-top:50px;
   position: relative;
 }
 
@@ -718,7 +720,9 @@ background-color: var(--principal);
  */
 
 @media (min-width: 575px) {
-
+  .has-scrollbar{
+    overflow-x: auto;
+  }
   /**
    * CUSTOM PROPERTY
    */
@@ -757,7 +761,6 @@ background-color: var(--principal);
   .hero {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
     padding-inline-start: 20px;
 
   }
@@ -818,11 +821,16 @@ background-color: var(--principal);
     text-align: end;
     padding: 1px;
   }
+  .has-scrollbar{
+    overflow-x: auto;
+  }
 
 }
 
 @media (min-width: 768px) {
-
+  .has-scrollbar{
+    overflow-x: auto;
+  }
   /**
    * CUSTOM PROPERTY
    */
@@ -859,7 +867,7 @@ background-color: var(--principal);
 
   .hero {
     aspect-ratio: 1512 / 784;
-    padding-inline-start: 10%;
+    padding-inline-start: 25%;
   }
 
   
@@ -1063,7 +1071,10 @@ background-color: var(--principal);
 
 @media (max-width: 768px) {
   
-
+  .has-scrollbar{
+    overflow-x: auto;
+  }
+  
   .slide-description{
     padding: 0;
   }
