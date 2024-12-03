@@ -70,7 +70,7 @@ if($data['switch']['switch'] == 'product'){
 </header>   <!-- FIM DO CABEÇALHO -->
 
     <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
-    <input type="hidden" name="inputErro" id="entrada-erro" value="1">
+    <input type="hidden" name="inputErro" id="entrada-erro" value="0">
     <dialog id="erro">
         <h1 class="titulo-erro">Dados incorretos</h1>
         <div>

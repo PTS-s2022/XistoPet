@@ -61,8 +61,8 @@ if(isset($_SESSION['user']['client'])){
                         
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
-                            <h1 class="titulo-notifi">Gostaria de avaliar sua compra?</h1> 
-                            <h1 class="data-notifi"><?= $notification['data']?></h1>
+                                <h1 class="titulo-notifi">Gostaria de avaliar sua compra?</h1> 
+                                <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
                                 De sua opinião sobre esse produto
@@ -71,12 +71,13 @@ if(isset($_SESSION['user']['client'])){
 
                         <?php break;
                     case 'pagamentoConfirmado': ?>
-                    <img src="..\imagem\1_Ração_Whiskas_Carne_para_Gatos_Adultos_Castrados_1.jpg" alt="" class="produto-notifi">
+                        <div class="imagem-notificacao-header"><i class='bx bx-check-circle'></i></div> <!-- aqui é o incone para a notificacao -->
+
                     
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
                             <h1 class="titulo-notifi">Seu pagamento foi confirmado</h1> 
-                            <h1 class="data-notifi"><?= $notification['data']?></h1>
+                            <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
                                 O pagamento para a venda <?= $notification['sale']?> foi confirmado
@@ -84,12 +85,12 @@ if(isset($_SESSION['user']['client'])){
                         </div>    
                         <?php break;
                     case 'pedidoACaminho': ?>
-                        <img src="..\imagem\1_Ração_Whiskas_Carne_para_Gatos_Adultos_Castrados_1.jpg" alt="" class="produto-notifi">
-                        
+                        <div class="imagem-notidicacao"><i class='bx bx-accessibility'></i></div> <!-- aqui é o incone para a notificacao -->
+    
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
-                            <h1 class="titulo-notifi">Seu pedido esta a caminho</h1> 
-                            <h1 class="data-notifi"><?= $notification['data']?></h1>
+                                <h1 class="titulo-notifi">Seu pedido esta a caminho</h1> 
+                                <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
                                 O pagamento para a venda <?= $notification['sale']?> foi confirmado
@@ -103,7 +104,7 @@ if(isset($_SESSION['user']['client'])){
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
                             <h1 class="titulo-notifi">Seu pedido foi entregue</h1> 
-                            <h1 class="data-notifi"><?= $notification['data']?></h1>
+                            <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
                                 O pedido <?= $notification['sale']?> foi entregue no endereço requisitado
@@ -117,7 +118,7 @@ if(isset($_SESSION['user']['client'])){
                         <div class="content-notifi">
                             <div class="titulo-data-notifi">
                             <h1 class="titulo-notifi">Seu pagamento foi cancelado</h1> 
-                            <h1 class="data-notifi"><?= $notification['data']?></h1>
+                            <h1 class="data-notifi"><?= $notification['date']?></h1>
                             </div>
                             <div class="texto-notifi">
                                 Seu pagamento não foi realizado, pois o pagamento não pois constado como realizado
