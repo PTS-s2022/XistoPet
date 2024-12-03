@@ -307,13 +307,21 @@ p{
   padding: 5px;
 }
 
+.salvar:hover{
+  background-color: var(--amarelo-hover);
+}
+
 .excluir{
   width: 50%;
   border: transparent;
   border-radius: 5px;
-  background-color: var(--principal-escuro);
+  background-color: var(--principal);
   color: var(--branco);
   padding: 5px;
+}
+
+.excluir:hover{
+  background-color: var(--principal-escuro);
 }
 
 

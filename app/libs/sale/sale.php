@@ -125,7 +125,13 @@ Class Sale
         }
 
         if($status == 3){
-
+          $value = [
+            'type' => 2,
+            'saleItem' => NULL,
+            'sale' => $data['cart']['idCart'],
+            'idClient' => $data['idClient']
+          ];
+          $this->client->aadNotification($value);
         }
 
         $data['switch'] = [
@@ -283,6 +289,7 @@ Class Sale
     if(!$data['sale']) {
       return false;
     }
+
     $data['sale'] = $this->dataSaleItems($data);
 
     return $data['sale'];
@@ -325,6 +332,7 @@ Class Sale
     if(!$foundSale){
       return false;
     }
+
     foreach ($foundSale as $k => $sale) {
       if($sale->status == 1){
         continue;
@@ -339,6 +347,9 @@ Class Sale
         'saleDate' => $sale->dateVenda,
         'deliveryDate' => $sale->dateEntrega
       ];
+    }
+    if(!isset($data['sale'])){
+      return false;
     }
     return $data['sale'];
 

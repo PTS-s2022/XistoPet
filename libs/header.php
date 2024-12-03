@@ -16,7 +16,9 @@ if(isset($_SESSION['user']['client'])){
         $count = count($data['notification']);
     }
 }
+
 ?>
+
 
 
 <head>
@@ -49,19 +51,88 @@ if(isset($_SESSION['user']['client'])){
               </div>
           </div>
       <?php else:?>
-
+        <?php foreach ($data['notification'] as $k => $notification):?>
           <div class="linha-notificacoes"> <!-- cada uma das linhas das notificaçoes -->
-              <img src="imagens/racao.webp" alt="" class="produto-notifi">
-              <div class="content-notifi">
-                  <div class="titulo-data-notifi">
-                      <h1 class="titulo-notifi">titulo da notificação, pipipipopopo dasdasdasda d asdadsasdd</h1> 
-                      <h1 class="data-notifi">03/08/2024</h1>
-                  </div>
-                  <div class="texto-notifi">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis impedit enim totam corporis fugit quibusdam. Magnam reiciendis dolorum eius optio, aperiam ullam, accusantium velit, iure deleniti blanditiis iusto rerum.
-                  </div>
-              </div>
+              
+            
+                <?php switch ($notification['type']):
+                    case 'avaliar': ?>
+                        <div class="imagem-notificacao-header"><i class='bx bxs-star'></i></div> <!-- aqui é o incone para a notificacao -->
+
+                        
+                        <div class="content-notifi">
+                            <div class="titulo-data-notifi">
+                                <h1 class="titulo-notifi">Gostaria de avaliar sua compra?</h1> 
+                                <h1 class="data-notifi"><?= $notification['date']?></h1>
+                            </div>
+                            <div class="texto-notifi">
+                                De sua opinião sobre esse produto
+                            </div>
+                        </div>
+
+                        <?php break;
+                    case 'pagamentoConfirmado': ?>
+                        <div class="imagem-notificacao-header"><i class='bx bx-check-circle'></i></div> <!-- aqui é o incone para a notificacao -->
+
+                    
+                        <div class="content-notifi">
+                            <div class="titulo-data-notifi">
+                            <h1 class="titulo-notifi">Seu pagamento foi confirmado</h1> 
+                            <h1 class="data-notifi"><?= $notification['date']?></h1>
+                            </div>
+                            <div class="texto-notifi">
+                                O pagamento para a venda <?= $notification['sale']?> foi confirmado
+                            </div>
+                        </div>    
+                        <?php break;
+                    case 'pedidoACaminho': ?>
+                        <div class="imagem-notificacao-header"><i class='bx bx-accessibility'></i></div> <!-- aqui é o incone para a notificacao -->
+    
+                        <div class="content-notifi">
+                            <div class="titulo-data-notifi">
+                                <h1 class="titulo-notifi">Seu pedido esta a caminho</h1> 
+                                <h1 class="data-notifi"><?= $notification['date']?></h1>
+                            </div>
+                            <div class="texto-notifi">
+                                O pagamento para a venda <?= $notification['sale']?> foi confirmado
+                            </div>
+                        </div>
+
+                        <?php break;
+                    case 'pedidoEntregue': ?>
+                        <div class="imagem-notificacao-header"><i class='bx bxs-flag-checkered'></i></div> <!-- aqui é o incone para a notificacao -->
+                       
+                        
+                        <div class="content-notifi">
+                            <div class="titulo-data-notifi">
+                            <h1 class="titulo-notifi">Seu pedido foi entregue</h1> 
+                            <h1 class="data-notifi"><?= $notification['date']?></h1>
+                            </div>
+                            <div class="texto-notifi">
+                                O pedido <?= $notification['sale']?> foi entregue no endereço requisitado
+                            </div>
+                        </div>
+                        <?php break;
+
+                    case 'pedidoCancelado': ?>
+                        <div class="imagem-notificacao-header"><i class='bx bx-run'></i></div> <!-- aqui é o incone para a notificacao -->
+                        
+                        
+                        <div class="content-notifi">
+                            <div class="titulo-data-notifi">
+                            <h1 class="titulo-notifi">Seu pagamento foi cancelado</h1> 
+                            <h1 class="data-notifi"><?= $notification['date']?></h1>
+                            </div>
+                            <div class="texto-notifi">
+                                Seu pagamento não foi realizado, pois o pagamento não pois constado como realizado
+                            </div>
+                        </div>
+                    <?php break;?>
+                <?php endswitch;?>
+               
+
           </div>
+        <?php endforeach;?> 
       <?php endif;?>       
 
        

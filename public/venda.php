@@ -69,6 +69,17 @@ if($data['switch']['switch'] == 'product'){
     </nav>  <!-- FIM DAS INFORMAÇÕES DO CABEÇALHO -->
 </header>   <!-- FIM DO CABEÇALHO -->
 
+    <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
+    <input type="hidden" name="inputErro" id="entrada-erro" value="0">
+    <dialog id="erro">
+        <h1 class="titulo-erro">Dados incorretos</h1>
+        <div>
+            <p class="p-erro">Preencha todos os campos corretamente</p>
+        </div>
+        <div class="div-btn-erro">
+            <button id="fechar">Fechar</button>
+        </div>
+    </dialog>
 
 <div class="flex">   <!-- DIV QUE CONTÉM O CONTEUDO DA PAGINA-->
     <p class="titulo"><span>Finalizar compra</span></p>  <!-- TITULO DO CONTEUDO DA PAGINA -->
@@ -251,6 +262,8 @@ if($data['switch']['switch'] == 'product'){
    
 
 <script src="../assets/js/sale/finalizar-compra.js"></script>
+<script src='../assets/js/error/erro.js'></script>  <!-- script do erro -->
+
 
 </body>
 </html>

@@ -62,7 +62,7 @@ $data['sale'] = $sale->displaySale($data);
       </div>  <!-- final LISTA DE PRODUTOS DO PEDIDO -->
     <?php else:?>
       <?php foreach ($data['sale'] as $k => $sale): ?>  
-        <div class="card2" > <!-- GERENCIAR PEDIDO -->
+        <div class="card2" id="<?= $sale['id']?>"> <!-- GERENCIAR PEDIDO -->
           <div > <!-- LISTA DE PRODUTOS DO PEDIDO -->
             <div class="topo-card">
               <div class="dados-da-compra">
@@ -71,7 +71,7 @@ $data['sale'] = $sale->displaySale($data);
             </div>
 
             <?php foreach ($sale['item'] as $a => $item):?>
-              <div class="card3"> <!-- aqui é cada linha de produto -->
+              <div class="card3" > <!-- aqui é cada linha de produto -->
                 <div class="coluns">
                   <div class="imagem"><img src="../imagem/<?= $item['product']['image']?>" ></div> <!-- IMAGEM DO PRODUTO -->
                   <div class="info">

@@ -12,7 +12,7 @@ $client = new Client;
 
 $data['idClient'] = $_SESSION['user']['client'];
 
-$data['notification'] = $client->dataNotification($data);
+$data['notification'] = $client->dataNotifications($data);
 
 
 ?>
@@ -76,7 +76,7 @@ $data['notification'] = $client->dataNotification($data);
                     </div>
                 </div>
                 <div class="bottom-notidicacao"> 
-                  <div class="texto-notidicacao"><a href="#">Ver mais </a></div>
+                  <div class="texto-notidicacao"><a href="../public/pedido.php?idSaleItem=<?= $notification['item']?>">Ver mais </a></div>
                 </div>
               </div> 
 
@@ -93,7 +93,7 @@ $data['notification'] = $client->dataNotification($data);
                     </div>
                 </div>
                 <div class="bottom-notidicacao"> 
-                  <div class="texto-notidicacao"><a href="#">Ver mais </a></div>
+                  <div class="texto-notidicacao"><a href="../public/pedidos.php#<?= $notification['sale']?>">Ver mais </a></div>
                 </div>
               </div> <!-- parte que vai o whaile -->
               
@@ -108,7 +108,7 @@ $data['notification'] = $client->dataNotification($data);
                     </div>
                 </div>
                 <div class="bottom-notidicacao"> 
-                  <div class="texto-notidicacao"><a href="#">Ver mais </a></div>
+                  <div class="texto-notidicacao"><a href="../public/pedidos.php#<?= $notification['sale']?>">Ver mais </a></div>
                 </div>
               </div> 
 
@@ -123,7 +123,7 @@ $data['notification'] = $client->dataNotification($data);
                     </div>
                 </div>
                 <div class="bottom-notidicacao"> 
-                  <div class="texto-notidicacao"><a href="#">Ver mais </a></div>
+                  <div class="texto-notidicacao"><a href="../public/pedidos.php#<?= $notification['sale']?>">Ver mais </a></div>
                 </div>
               </div> 
 

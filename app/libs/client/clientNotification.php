@@ -20,40 +20,78 @@ Class ClientNotification
   {
     $this->client = new modelsClient;
     $this->clientNotification = new ModelsClientNotification;
+    $this->clientNotificationType = new ModelsClientNotificationType;
 
   }
 
-  public function displayNotification($data){
-    $foundNotification = $this->clientNotification->findBy('cliente', $data['idClient']);
+  public function displayNotifications($data){
+    $value = [
+      'idClient' => $data['idClient']
+    ];
+    $foundNotification = $this->clientNotification->selects($value);
     if(!$foundNotification){
       return false;
     }
+
+    $data['notification'] = $this->dataNotification($foundNotification);
+
+    return $data['notification'];
+  }
+
+
+  public function displayNotification($data){
+    $value = [
+      'idClient' => $data['idClient']
+    ];
+    $foundNotification = $this->clientNotification->select($value);
+    if(!$foundNotification){
+      return false;
+    }
+
+    $data['notification'] = $this->dataNotification($foundNotification);
+
+    return $data['notification'];
+  }
+
+
+  public function addNotification($data){
+
+    $value = [
+      'type' => $data['type'],
+      'saleItem' => $data['saleItem'],
+      'sale' => $data['sale'],
+      'idClient' => $data['idClient']
+    ];
+
+    $this->clientNotification->insert($value);
+  }
+
+  public function dataNotification($foundNotification){
     $sale = new Sale;
     foreach ($foundNotification as $k => $notification) {
       $foundNotificationType = $this->clientNotificationType->findBy('id', $notification->tipo);
 
       $data['notification'][$k] = [
-        'type' => $foundNotificationType[0]->tipo
+        'type' => $foundNotificationType[0]->tipo,
+        'date' => $notification->date
       ];
       
       if($notification->itemVenda){
-        $value = [
-          'idSaleItem' => $notification->itemVenda
-        ];
-        $foundItem = $sale->displaySaleItem($value);
-
-        $data['notification'][$k]['item'] = $foundNotificationType[0]->tipo;
+        $data['notification'][$k]['item'] = $notification->itemVenda;
 
       }
 
       if($notification->venda){
-        $data['notification'][$k]['sale'] = $foundNotificationType[0]->tipo;
+        $value = [
+          'idSale' => $notification->venda
+        ];
+
+
+        $data['notification'][$k]['sale'] = $notification->venda;
       }
 
     }
 
     return $data['notification'];
   }
-
-  
 }

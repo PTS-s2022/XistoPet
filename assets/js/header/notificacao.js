@@ -25,4 +25,13 @@ notificacao.addEventListener("click", function () {
             num = 1;
         }
     }
+
+
+    let Data = document.querySelectorAll(".data-notifi");
+    Data.forEach(function(DataNum, index){
+      DataValue = DataNum.innerHTML;
+      let data_brasileira = DataValue.split('-').reverse().join('/');
+      DataNum.innerHTML = data_brasileira;
+
+    })
 });
