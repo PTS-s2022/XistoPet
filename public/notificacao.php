@@ -12,7 +12,7 @@ $client = new Client;
 
 $data['idClient'] = $_SESSION['user']['client'];
 
-$data['notification'] = $client->dataNotification($data);
+$data['notification'] = $client->dataNotifications($data);
 
 
 ?>

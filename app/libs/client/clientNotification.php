@@ -34,6 +34,8 @@ Class ClientNotification
     }
 
     $data['notification'] = $this->dataNotification($foundNotification);
+
+    return $data['notification'];
   }
 
 
@@ -47,6 +49,8 @@ Class ClientNotification
     }
 
     $data['notification'] = $this->dataNotification($foundNotification);
+
+    return $data['notification'];
   }
 
 
