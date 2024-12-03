@@ -263,7 +263,7 @@ if(isset($_SESSION['user']['client'])){
 <!-- INFORMAÇÕES ADICIONAIS DO PRODUTO -->
 <div class="description" id="block"> 
     <h1 class="h1-desc" id="descricao">Descrição do produto:</h1> 
-    <p><?= $data['description'] ?></p>
+    <p><?= nl2br($data['description']) ?></p>
 </div> <!-- FIM DAS INFORMAÇÕES ADICIONAIS -->
 
 

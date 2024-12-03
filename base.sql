@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03/12/2024 às 00:45
+-- Tempo de geração: 03/12/2024 às 02:10
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -45,7 +45,7 @@ CREATE TABLE `tb_administrador` (
 --
 
 INSERT INTO `tb_administrador` (`id`, `nome`, `cpf`, `telefone`, `usuario`, `nivel`, `dateCreate`, `dateModify`) VALUES
-(1, 0x255e8295d53cff73056c16bf3a386b947f3d7bab2d8057b4471f84f87d72d16b, 0x1666c19eab0cdab1aa2d6fb966ca660d, 0x4441125f1c1c69e9737f258fcf757b13, 42, 3, '2024-12-01 09:40:02', '2024-12-01 09:40:06');
+(1, 0xae20c15abe07b3952d9fcd489a48a47d27b6c998b7a89edd1fb0dce628ccc48f, 0x079fcce97adff021b71cad026897320e, 0x3693ffd1f2b3ca3c5251ff85be6dee25, 1, 3, '2024-12-02 22:34:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -83,19 +83,16 @@ CREATE TABLE `tb_categoria` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
 --
--- Estrutura para tabela `tb_cidade`
+-- Despejando dados para a tabela `tb_categoria`
 --
 
-CREATE TABLE `tb_cidade` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `capital` tinyint(1) NOT NULL,
-  `estado` int(11) NOT NULL,
-  `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
-  `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `tb_categoria` (`id`, `categoria`, `ativo`, `imagem`, `dateCreate`, `dateModify`) VALUES
+(1, 'Ração de gato', 1, '1_Ração_de_gato_1.jpg', '2024-12-02 22:36:39', '2024-12-02 23:08:06'),
+(2, 'Brinquedo de gato', 1, '5_Brinquedo_de_gato_1.jpg', '2024-12-02 22:37:01', '2024-12-02 23:08:09'),
+(3, 'Ração de cachorro', 1, '2_Ração_de_cachorro_1.jpg', '2024-12-02 22:37:53', '2024-12-02 23:08:13'),
+(4, 'Brinquedo de cachorro', 1, '3_Brinquedo_de_cachorro_1.jpg', '2024-12-02 22:38:18', '2024-12-02 23:08:17'),
+(5, 'Medicamento', 1, '6_Medicamento_1.jpg', '2024-12-02 22:38:37', '2024-12-02 23:08:20');
 
 -- --------------------------------------------------------
 
@@ -112,6 +109,7 @@ CREATE TABLE `tb_cliente` (
   `dataModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_cliente_cartao`
@@ -129,6 +127,7 @@ CREATE TABLE `tb_cliente_cartao` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_cliente_endereco`
@@ -149,6 +148,7 @@ CREATE TABLE `tb_cliente_endereco` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_cliente_favorito`
@@ -162,6 +162,7 @@ CREATE TABLE `tb_cliente_favorito` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_cliente_notificacao`
@@ -177,6 +178,8 @@ CREATE TABLE `tb_cliente_notificacao` (
   `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_cliente_notificacao_tipo`
@@ -303,6 +306,7 @@ CREATE TABLE `tb_produto_comentario` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_produto_cor`
@@ -316,6 +320,7 @@ CREATE TABLE `tb_produto_cor` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_produto_estoque`
@@ -328,6 +333,7 @@ CREATE TABLE `tb_produto_estoque` (
   `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --
 -- Estrutura para tabela `tb_produto_imagem`
@@ -357,6 +363,8 @@ CREATE TABLE `tb_produto_tamanho` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
+-- --------------------------------------------------------
+
 --
 -- Estrutura para tabela `tb_usuario`
 --
@@ -378,7 +386,8 @@ CREATE TABLE `tb_usuario` (
 
 INSERT INTO `tb_usuario` (`id`, `email`, `senha`, `sub`, `token`, `expiry`, `dateCreate`, `dateModify`) VALUES
 (1, 'xistopet@gmail.com', NULL, '109395935496376993579', NULL, NULL, '2024-09-02 19:49:31', NULL);
----------------------------------------------------
+
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_venda`
@@ -397,6 +406,7 @@ CREATE TABLE `tb_venda` (
   `dateModify` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_venda_item`
@@ -413,8 +423,11 @@ CREATE TABLE `tb_venda_item` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
-
+--
+-- Estrutura para tabela `tb_venda_status`
+--
 
 CREATE TABLE `tb_venda_status` (
   `id` int(11) NOT NULL,
@@ -459,12 +472,6 @@ ALTER TABLE `tb_categoria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `tb_cidade`
---
-ALTER TABLE `tb_cidade`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices de tabela `tb_cliente`
 --
 ALTER TABLE `tb_cliente`
@@ -504,12 +511,6 @@ ALTER TABLE `tb_cliente_notificacao_tipo`
 -- Índices de tabela `tb_cliente_telefone`
 --
 ALTER TABLE `tb_cliente_telefone`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `tb_estado`
---
-ALTER TABLE `tb_estado`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -616,13 +617,7 @@ ALTER TABLE `tb_administrador_nivel`
 -- AUTO_INCREMENT de tabela `tb_categoria`
 --
 ALTER TABLE `tb_categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
---
--- AUTO_INCREMENT de tabela `tb_cidade`
---
-ALTER TABLE `tb_cidade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cliente`
@@ -667,12 +662,6 @@ ALTER TABLE `tb_cliente_telefone`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_estado`
---
-ALTER TABLE `tb_estado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tb_fornecedor`
 --
 ALTER TABLE `tb_fornecedor`
@@ -688,7 +677,7 @@ ALTER TABLE `tb_metodo_pagamento`
 -- AUTO_INCREMENT de tabela `tb_produto`
 --
 ALTER TABLE `tb_produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto_comentario`
@@ -706,19 +695,19 @@ ALTER TABLE `tb_produto_cor`
 -- AUTO_INCREMENT de tabela `tb_produto_estoque`
 --
 ALTER TABLE `tb_produto_estoque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto_imagem`
 --
 ALTER TABLE `tb_produto_imagem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto_tamanho`
 --
 ALTER TABLE `tb_produto_tamanho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuario`
