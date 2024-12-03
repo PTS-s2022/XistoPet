@@ -124,6 +124,9 @@ Class Sale
           $this->productStock->update($value);
         }
 
+        if($status == 3){
+
+        }
 
         $data['switch'] = [
           'switch' => $data['switch'],

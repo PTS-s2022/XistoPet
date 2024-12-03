@@ -4,19 +4,15 @@ namespace app\libs\client;
 
 use app\database\models\Client as modelsClient;
 use app\database\models\ClientAddress as modelsClientAddress;
-use app\database\models\ClientNotification as modelsClientNotification;
-use app\database\models\ClientNotificationType as modelsClientNotificationType;
 use app\database\models\ClientCard as modelsClientCard;
 use app\libs\client\ClientFavorite as ClientFavorite;
-use app\libs\product\DisplayProduct;
-use app\libs\sale\Sale;
+
 
 Class Client
 {
   public readonly modelsClient $client;
   public readonly modelsClientAddress $clientAddress;
-  public readonly modelsClientNotification $clientNotification;
-  public readonly modelsClientNotificationType $clientNotificationType;
+  public readonly ClientNotification $clientNotification;
   public readonly modelsClientCard $clientCard;
   public readonly ClientFavorite $clientFavorite;
 
@@ -24,8 +20,8 @@ Class Client
   {
     $this->client = new modelsClient;
     $this->clientAddress = new modelsClientAddress;
-    $this->clientNotification = new modelsClientNotification;
-    $this->clientNotificationType = new modelsClientNotificationType;
+    $this->clientNotification = new ClientNotification;
+
     $this->clientCard = new modelsClientCard;
     $this->clientFavorite = new ClientFavorite;
 
@@ -137,33 +133,7 @@ Class Client
   }
 
   public function dataNotification($data){
-    $foundNotification = $this->clientNotification->findBy('cliente', $data['idClient']);
-    if(!$foundNotification){
-      return false;
-    }
-    $sale = new Sale;
-    foreach ($foundNotification as $k => $notification) {
-      $foundNotificationType = $this->clientNotificationType->findBy('id', $notification->tipo);
-
-      $data['notification'][$k] = [
-        'type' => $foundNotificationType[0]->tipo
-      ];
-      
-      if($notification->itemVenda){
-        $value = [
-          'idSaleItem' => $notification->itemVenda
-        ];
-        $foundItem = $sale->displaySaleItem($value);
-
-        $data['notification'][$k]['item'] = $foundNotificationType[0]->tipo;
-
-      }
-
-      if($notification->venda){
-        $data['notification'][$k]['sale'] = $foundNotificationType[0]->tipo;
-      }
-
-    }
+    $data['notification'] = $this->clientNotification->displayNotification($data);
 
     return $data['notification'];
     

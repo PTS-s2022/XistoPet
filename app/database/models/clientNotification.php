@@ -12,15 +12,19 @@ class ClientNotification extends Model
     {
         try {
             $connect = Connect::connect();
-            $prepare = $connect->prepare("insert into $this->table(nome,usuario) 
+            $prepare = $connect->prepare("insert into $this->table(tipo, venda, itemVenda, client) 
                                 values(
-                                    AES_ENCRYPT(:nome, UNHEX(SHA2('". AES_KEY ."', 512))),
-                                    :usuario
+                                    :type,
+                                    :saleItem,
+                                    :sale,
+                                    :idClient
                                 )");
 
             return $prepare->execute([
-                ':nome' =>  $data['nome'],
-                ':usuario' => $data['idUser']
+                ':type' =>  $data['type'],
+                ':saleItem' => $data['saleItem'],
+                ':sale' =>  $data['sale'],
+                ':idClient' => $data['idClient']
             ]);
         } catch (\PDOException $th) {
             var_dump($th->getMessage());
