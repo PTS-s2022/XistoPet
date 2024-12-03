@@ -377,7 +377,7 @@ CREATE TABLE `tb_usuario` (
 --
 
 INSERT INTO `tb_usuario` (`id`, `email`, `senha`, `sub`, `token`, `expiry`, `dateCreate`, `dateModify`) VALUES
-(1, 'xistopet@gmail.com', NULL, '109395935496376993579', NULL, NULL, '2024-09-02 19:49:31', NULL)
+(1, 'xistopet@gmail.com', NULL, '109395935496376993579', NULL, NULL, '2024-09-02 19:49:31', NULL);
 ---------------------------------------------------
 
 --
@@ -414,7 +414,6 @@ CREATE TABLE `tb_venda_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-INSERT INTO `tb_venda_item` (`id`, `quantidade`, `subTotal`, `avaliar`, `venda`, `produto`, `dateCreate`, `dateModify`) VALUES
 
 
 CREATE TABLE `tb_venda_status` (
