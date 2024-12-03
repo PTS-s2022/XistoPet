@@ -136,12 +136,15 @@ header{  /* CABEÇALHO */
   height: 20px;
   transform: translate(100%, -200%);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .num-notifi{
-  font-size: 12px;
-  transform: translate(30%, 10%);
-  position: absolute;
+  font-size: 13px;
+  padding-bottom: 5px;
+
 }
 
 
