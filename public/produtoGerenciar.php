@@ -67,8 +67,8 @@ $data['category'] = $product->displayCategories();
             </div>
         </div>
 
-        <div>  <!-- PRODUTOS -->
-            <p class="title">Gerenciar produtos</p>
+        <div>  <!-- Aqui vai ser cada categoria -->
+            <p class="title">Gerenciar produtos da categoria</p>
             <div class="list">
                 <div class="square">
                     <a href="produtoAdd.php" class="btn-adic">Adicionar produto</a> <!-- BTN ADICIONAR PRODUTO-->
@@ -98,6 +98,9 @@ $data['category'] = $product->displayCategories();
                 <?php endif;?>
             </div>
         </div>
+
+
+        
         
     </div> <!-- FIM CONTEUDO DA PAGINA -->
     <?php 
