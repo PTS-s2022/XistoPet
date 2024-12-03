@@ -50,7 +50,7 @@ $data['sale'] = $sale->displaySaleItem($data);
  
 <!-- FIM DO CABEÇALHO -->
 
-<body>
+<body onload="Carregado()">
 
   <div class="tudo"><!--tudo-->
     <div class="div-pai"><!--pai-->
@@ -92,7 +92,7 @@ $data['sale'] = $sale->displaySaleItem($data);
           <div class="informacao">
             <p class="titulo">Infomações do pedido</p>
             <hr>
-            <p class="date">Pagamento realizado <?= $data['sale']['saleDate'] ?></p>
+            <p class="">Pagamento realizado <span class="date"><?= $data['sale']['saleDate'] ?></span></p>
             <?php if($data['sale']['deliveryDate']): ?>
               <p class="date">Pedido entregue em <?= $data['sale']['deliveryDate'] ?></p>
             <?php endif; ?>
@@ -115,5 +115,5 @@ $data['sale'] = $sale->displaySaleItem($data);
 
 
   <body>
-
+  <script src="../assets/js/sale/pedidos.js"></script>
 </html>

@@ -14,6 +14,7 @@
   --cor7: #cccccc8a;
   --cor6: rgb(124, 124, 124);
   --cor7: #666;
+  --cor8: rgba(124, 124, 124, 0.538);
 }
 
 body {
@@ -40,10 +41,42 @@ p{
   margin: 0%;
 }
 
+.content{
+    width: auto;
+    display: flex;
+}
+
 .list{
-  overflow: auto;
+ padding-right: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  height: 30vh;
+  /* width: 90%; */
+  gap: 10px;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap:10px;
+    height: 30px;
+    width: 20%;
+}
+
+.input-estoque{
+    outline: none;
+    border: 1px solid var(--cor6);
+    padding: 5px;
+    border-radius: 10px;    
+}
+
+.input-estoque:focus, .input-estoque:focus, .input-estoque:active{
+    border: 1px solid var(--principal);
+    background-color: var(--azure);
 }
 
 
@@ -55,11 +88,11 @@ p{
 .card{ 
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: auto;
   /* height: auto; */
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.103);
   border-radius: 5px;
-  padding: 10px 10px 10px 20px;
+  padding: 20px 10px 10px 10px;
   background-color: var(--branco);
   /* background-color: #0296C5; */
   /* margin: auto; */
@@ -97,19 +130,66 @@ p{
 }
 
 
-
-
-
-
-
-.excluir{
-  width: 50%;
-  border: transparent;
-  border-radius: 5px;
-  background-color: var(--principal-escuro);
-  color: var(--branco);
-  padding: 5px;
+.image{
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.image > img{
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    max-height: 200px;
+}
+
+.div-select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0 20px 0;
+}
+
+.select{
+    width: 50%;
+    padding: 2px;
+    border-radius: 5px;
+    outline: none;
+    border-color: var(--principal);
+  }
+
+  .tamanho{
+    color: var(--cor6);
+    font-weight: bold;
+  }
+
+  .div-button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .btn{
+    border: none;
+    background-color: var(--amarelo);
+    padding: 10px;
+    color: var(--branco);
+    width: 40%;
+    border-radius: 10px;
+    font-size: 1.1em;
+  }
+
+  .btn:hover{
+    background-color: var(--amarelo-hover);
+  }
+
+
+
 
 
 input::-webkit-outer-spin-button,
