@@ -562,5 +562,64 @@ nav{   /* CONTEUDO DO CABEÇALHO */
   /* color: rgb(253, 68, 68); */
   margin:10px 0 10px 0;
   font-size: 1em;
+<<<<<<< HEAD
   color: var(--cor5);
+=======
+}
+
+
+dialog::backdrop{
+  background-color: transparent;
+}
+
+dialog{
+  position: fixed;
+  transform: translate(2.5%, 50%);
+  background-color: white; 
+  /* padding: 20px;  */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px; 
+  border: 1px solid red;
+  outline: none;
+  width: 40%;
+}
+
+.div-erro{
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-erro{
+  color: rgb(255, 65, 65);
+  /* font-size: 2.5em; */
+  padding: 4px;
+  margin: 0;
+}
+.p-erro{
+  font-size: 1.3em;
+  padding-left: 5px;
+}
+
+.div-btn-erro{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+}
+
+.div-btn-erro > button{
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: var(--amarelo);
+  color: var(--branco);
+  border-radius: 10px;
+  width: 30%;
+}
+
+.div-btn-erro > button:hover{
+  background-color: var(--amarelo-hover);
+>>>>>>> ecc407c6d93e3ac08ac2d6d943bc7e3bf8ba8193
 }
