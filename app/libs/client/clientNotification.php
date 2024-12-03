@@ -24,11 +24,45 @@ Class ClientNotification
 
   }
 
-  public function displayNotification($data){
-    $foundNotification = $this->clientNotification->findBy('cliente', $data['idClient']);
+  public function displayNotifications($data){
+    $value = [
+      'idClient' => $data['idClient']
+    ];
+    $foundNotification = $this->clientNotification->selects($value);
     if(!$foundNotification){
       return false;
     }
+
+    $data['notification'] = $this->dataNotification($foundNotification);
+  }
+
+
+  public function displayNotification($data){
+    $value = [
+      'idClient' => $data['idClient']
+    ];
+    $foundNotification = $this->clientNotification->select($value);
+    if(!$foundNotification){
+      return false;
+    }
+
+    $data['notification'] = $this->dataNotification($foundNotification);
+  }
+
+
+  public function addNotification($data){
+
+    $value = [
+      'type' => $data['type'],
+      'saleItem' => $data['saleItem'],
+      'sale' => $data['sale'],
+      'idClient' => $data['idClient']
+    ];
+
+    $this->clientNotification->insert($value);
+  }
+
+  public function dataNotification($foundNotification){
     $sale = new Sale;
     foreach ($foundNotification as $k => $notification) {
       $foundNotificationType = $this->clientNotificationType->findBy('id', $notification->tipo);
@@ -55,17 +89,5 @@ Class ClientNotification
     }
 
     return $data['notification'];
-  }
-
-  public function addNotification($data){
-
-    $value = [
-      'type' => $data['type'],
-      'saleItem' => $data['saleItem'],
-      'sale' => $data['sale'],
-      'idClient' => $data['idClient']
-    ];
-
-    $this->clientNotification->insert($value);
   }
 }

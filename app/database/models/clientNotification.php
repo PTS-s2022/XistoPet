@@ -31,4 +31,35 @@ class ClientNotification extends Model
         }
     }
 
+    public function selects($data){
+
+        try {
+            $connect = Connect::connect();
+            $prepare = $connect->prepare("SELECT * FROM $this->table where cliente = :cliente ORDER BY id DESC");
+            $prepare->execute([
+                ":cliente" => $data['idClient']
+            ]);
+
+            return $prepare->fetchAll();
+        } catch (\Throwable $th) {
+            var_dump($th->getMessage());
+        }
+    }
+
+    public function select($data){
+
+        try {
+            $connect = Connect::connect();
+            $prepare = $connect->prepare("SELECT * FROM $this->table where cliente = :cliente ORDER BY id DESC limit 5");
+            $prepare->execute([
+                ":cliente" => $data['idClient']
+            ]);
+
+            return $prepare->fetchAll();
+        } catch (\Throwable $th) {
+            var_dump($th->getMessage());
+        }
+    }
+
+
 }
