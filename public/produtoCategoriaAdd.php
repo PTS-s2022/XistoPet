@@ -100,6 +100,9 @@ if($data['switch'] == 'alter'){
         </div>
         <?php break;
     endswitch;?>
+    <?php
+    require_once('../libs/footer.html');
+    ?>
 </body>
 <script src="..\assets\js\category\add-categoria.js"></script>
 </html>

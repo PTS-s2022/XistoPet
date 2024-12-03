@@ -66,7 +66,7 @@ if(isset($_SESSION['user']['client'])){
 
        
           <div class="linha-notificacoes"> <!-- aqui vai ter o link para a tela de notificações -->
-              <a href="notificacao.php" class="link-notificacao">Click aqui para ver todas as notificações</a>
+              <a href="notificacao.php" class="link-notificacao" tabIndex="-1">Click aqui para ver todas as notificações</a>
           </div>
       </div>
       

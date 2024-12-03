@@ -107,5 +107,5 @@ $data['sale'] = $sale->displaySale($data);
             require_once('../libs/footer.html');
         ?>
 <body>
-  <script src="../assets/js/saleManager/pedidos.js"></script>
+  <script src="../assets/js/sale/pedidos.js"></script>
 </html>
