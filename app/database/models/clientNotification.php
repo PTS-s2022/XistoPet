@@ -12,11 +12,11 @@ class ClientNotification extends Model
     {
         try {
             $connect = Connect::connect();
-            $prepare = $connect->prepare("insert into $this->table(tipo, venda, itemVenda, client) 
+            $prepare = $connect->prepare("insert into $this->table(tipo, venda, itemVenda, cliente) 
                                 values(
                                     :type,
-                                    :saleItem,
                                     :sale,
+                                    :saleItem,
                                     :idClient
                                 )");
 

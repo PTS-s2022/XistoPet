@@ -125,7 +125,13 @@ Class Sale
         }
 
         if($status == 3){
-
+          $value = [
+            'type' => 2,
+            'saleItem' => NULL,
+            'sale' => $data['cart']['idCart'],
+            'idClient' => $data['idClient']
+          ];
+          $this->client->aadNotification($value);
         }
 
         $data['switch'] = [

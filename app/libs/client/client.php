@@ -138,4 +138,8 @@ Class Client
     return $data['notification'];
     
   }
+
+  public function aadNotification($data){
+    $this->clientNotification->addNotification($data);
+  }
 }
