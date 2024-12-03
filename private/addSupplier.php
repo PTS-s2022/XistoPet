@@ -29,7 +29,7 @@ switch ($data['switch']) {
       'number' => $_POST['telephone']
     ];
 
-    $supplier->addSupplier($data);
+    $error = $supplier->addSupplier($data);
 
     break;
   case 'delete':
@@ -37,12 +37,15 @@ switch ($data['switch']) {
       'idSupplier' => $_POST['idSupplier']
     ];
 
-    $supplier->deleteSupplier($data);
+    $error = $supplier->deleteSupplier($data);
 
     break;
   default:
     # code...
     break;
 }
+if($error){
+  $_SESSION['ERROR'] = $error; 
+}
 
-// header('Location: ../public/adminGerenciar.php');
+header('Location: ../public/fornecedorGerenciar.php');

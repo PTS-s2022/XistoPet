@@ -38,17 +38,19 @@ $data['supplier'] = $supplier->displaySuppliers();
 ?>  
 
     <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
+  <?php if(isset($_SESSION['ERROR'])):?>
     <input type="hidden" name="inputErro" id="entrada-erro" value="1">
     <dialog id="erro">
         <h1 class="titulo-erro">Dados incorretos</h1>
         <div>
-            <p class="p-erro">Preencha todos os campos corretamente</p>
+            <p class="p-erro"><?= $_SESSION['ERROR'] ?></p>
         </div>
         <div class="div-btn-erro">
             <button id="fechar">Fechar</button>
         </div>
     </dialog>
-
+  <?php unset($_SESSION['ERROR']);?>
+  <?php endif; ?>
   <div class="container-alto">
       <p class="titulo1"><span>Gerenciar administradores</span></p>
       <div class="flex"> <!-- CONTEUDO DA PÁGINA -->

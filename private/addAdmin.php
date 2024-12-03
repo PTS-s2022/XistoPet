@@ -32,7 +32,7 @@ switch ($data['switch']) {
       'level' => $_POST['level']
     ];
 
-    $admin->addAdmin($data);
+    $error = $admin->addAdmin($data);
 
     break;
   case 'alter':
@@ -41,7 +41,7 @@ switch ($data['switch']) {
       'level' => $_POST['level']
     ];
 
-    $admin->alterAdmin($data);
+    $error = $admin->alterAdmin($data);
 
     break;
   case 'delete':
@@ -49,12 +49,14 @@ switch ($data['switch']) {
       'idAdmin' => $_POST['idAdmin']
     ];
 
-    $admin->deleteAdmin($data);
+    $error = $admin->deleteAdmin($data);
 
     break;
   default:
     # code...
     break;
 }
-
+if($error){
+  $_SESSION['ERROR'] = $error; 
+}
 header('Location: ../public/adminGerenciar.php');
