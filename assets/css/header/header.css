@@ -94,6 +94,9 @@ header{  /* CABEÇALHO */
     color: #9e9ea7;
   }
   
+  .div-pesquisa{
+    width: 100%;
+  }
   
   .icon {
     position: absolute;
@@ -584,3 +587,5 @@ dialog{
 .div-btn-erro > button:hover{
   background-color: var(--amarelo-hover);
 }
+
+
