@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+@media screen and (max-width: 1000px){
+
+    .principal{
+        width: 100%;
+    }
+
+    .container{
+        padding: 10px 0px 10px 0px;
+    }
+    .conteudo{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .conteudo > p{
+        width: 100%;
+    }
+
+    #img2{
+        display: none;
+    }
+}
+

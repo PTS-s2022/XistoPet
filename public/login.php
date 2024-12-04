@@ -91,7 +91,7 @@ $authUrl = $googleClient->generateAuthLink();
           <div class="textos">
             <p class="termos">
               
-            <a href="senhaEsqueceu.php">Esqueceu a senha?</a>
+              <a href="senhaEsqueceu.php" class="esqueceu-senha">Esqueceu a senha?</a>
             </p>
             <p class="tem-conta">
               Não tem uma conta? <a href="cadastro.php">Cadastre-se</a>

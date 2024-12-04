@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+:root{
+    --branco: white;
+    --azure: rgba(224, 253, 253, 0.836);
+    --preto: black;
+    --principal: #0296C5;
+    --principal-escuro: #067495;
+    --amarelo: #f7a800ce;
+    --amarelo-hover: #faab00;
+    --cinza: rgb(107, 106, 106);
+    --destaque: #1d023be7;
+    --cor1: #f6f6f6;
+    --cor2: rgb(77, 158, 77);
+    --cor3: #fff;
+    --cor4: #eee;
+    --cor5: rgba(131, 130, 130, 0.404);
+    --cor6: green;
+    --cor7: rgba(204, 204, 204, 0.363);
+    --cor8: #37c980;
+    --cor-letra1: white;
+    --cor-letra2: #666;    
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    background-color: var(--azure);
+    overflow-x: hidden;
+}
+
+.principal{
+    width: 70%;
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.titulo{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--cor-letra2);
+    margin: 0px 0px 10px 20px;
+}
+
+.container{
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.103);
+    padding: 25px;
+    gap: 20px;
+    text-align: justify;
+}
+
+.subtitulo{
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
+}
+
+.subtitulo2{
+    display: inline-block;
+    font-weight: bold;
+    margin: 0%;
+}
+
+.texto{
+    text-indent: 1em;
+}
+
+
+@media screen and (max-width: 1000px){
+
+    .principal{
+        width: 100%;
+    }
+
+    .titulo{
+        font-size: 1.2em;
+    }
+}
