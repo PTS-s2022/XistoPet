@@ -52,7 +52,7 @@ $data['supplier'] = $supplier->displaySuppliers();
   <?php unset($_SESSION['ERROR']);?>
   <?php endif; ?>
   <div class="container-alto">
-      <p class="titulo1"><span>Gerenciar administradores</span></p>
+      <p class="titulo1"><span>Gerenciar fornecedores</span></p>
       <div class="flex"> <!-- CONTEUDO DA PÁGINA -->
           <div class="card1">
       
@@ -67,7 +67,6 @@ $data['supplier'] = $supplier->displaySuppliers();
               </div>
           </div>
           <div class="card2"> <!-- GERENCIAR administrador -->
-              <p class="titulo"><span>Gerenciar fornecedores</span></p>
       
               <div class="list"> <!-- LISTA DE PRODUTOS DO administrador -->
                 <?php if($data['supplier']):?>
@@ -114,7 +113,7 @@ $data['supplier'] = $supplier->displaySuppliers();
                   <div class="img-empty">
                     <img src="..\assets\css\admin\img\corgi.png" alt="">
                   </div>
-                  <p>Selecione um administrador</p>
+                  <p>Selecione um fornecedor</p>
                 </div>
               </div>
           </div>

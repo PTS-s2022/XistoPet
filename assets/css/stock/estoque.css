@@ -61,10 +61,10 @@ p{
 .input{
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: space-between;
     gap:10px;
     height: 30px;
-    width: 20%;
+    width: 230px;
 }
 
 .input-estoque{

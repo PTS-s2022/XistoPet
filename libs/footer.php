@@ -17,36 +17,33 @@
           <div class="footer-flex-direitos">
               <div class="footer-coll">
                   <span class="footer-titulo">Políticas</span>
-                  <a href="" class="footer-texto">Termos e condições</a>
-                  <a href="/public/politica" class="footer-texto">Política de privacidade</a>
+                  <a href="termosCondicoes.php" class="footer-texto">Termos e condições</a>
+                  <a href="politicaPrivacidade.php" class="footer-texto">Política de privacidade</a>
               </div>
               <div class="footer-coll">
                   <span class="footer-titulo">Sobre nós</span>
-                  <a href="/public/sobrenos.php" class="footer-texto">Sobre a XistoPet</a>
+                  <a href="sobreNos.php" class="footer-texto">Sobre a XistoPet</a>
                   <!-- <a href="" class="footer-texto">Nossa história</a> -->
               </div>
           </div>
           <div class="footer-coll">
               <span class="footer-titulo-mapa-site">Mapa do site</span>
-              <div class="footer-flex">
-                  <div class="footer-coll">
-                      <?php if(isset($_SESSION['user']['admin'])):?>
-                        <a href="/public/perfil.php" class="footer-texto">Perfil</a>
-                        <a href="/public/carrinho.php" class="footer-texto">Gerenciar pedidos</a>
-                        <a href="/public/pedidos.php" class="footer-texto">Gerenciar produtos</a>
-                        <a href="/public/notificacao.php" class="footer-texto">Gerenciar</a>
-                        <a href="/public/addCartao.php" class="footer-texto">Cartão</a>
-                        <a href="/public/addEndereco.php" class="footer-texto">Endereço</a>
-                      <?php else:?>
-                        <a href="/public/perfil.php" class="footer-texto">Perfil</a>
-                        <a href="/public/carrinho.php" class="footer-texto">Carrinho</a>
-                        <a href="/public/pedidos.php" class="footer-texto">Pedidos</a>
-                        <a href="/public/notificacao.php" class="footer-texto">Notificações</a>
-                        <a href="/public/addCartao.php" class="footer-texto">Cartão</a>
-                        <a href="/public/addEndereco.php" class="footer-texto">Endereço</a>
-                      <?php endif;?>
-                  </div>
-                  
+              <div class="link-flex">
+                <a href="perfil.php" class="footer-texto">Perfil</a>
+                <?php if(isset($_SESSION['user']['admin'])):?>
+                    <a href="vendaGerenciar.php" class="footer-texto">Gerenciar pedidos</a>
+                    <a href="produtoGerenciar.php" class="footer-texto">Gerenciar produtos</a>
+                    <a href="fornecedorGerenciar.php" class="footer-texto">Gerenciar fornecedor</a>
+                    <a href="adminGerenciar.php" class="footer-texto">Gerenciar administrador</a>
+                <?php else:?>
+                    <a href="carrinho.php" class="footer-texto">Carrinho</a>
+                    <a href="pedidos.php" class="footer-texto">Pedidos</a>
+                    <a href="notificacao.php" class="footer-texto">Notificações</a>
+                    <a href="addCartao.php" class="footer-texto">Cartão</a>
+                    <a href="addEndereco.php" class="footer-texto">Endereço</a>
+                <?php endif;?>
+                <a href="senhaAlterar.php" class="footer-texto">Alterar senha</a>
+
               </div>
           </div>
       
