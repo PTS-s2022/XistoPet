@@ -58,5 +58,6 @@ switch ($data['switch']) {
 }
 if($error){
   $_SESSION['ERROR'] = $error; 
+  
 }
 header('Location: ../public/adminGerenciar.php');

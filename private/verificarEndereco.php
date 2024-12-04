@@ -44,10 +44,10 @@ switch ($data['switch']) {
     
     if($_POST['idAddress']){
       $data['address']['addressDisable'] = $_POST['idAddress']; 
+      $header = '?address='.$_POST['idAddress'];
     }
     
-    $clientAddress->insertAddress($data);
-    
+    $error = $clientAddress->insertAddress($data);
 
     break;
   
@@ -55,10 +55,16 @@ switch ($data['switch']) {
     $data['idClient'] = $_SESSION['user']['client'];
     $data['address']['addressDisable'] = $_GET['address'];
 
-    $clientAddress->deleteAddress($data);
-
+    $error = $clientAddress->deleteAddress($data);
+    
     break;
    
+}
+
+if($error){
+  $_SESSION['ERROR'] = $error['ERROR']; 
+  header('Location: ../public/addEndereco.php'. $header);
+  die();
 }
 
 if(isset($_SESSION['CONTROLER'])){

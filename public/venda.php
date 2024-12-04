@@ -70,17 +70,20 @@ if($data['switch']['switch'] == 'product'){
 </header>   <!-- FIM DO CABEÇALHO -->
 
     <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->
-    <input type="hidden" name="inputErro" id="entrada-erro" value="0">
+    <?php if(isset($_SESSION['ERROR'])):?>
+    <input type="hidden" name="inputErro" id="entrada-erro" value="1">
     <dialog id="erro">
         <h1 class="titulo-erro">Dados incorretos</h1>
         <div>
-            <p class="p-erro">Preencha todos os campos corretamente</p>
+            <p class="p-erro"><?= $_SESSION['ERROR'] ?></p>
         </div>
         <div class="div-btn-erro">
             <button id="fechar">Fechar</button>
         </div>
     </dialog>
-
+  <?php unset($_SESSION['ERROR']);?>
+  <?php endif; ?>
+  
 <div class="flex">   <!-- DIV QUE CONTÉM O CONTEUDO DA PAGINA-->
     <p class="titulo"><span>Finalizar compra</span></p>  <!-- TITULO DO CONTEUDO DA PAGINA -->
     <div class="formularios">   <!-- DIV DOS FORMULARIOS -->

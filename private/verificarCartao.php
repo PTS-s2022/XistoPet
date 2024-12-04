@@ -38,7 +38,7 @@ switch ($data['switch']) {
       'cvv' => $_POST['cardCvv']
     ];
     
-    $clientCard->insertCard($data);
+    $error = $clientCard->insertCard($data);
 
     break;
   case 'delete':
@@ -46,6 +46,13 @@ switch ($data['switch']) {
     $clientCard->deleteCard($data);
 
     break;
+}
+
+
+if($error){
+  $_SESSION['ERROR'] = $error['ERROR']; 
+  header('Location: ../public/addCartao.php');
+  die();
 }
 
 if(isset($_SESSION['CONTROLER'])){

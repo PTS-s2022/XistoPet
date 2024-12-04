@@ -27,11 +27,17 @@ foreach ($_POST as $k => $sla) {
 $finishSale = $sale->finishSale($data);
 
 if(isset($finishSale['switch'])){
-  var_dump($finishSale);
+  var_dump($finishSale['switch']);
   header("Location: ../public/". $finishSale['location']);
   die();
 }
+if($finishSale['ERROR']){
+  $_SESSION['ERROR'] = $finishSale['ERROR']; 
+  header('Location: ../public/venda.php');
+  die();
+}
 
-header("Location: ../public/venda.php");
+
+// header("Location: ../public/venda.php");
 die();
 
