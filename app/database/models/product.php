@@ -70,7 +70,7 @@ class Product extends Model
                                       WHERE id = :idProduct");
 
           return $prepare->execute([
-              ":category" => 0,
+              ":category" => null,
               ":idProduct" => $data['idProduct']
           ]);
       } catch (\PDOException $th) {

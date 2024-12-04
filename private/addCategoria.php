@@ -45,7 +45,7 @@ switch ($data['switch']) {
       'idCategory' => $_POST['idCategory']
     ];
 
-    $product->deleteCategory($data);
+    $error = $product->deleteCategory($data);
     break;
 }
 if($error){
@@ -54,5 +54,5 @@ if($error){
   die();
 }
 
-header('Location: ../public/produtoGerenciar.php');
+// header('Location: ../public/produtoGerenciar.php');
 

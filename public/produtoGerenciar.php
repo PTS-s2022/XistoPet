@@ -22,6 +22,7 @@ $data['product'] = $product->displayProducts();
 
 $data['category'] = $product->displayCategories();
 
+$controler = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,6 +77,10 @@ $data['category'] = $product->displayCategories();
                 </div>
                 <?php if($data['product']):?>
                   <?php foreach($data['product'] as $k => $product):?>
+                  <?php 
+                  if($product['category'] == 0){
+                    $controler++;
+                  }?>
                     <?php if($product['category'] == $category['id']):?>
                       <div class="square">
                           <div class="div-img-p"> 
@@ -106,7 +111,46 @@ $data['category'] = $product->displayCategories();
         </div>
       <?php endforeach;?>
     <?php endif;?>
-        
+    
+    <?php if($controler):?>
+
+      <div>  <!-- Aqui vai ser cada categoria -->
+          <p class="title">Gerenciar produtos sem categoria</p>
+          <div class="list">
+              <div class="square">
+                  <a href="produtoAdd.php?idCategory=<?= $category['id']?>" class="btn-adic">Adicionar produto</a> <!-- BTN ADICIONAR PRODUTO-->
+              </div>
+              <?php if($data['product']):?>
+                <?php foreach($data['product'] as $k => $product):?>
+                  <?php if($product['category'] == 0):?>
+                    <div class="square">
+                        <div class="div-img-p"> 
+                          <img src="../imagem/<?= $product['image']?>" class="img-p"> 
+                        </div> <!-- IMAGEM DO PRODUTO -->
+                        <a href="produto.php?idProduct=<?= $product['id']?>" class="link-p">
+                          <p class="nome-p"><span><?= $product['name']?></span></p> <!-- NOME DO PRODUTO -->
+                        </a>
+                        <div class="preco-flex">
+                            <p class="preco formatar-preco"><?= $product['price']['min']?></p>
+                            <p class="traco">-</p>
+                            <p class="preco formatar-preco"><?= $product['price']['max']?></p>
+                        </div> <!-- PREÇO DO PRODUTO -->
+                        <form action="../private/addProduct.php" method="POST" class="btn">
+                          <input type="hidden" name="switch" value="delete">
+                          <input type="hidden" name="idProduct" value="<?= $product['id']?>">
+                          <a href="produtoAlterar.php?idProduct=<?= $product['id']?>" class="btn-edit">Editar</a> <!-- BTN EDITAR PRODUTO -->
+                          <button class="btn-excluir">Excluir</button> <!-- BTN EXCLUIR PRODUTO -->
+                        </form>
+                        <div class="edt-estoque">
+                          <a href="" class="a-estoque">Estoque</a>
+                        </div>
+                    </div>
+                  <?php endif;?>
+                <?php endforeach;?>
+              <?php endif;?>
+          </div>
+      </div>
+    <?php endif;?>
         
     </div> <!-- FIM CONTEUDO DA PAGINA -->
     <?php 

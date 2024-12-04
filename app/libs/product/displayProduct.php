@@ -186,6 +186,9 @@ Class DisplayProduct
 
   public function dataImage(array $data){
     $imageFound = $this->productImage->findBy("produto",$data['idProduct'], null);
+    if(!$imageFound){
+      return false;
+    }
     foreach ($imageFound as $k => $image) {
       
       $data['image'][$k] = $image->imagem;
@@ -411,6 +414,9 @@ Class DisplayProduct
     $selectProductSize = $this->productSize->selectProductSize($foundProduct[0]->id);
     
     $productImage = $this->dataImage($image);
+    if(!$productImage){
+      $productImage[0] = 0;
+    }
     
     $data['selectProduct'] = [
       "id" => $foundProduct[0]->id,
@@ -582,11 +588,12 @@ Class DisplayProduct
       return false;
     }
     foreach ($foundProduct as $k => $product) {
-      $valeu = [
+      $value = [
         'idProduct' => $product->id
       ];
-      
-      $this->product->updateCategory($valeu);
+      var_dump($value);
+
+      $this->product->updateCategory($value);
     }
     
 
