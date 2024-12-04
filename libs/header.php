@@ -24,7 +24,7 @@ if(isset($_SESSION['user']['client'])){
 
 <head>
     <link rel="stylesheet" href="../assets/css/header/header.css">
-    <link rel="stylesheet" href="/header/header-reponsivo.css">
+    <link rel="stylesheet" href="../assets/css/header/header-reponsivo.css">
 </head>
 <header class="no-select"> <!-- CABEÇALHO -->
   <nav class="nav-header"> <!-- INFORMAÇÕES DO CABEÇALHO -->
