@@ -84,8 +84,7 @@ a{
     position: relative;
     min-width: 15%;
     max-width: 15%;
-    /* max-width: 100vw; */
-    /* max-height: 90vh; */
+    /* min-height: 20vh; */
     display: flex;
     align-items: center;
     justify-content: center;
