@@ -14,6 +14,8 @@ if(!isset($_SESSION['user']['admin'])){
 
 $data['switch'] = 'add';
 
+$idCategory = 0;
+
 if(isset($_POST['switch'])){
     $data['switch'] = 'add';
 }
@@ -67,7 +69,7 @@ $data['category'] = $displayProduct->displayCategories();
                 <select name="categoria" id="" class="input"> <!-- SELECIONAR CATEGORIA -->
                   <option value=""></option>
                   <?php foreach ($data['category'] as $k => $category):?>
-                    <option value="<?= $category['id']?>"><?= $category['name']?></option>
+                    <option value="<?= $category['id']?>"<?php if($idCategory == $category['id']):?> selected <?php endif;?>><?= $category['name']?></option>
                   <?php endforeach;?>
                     
                 </select>
