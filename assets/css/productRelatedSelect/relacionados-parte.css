@@ -81,6 +81,7 @@ a{
   }
   
   .products{  /* DIV PRODUTOS */
+    position: relative;
     min-width: 15%;
     max-width: 15%;
     /* max-width: 100vw; */
@@ -97,6 +98,26 @@ a{
     padding: 15px;
     transition: 1s;
   }
+
+  .star{
+    display: flex;
+    gap: 3px;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    align-items: center;
+}
+
+.star > span{
+    color: var(--cor5);
+    font-size: 0.8rem;
+}
+
+.star > i{
+    color: var(--amarelo);
+    font-size: 1.2rem;
+}
   
   .products > p{
     font-size: 1em;

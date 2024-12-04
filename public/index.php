@@ -286,7 +286,7 @@ $data['toy'] = $product->selectProducts($value);
 
           <div class="flex-relacionados">
             <?php foreach ($data['animalFood'] as $k => $product): ?>
-              <div class="products" <?php if ($k == 0): ?>id="first"> <?php endif; ?> <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
+              <div class="products" <?php if ($k == 1): ?>id="first-1" <?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
               <div class="img-products"><img src="../imagem/<?= $product['image'] ?>"></div>
               <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
               <div class="preco-flex">
@@ -302,12 +302,12 @@ $data['toy'] = $product->selectProducts($value);
               <a class="btn-adic" href="pesquisar.php?category=<?= 1?>">Ver Mais</a>
             </div>
           </div>
-          <div class="anterior" id="anterior"><i class='bx bx-left-arrow-alt'></i></div><!-- seta para voltar -->
-          <div class="proximo" id="proximo"><i class='bx bx-right-arrow-alt'></i></div><!-- seta para avançar -->
+          <div class="anterior" id="anterior-1"><i class='bx bx-left-arrow-alt'></i></div><!-- seta para voltar -->
+          <div class="proximo" id="proximo-1"><i class='bx bx-right-arrow-alt'></i></div><!-- seta para avançar -->
           <div class="bolinha">
-            <div class="ball ativo" id="pag1"></div>
-            <div class="ball" id="pag2"></div>
-            <div class="ball" id="pag3"></div>
+            <div class="ball ativo" id="pag1-1"></div>
+            <div class="ball" id="pag2-1"></div>
+            <div class="ball" id="pag3-1"></div>
 
           </div>
         </div>
@@ -361,7 +361,7 @@ $data['toy'] = $product->selectProducts($value);
           </h2>
           <div class="flex-relacionados">
             <?php foreach ($data['toy'] as $k => $product): ?>
-              <div class="products" <?php if ($k == 0): ?>id="first"> <?php endif; ?> <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
+              <div class="products" <?php if ($k == 0): ?>id="first-2" <?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
               <div class="img-products"><img src="../imagem/<?= $product['image'] ?>"></div>
               <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
               <div class="preco-flex">
@@ -397,7 +397,7 @@ $data['toy'] = $product->selectProducts($value);
           </h2>
           <div class="flex-relacionados">
             <?php foreach ($data['hygieneProduct'] as $k => $product): ?>
-              <div class="products" <?php if ($k == 0): ?>id="first"> <?php endif; ?> <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
+              <div class="products" <?php if ($k == 1): ?>id="first-3"<?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
               <div class="img-products"><img src="../imagem/<?= $product['image'] ?>"></div>
               <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
               <div class="preco-flex">

@@ -1,5 +1,4 @@
 
-   
     let proximo = document.querySelector("#proximo");
     let anterior = document.querySelector("#anterior");
     let pag1 = document.querySelector("#pag1");

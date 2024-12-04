@@ -6,8 +6,9 @@
       <p class="titulo"><span>Produtos relacionados</span></p>  <!-- TITULO DO CONTEUDO DA PAGINA -->
       <div class="flex-relacionados">
           <?php foreach($selectProduct as $k => $product):?>     
-              <div class="products" <?php  if ($k == 0): ?>id="first"> <?php endif; ?> <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
-                  <div class="img-products"><img src="../imagem/<?= $product['image'] ?>" ></div>
+              <div class="products" <?php  if ($k == 1): ?>id="first" <?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
+                <div class="star"><i class='bx bxs-star'></i><span>5</span></div>   <!-- inserir as avaliacoes -->
+                <div class="img-products"><img src="../imagem/<?= $product['image'] ?>" ></div>
                   <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
                   <div class="preco-flex">
                     <p class="preco formatar-preco"><?= $product['price']['min']?></p>
@@ -26,8 +27,8 @@
 
 
 
-      <div class="anterior" id="anterior"><i class='bx bx-left-arrow-alt' ></i></div><!-- seta para voltar -->
-      <div class="proximo" id="proximo"><i class='bx bx-right-arrow-alt' ></i></div><!-- seta para avançar -->
+      <div class="anterior" id="anterior"><i class='bx bx-left-arrow-alt'></i></div><!-- seta para voltar -->
+      <div class="proximo" id="proximo"><i class='bx bx-right-arrow-alt'></i></div><!-- seta para avançar -->
       <div class="bolinha">
           <div class="ball ativo" id="pag1"></div>
           <div class="ball" id="pag2"></div>
