@@ -4,7 +4,7 @@ use app\libs\sale\Sale;
 
 require_once("../vendor/autoload.php");
 require_once("../config.php");
-
+require_once("../bug/phpMailer/Payload.php");
 
 $sale = new Sale;
 
@@ -59,10 +59,10 @@ $data['sale'] = $sale->payment($data);
                             <div class="pix">
                                 <h1 class="titulo3"><span>O QrCode irá expirar em 30 minutos</span></h1>
                                 <div class="container-qrcode">
-                                    <img src="../assets/css/sale/imagens/qrcode.png" alt="" class="qrcode">
+                                    <img src="data:image/png;base64,<?= base64_encode($data['sale'][0]->pix['image'])?>" alt="" class="qrcode">
                                 </div>
                                 <div class="boleto">
-                                    <input type="text" name="cod-Pix" id="cod" value="03399533744613397279700000001016498780000014912" disabled>
+                                    <input type="text" name="cod-Pix" id="cod" value="<?= $data['sale'][0]->pix['key']?>" disabled>
                                     <div class="buttons">
                                         <button id="copy" class="btn"><p id="text">Copiar código</p></button>
                                     </div>

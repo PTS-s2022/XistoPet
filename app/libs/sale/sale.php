@@ -8,6 +8,7 @@ use app\database\models\SaleItem as modelsSaleItem;
 use app\database\models\SaleStatus as modelsSaleStatus;
 use app\libs\cart\Cart;
 use app\libs\client\Client;
+use app\libs\payment\payment;
 use app\libs\product\DisplayProduct;
 
 
@@ -237,11 +238,22 @@ Class Sale
       header('Location: ../public/index.php');
     }
 
+    if($data['sale'][0]->metodo == 1){
+      $pix = new payment;
+
+      $value = [
+        'price' => $data['sale'][0]->valorTotal,
+        'idSale' => $data['sale'][0]->id
+      ];
+      $data['sale'][0]->pix = $pix->displayPix($value);
+    }
+
     $saleItemFound = $this->saleItem->findBy('venda', $data['idSale']);
     if(!$saleItemFound){
       return false;
     }
   
+
     foreach ($saleItemFound as $k => $item) {
       $value = [
         'idProductSize' => $item->produto,

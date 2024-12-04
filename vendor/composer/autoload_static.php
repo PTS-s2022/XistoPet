@@ -35,6 +35,7 @@ class ComposerStaticInit8c2e024e5d3c4c3e76aba0f47181508b
         ),
         'M' => 
         array (
+            'Mpdf\\QrCode\\' => 12,
             'Monolog\\' => 8,
         ),
         'G' => 
@@ -85,6 +86,10 @@ class ComposerStaticInit8c2e024e5d3c4c3e76aba0f47181508b
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'Mpdf\\QrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/qrcode/src',
         ),
         'Monolog\\' => 
         array (
