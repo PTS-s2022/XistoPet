@@ -138,7 +138,7 @@ Class Admin
       'email' => $data['form']['email'] ,
       'subject' => 'Novo Acesso de Administrador no XistoPet',
       'message' => <<<END
-              Olá [Nome do Administrador],
+              Olá,
 
               Gostaríamos de informar que um novo acesso de administrador foi criado para a plataforma XistoPet. Aqui estão os detalhes do seu login:
 

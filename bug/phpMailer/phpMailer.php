@@ -20,8 +20,8 @@ Class UsedPhpMailer
     $this->mail->Host = "smtp.gmail.com";
     $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $this->mail->Port = 587;
-    $this->mail->Username = "xisto3771@gmail.com";
-    $this->mail->Password = "hrdc kivg ypmx vtsk";
+    $this->mail->Username = "xistopet@gmail.com";
+    $this->mail->Password = "dqug uoxh dwhy zcup";
 
     $this->mail->isHtml(true);
   }
