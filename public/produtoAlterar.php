@@ -82,6 +82,7 @@ $data['category'] = $displayProduct->displayCategories();
             <div class="scroll"> 
                 <p class="sub-titulo">Imagens:</p>
                 <div class="image" id="image-container">
+                  <?php if($data['product']['image']):?>
                     <?php foreach ($data['product']['image'] as $k => $image):?>
                         <div class="IdnumFoto">
                             <input type="hidden" name="idImage<?= $k ?>" value="<?= $image['id'] ?>">  
@@ -93,6 +94,7 @@ $data['category'] = $displayProduct->displayCategories();
                             </label>
                         </div>
                     <?php endforeach;?>
+                  <?php endif;?>
                     <div class="numFoto">
                         <input type="file" name="foto-produto0" id="foto-produto0" class="foto-produto-add"> 
                         <label class="foto" for="foto-produto0">

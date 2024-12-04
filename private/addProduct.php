@@ -63,6 +63,9 @@ else{
     
         }
       }
+      if(!$idImage){
+        $idImage[] = 0;
+      }
       $data['form']['idImage'] = $idImage;
       $data['form']['idProduct'] = $_POST['idProduct'];
       $error = $product->alterProduct($data);

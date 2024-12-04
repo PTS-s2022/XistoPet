@@ -200,6 +200,9 @@ Class DisplayProduct
 
   public function dataImage1(array $data){
     $imageFound = $this->productImage->findBy("produto",$data['idProduct'], null);
+    if(!$imageFound){
+      return false;
+    }
     foreach ($imageFound as $k => $image) {
       
       $data['image'][$k] = [
@@ -253,6 +256,7 @@ Class DisplayProduct
 
   public function dataStock(array $data){
     $stockFound = $this->productStock->findBy("produto",$data['idProductSize'], null);
+
     $data['stock'] = $stockFound[0]->qtdtotal;
     
 
@@ -531,7 +535,7 @@ Class DisplayProduct
       $value = [
         'type' => $data['form']['image']['type']
       ];
-  
+
       $varifyType = $this->verifyMimeTypes($value);
       if($varifyType){
         return $varifyType;
@@ -782,7 +786,9 @@ Class DisplayProduct
         $value = [
           'type' => $image['type']
         ];
-
+        if(!$value['type']){
+          continue;
+        }
 
         $varifyType = $this->verifyMimeTypes($value);
         if($varifyType){
