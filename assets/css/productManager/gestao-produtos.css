@@ -205,7 +205,7 @@ body {
 }
 
 .btn-edit{
-    width: 50%;
+    width: 100%;
     background-color: var(--amarelo);
     color: var(--branco);
     font-size: 1rem;
@@ -221,7 +221,7 @@ body {
 }
 
 .btn-excluir{
-    width: 50%;
+    width: 100%;
     background-color: var(--principal);
     color: var(--branco);
     font-size: 1rem;
@@ -256,6 +256,26 @@ body {
 a {
     text-decoration: none;
 
+}
+
+.edt-estoque{
+    width: 100%;
+    
+}
+
+.a-estoque{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(164, 164, 164);
+    color: var(--branco);
+    font-size: 1rem;
+    padding: 5px 0;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
 }
 
 

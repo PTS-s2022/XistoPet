@@ -93,6 +93,9 @@ $data['category'] = $product->displayCategories();
                           <a href="produtoAlterar.php?idProduct=<?= $product['id']?>" class="btn-edit">Editar</a> <!-- BTN EDITAR PRODUTO -->
                           <button class="btn-excluir">Excluir</button> <!-- BTN EXCLUIR PRODUTO -->
                         </form>
+                        <div class="edt-estoque">
+                          <a href="" class="a-estoque">Estoque</a>
+                        </div>
                     </div>
                   <?php endforeach;?>
                 <?php endif;?>
