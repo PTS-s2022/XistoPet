@@ -51,7 +51,7 @@ else{
     case 'add':
       
       $error = $product->addProduct($data);
-
+      $header = 'produtoAdd.php';
       break;
     
     case 'alter':
@@ -64,10 +64,15 @@ else{
       }
       $data['form']['idImage'] = $idImage;
       $data['form']['idProduct'] = $_POST['idProduct'];
-      $product->alterProduct($data);
+      $error = $product->alterProduct($data);
+      $header = 'produtoAlterar.php?idProduct='.$_POST['idProduct'];
       break;
   }
 }
 
-
-header('Location: ../public/produtoGerenciar.php');
+if($error){
+  $_SESSION['ERROR'] = $error; 
+  header('Location: ../public/'.$header);
+  die();
+}
+header('Location: ../'.$header);

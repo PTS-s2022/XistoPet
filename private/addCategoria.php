@@ -25,7 +25,8 @@ switch ($data['switch']) {
       'image' => $_FILES['foto-produto']
     ];
     
-    $product->addCategory($data);
+    $error = $product->addCategory($data);
+    $header = '';
     break;
 
   case 'alter':
@@ -35,7 +36,8 @@ switch ($data['switch']) {
       'image' => $_FILES['foto-produto']
     ];
 
-    $product->alterCategory($data);
+    $error = $product->alterCategory($data);
+    $header = '?switch=alter&&idCategory=' . $_POST['idCategory'];
     break;
 
   case 'delete':
@@ -46,7 +48,11 @@ switch ($data['switch']) {
     $product->deleteCategory($data);
     break;
 }
-
+if($error){
+  $_SESSION['ERROR'] = $error; 
+  header('Location: ../public/produtoCategoriaAdd.php'.$header);
+  die();
+}
 
 header('Location: ../public/produtoGerenciar.php');
 
