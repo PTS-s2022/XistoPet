@@ -420,6 +420,13 @@ header{  /* CABEÇALHO */
 }
 
 
+.link-flex{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 25vh;
+}
+
 
 .footer-titulo, .footer-titulo-center, .footer-titulo-mapa-site{
   font-size: 1.5em;
