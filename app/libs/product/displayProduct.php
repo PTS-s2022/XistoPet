@@ -495,7 +495,7 @@ Class DisplayProduct
     $location = '../imagem/categoria/';
     $mime = explode('.', $data['form']['image']['name']);  
     $count = count($mime) - 1;
-    $nameImage = str_replace(' ', "_", $foundCategory[0]->id .'_'. $data['form']['name']."_". 1 . '.' . $mime[$count]);
+    $nameImage = str_replace(' ', "_", $foundCategory[0]->id .'_'. $data['form']['name']. '.' . $mime[$count]);
     
     $value = [
       'idCategory' => $foundCategory[0]->id,

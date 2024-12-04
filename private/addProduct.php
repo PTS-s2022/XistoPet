@@ -80,4 +80,4 @@ if($error){
   die();
 }
 
-header('Location: ../'.$header);
+header('Location: ../public/produtoGerenciar.php');
