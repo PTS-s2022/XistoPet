@@ -34,7 +34,9 @@ Class DisplayProduct
 
   public function displayCategories(){
     $selectCategory = $this->productCategory->findBy('ativo', 1);
-
+    if(!$selectCategory){
+      return false;
+    }
     foreach ($selectCategory as $k => $category) {
       $data['selectCategory'][$k] = [
         "id" => $category->id,

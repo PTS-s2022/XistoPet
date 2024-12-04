@@ -9,7 +9,9 @@ if(!isset($_SESSION['usuario'])){
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Produto</title>
+  
+  <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
 </head>
 <body>
     <!-- aqui é quando der erro, coloque o value=1 para aparecer o erro -->

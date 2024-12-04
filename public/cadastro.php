@@ -13,6 +13,7 @@ if(isset($_SESSION['usuario'])){
     <title>Xisto| cadastro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/authenticate/loginCadastro.css"/>
+    <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"

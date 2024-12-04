@@ -33,6 +33,7 @@ $data['category'] = $product->displayCategories();
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/3d2ec5edb8.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
 </head>
 
 <body onload="Carregado()">
@@ -47,7 +48,7 @@ $data['category'] = $product->displayCategories();
                 <div class="square"> <!-- BOTÃO ADICIONAR CATEGORIA -->
                     <a href="produtoCategoriaAdd.php" class="btn-adic">Adicionar categoria</a>
                 </div>
-                <?php if(isset($data['category'])):?>
+                <?php if($data['category']):?>
                   <?php foreach($data['category'] as $k => $category):?>
                     <div class="square"> <!-- DIV CATEGORIA -->
                         <div class="img">
@@ -65,7 +66,7 @@ $data['category'] = $product->displayCategories();
                 <?php endif;?>
             </div>
         </div>
-
+    <?php if($data['category']):?>
       <?php foreach ($data['category'] as $key => $category):?>
         <div>  <!-- Aqui vai ser cada categoria -->
             <p class="title">Gerenciar produtos da categoria <?= $category['name']?></p>
@@ -104,7 +105,7 @@ $data['category'] = $product->displayCategories();
             </div>
         </div>
       <?php endforeach;?>
-
+    <?php endif;?>
         
         
     </div> <!-- FIM CONTEUDO DA PAGINA -->

@@ -25,6 +25,7 @@ $authUrl = $googleClient->generateAuthLink();
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/authenticate/loginCadastro.css" />
     <script src="https://accounts.google.com/gsi/client" async></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
   </head>
 
   <body>

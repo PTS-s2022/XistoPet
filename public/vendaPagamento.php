@@ -12,6 +12,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../assets/css/sale/realizar-pagamento-responsivo.css'>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
 
 </head>
 <body onload="Carregado()">

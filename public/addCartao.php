@@ -24,6 +24,7 @@ if(isset($_GET['controler'])){
     <link rel="stylesheet" href="../assets/css/card/cartao-responsivo.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">  -->
+    <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
 </head>
 <body onload="carregado()" >
 <?php

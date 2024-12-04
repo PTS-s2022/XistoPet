@@ -36,6 +36,7 @@ $data['sale'] = $sale->payment($data);
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/3d2ec5edb8.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
 </head>
 
 <body onload="carregado()">

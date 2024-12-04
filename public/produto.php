@@ -60,6 +60,7 @@ if(isset($_SESSION['user']['client'])){
     <link rel="stylesheet" href="../assets/css/product/produtos.css">
     <link rel="stylesheet" href="../assets/css/product/produtos-responsivo.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
 </head>
 <body onload="carregado()" id="body">
 <?php if(isset($_SESSION['ERROR'])):?>

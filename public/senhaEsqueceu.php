@@ -27,6 +27,7 @@ if(isset($_GET['switch'])){
     <title>Xisto| email de recuperação</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="../assets\css\alterPassword\senha.css" />
+    <link rel="shortcut icon" href="../assets/css/index/imgs/favicon.svg" type="image/svg+xml">
 
 </head>
 
