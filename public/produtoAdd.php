@@ -17,7 +17,9 @@ $data['switch'] = 'add';
 if(isset($_POST['switch'])){
     $data['switch'] = 'add';
 }
-
+if(isset($_GET['idCategory'])){
+    $idCategory = $_GET['idCategory'];
+}
 $data['category'] = $displayProduct->displayCategories();
 ?>
 

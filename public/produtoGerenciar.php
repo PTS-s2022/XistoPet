@@ -74,7 +74,7 @@ var_dump($data['product'][0]);
             <p class="title">Gerenciar produtos da categoria <?= $category['name']?></p>
             <div class="list">
                 <div class="square">
-                    <a href="produtoAdd.php" class="btn-adic">Adicionar produto</a> <!-- BTN ADICIONAR PRODUTO-->
+                    <a href="produtoAdd.php?idCategory=<?= $category['id']?>" class="btn-adic">Adicionar produto</a> <!-- BTN ADICIONAR PRODUTO-->
                 </div>
                 <?php if(isset($data['product'])):?>
                   <?php foreach($data['product'] as $k => $product):?>

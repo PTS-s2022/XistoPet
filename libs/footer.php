@@ -30,12 +30,21 @@
               <span class="footer-titulo-mapa-site">Mapa do site</span>
               <div class="footer-flex">
                   <div class="footer-coll">
-                      <a href="/public/perfil.php" class="footer-texto">Perfil</a>
-                      <a href="/public/carrinho.php" class="footer-texto">Carrinho</a>
-                      <a href="/public/pedidos.php" class="footer-texto">Pedidos</a>
-                      <a href="/public/notificacao.php" class="footer-texto">Notificações</a>
-                      <a href="/public/addCartao.php" class="footer-texto">Cartão</a>
-                      <a href="/public/addEndereco.php" class="footer-texto">Endereço</a>
+                      <?php if(isset($_SESSION['user']['admin'])):?>
+                        <a href="/public/perfil.php" class="footer-texto">Perfil</a>
+                        <a href="/public/carrinho.php" class="footer-texto">Carrinho</a>
+                        <a href="/public/pedidos.php" class="footer-texto">Pedidos</a>
+                        <a href="/public/notificacao.php" class="footer-texto">Notificações</a>
+                        <a href="/public/addCartao.php" class="footer-texto">Cartão</a>
+                        <a href="/public/addEndereco.php" class="footer-texto">Endereço</a>
+                      <?php else:?>
+                        <a href="/public/perfil.php" class="footer-texto">Perfil</a>
+                        <a href="/public/carrinho.php" class="footer-texto">Carrinho</a>
+                        <a href="/public/pedidos.php" class="footer-texto">Pedidos</a>
+                        <a href="/public/notificacao.php" class="footer-texto">Notificações</a>
+                        <a href="/public/addCartao.php" class="footer-texto">Cartão</a>
+                        <a href="/public/addEndereco.php" class="footer-texto">Endereço</a>
+                      <?php endif;?>
                   </div>
                   <div class="footer-coll">
                       <a href="" class="footer-texto">Produtos</a>
