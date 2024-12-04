@@ -92,7 +92,7 @@ $selectProduct = $displayProduct->selectProducts($value);
                         <div class="space">
                             <div class="col-1">
                                 <div>
-                                    <a href="" class="nome-produto <?= $esgotado ?>"><?= $item['product']['name'] ?></a> <!-- nome com o link para ir pra pagina do produto -->
+                                    <a href="" class="nome-produto <?= $esgotado ?>"><?= $item['product']['name'] ?> - <?= $item['productSize']['size'] ?></a> <!-- nome com o link para ir pra pagina do produto -->
                                 </div>
                                 <?php if($item['productSize']['stock'] != 0): ?>
 
