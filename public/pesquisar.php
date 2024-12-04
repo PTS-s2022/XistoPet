@@ -121,7 +121,7 @@ $data['category'] = $displayProduct->displayCategories();
     </div>
    
 <?php
-  require_once('../libs/footer.html');
+  require_once('../libs/footer.php');
 ?>
 </body>
 <script src="../assets/js/search/buscar.js"></script>

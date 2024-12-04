@@ -32,7 +32,7 @@
     
     
 <?php
-require_once('../libs/footer.html');
+require_once('../libs/footer.php');
 ?>
 
 </body>

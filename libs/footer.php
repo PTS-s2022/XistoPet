@@ -32,9 +32,9 @@
                   <div class="footer-coll">
                       <?php if(isset($_SESSION['user']['admin'])):?>
                         <a href="/public/perfil.php" class="footer-texto">Perfil</a>
-                        <a href="/public/carrinho.php" class="footer-texto">Carrinho</a>
-                        <a href="/public/pedidos.php" class="footer-texto">Pedidos</a>
-                        <a href="/public/notificacao.php" class="footer-texto">Notificações</a>
+                        <a href="/public/carrinho.php" class="footer-texto">Gerenciar pedidos</a>
+                        <a href="/public/pedidos.php" class="footer-texto">Gerenciar produtos</a>
+                        <a href="/public/notificacao.php" class="footer-texto">Gerenciar</a>
                         <a href="/public/addCartao.php" class="footer-texto">Cartão</a>
                         <a href="/public/addEndereco.php" class="footer-texto">Endereço</a>
                       <?php else:?>
@@ -46,12 +46,7 @@
                         <a href="/public/addEndereco.php" class="footer-texto">Endereço</a>
                       <?php endif;?>
                   </div>
-                  <div class="footer-coll">
-                      <a href="" class="footer-texto">Produtos</a>
-                      <a href="" class="footer-texto">teste1</a>
-                      <a href="" class="footer-texto">teste2</a>
-                      <a href="" class="footer-texto">teste3</a>
-                  </div>
+                  
               </div>
           </div>
       

@@ -153,7 +153,7 @@ $selectProduct = $displayProduct->selectProducts($value);
 <?php
 require_once('../libs/productRelatedSelect.php');
 
-require_once('../libs/footer.html');
+require_once('../libs/footer.php');
 ?>
     
 <script src="../assets/js/cart/carrinho.js?v=1.0" defer></script>

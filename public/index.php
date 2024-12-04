@@ -516,7 +516,7 @@ $data['toy'] = $product->selectProducts($value);
     - #FOOTER
   -->
   <?php
-  require_once('../libs/footer.html');
+  require_once('../libs/footer.php');
   ?>
 
   <!-- 

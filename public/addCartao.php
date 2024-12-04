@@ -228,7 +228,7 @@ if(isset($_GET['controler'])){
         
     </div>  <!-- FIM DO CONTEUDO PRINCIPAL -->
 <?php
-require_once('../libs/footer.html');
+require_once('../libs/footer.php');
 ?>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>

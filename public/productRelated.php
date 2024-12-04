@@ -101,7 +101,7 @@ $selectProduct = $displayProduct->selectProducts($data['product']);
   </div> <!-- FIM DA DIV SOBRE O PRODUTO -->
 
 <?php
-require_once('../libs/footer.html');
+require_once('../libs/footer.php');
 ?>
 
 <script src="../assets/js/productRelated/relacionados.js"></script>

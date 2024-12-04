@@ -121,7 +121,7 @@ $data['sales'] = $saleMenager->displaySale();
     </div> <!-- FIM DO CONTEUDO DA PÁGINA -->
   </div>
   <?php 
-  require_once('../libs/footer.html'); 
+  require_once('../libs/footer.php'); 
   ?>
 <body>
   <script src="..\assets\js\saleManager\gestao_pedidos.js"></script>
