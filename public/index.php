@@ -286,7 +286,7 @@ $data['toy'] = $product->selectProducts($value);
 
           <div class="flex-relacionados">
             <?php foreach ($data['animalFood'] as $k => $product): ?>
-              <div class="products" <?php if ($k == 1): ?>id="first-1" <?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
+              <div class="products" <?php if ($k == 0): ?>id="first-1" <?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
               <div class="star"><i class='bx bxs-star'></i><span>5</span></div>   <!-- inserir as avaliacoes -->
               <div class="img-products"><img src="../imagem/<?= $product['image'] ?>"></div>
               <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
@@ -399,7 +399,7 @@ $data['toy'] = $product->selectProducts($value);
           </h2>
           <div class="flex-relacionados">
             <?php foreach ($data['hygieneProduct'] as $k => $product): ?>
-              <div class="products" <?php if ($k == 1): ?>id="first-3"<?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
+              <div class="products" <?php if ($k == 0): ?>id="first-3"<?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
                 <div class="star"><i class='bx bxs-star'></i><span>5</span></div>   <!-- inserir as avaliacoes -->
                 <div class="img-products"><img src="../imagem/<?= $product['image'] ?>"></div>
                 <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->

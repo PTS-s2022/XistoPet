@@ -344,7 +344,9 @@ Class DisplayProduct
           continue;
         }
       }
-      $data['selectProduct'] = [];
+      if($k == 0 ){
+        $data['selectProduct'] = [];
+      }
       $image['idProduct'] =  $product->id;
       $selectProductSize = $this->productSize->selectProductSize($product->id);
       $productImage = $this->dataImage($image);
