@@ -101,7 +101,7 @@ $data['supplier'] = $supplier->displaySuppliers();
   </div>
 
   <?php
-  require_once('../libs/footer.html');
+  require_once('../libs/footer.php');
   ?>
 <body>
   <script src="gestao_administrador.js"></script>

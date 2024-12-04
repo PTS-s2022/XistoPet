@@ -112,7 +112,7 @@ var_dump($data['product'][0]);
         
     </div> <!-- FIM CONTEUDO DA PAGINA -->
     <?php 
-    require_once('../libs/footer.html'); 
+    require_once('../libs/footer.php'); 
     ?>
 </body>
 <script src="../assets/js/productManager/gestao-produtos.js"></script>

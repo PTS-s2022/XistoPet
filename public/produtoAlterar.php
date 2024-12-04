@@ -144,7 +144,7 @@ $data['category'] = $displayProduct->displayCategories();
         </form>
     </div> <!-- FIM DA DIV PRINCIPAL -->
     <?php 
-    require_once('../libs/footer.html'); 
+    require_once('../libs/footer.php'); 
     ?>
 <script src='../assets/js/productManager/add-produto.js'></script>  <!-- script da cor -->
 <script src='../assets/js/error/erro.js'></script>  <!-- script do erro -->
