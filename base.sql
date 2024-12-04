@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03/12/2024 às 02:10
+-- Tempo de geração: 04/12/2024 às 03:28
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -45,7 +45,7 @@ CREATE TABLE `tb_administrador` (
 --
 
 INSERT INTO `tb_administrador` (`id`, `nome`, `cpf`, `telefone`, `usuario`, `nivel`, `dateCreate`, `dateModify`) VALUES
-(1, 0xae20c15abe07b3952d9fcd489a48a47d27b6c998b7a89edd1fb0dce628ccc48f, 0x079fcce97adff021b71cad026897320e, 0x3693ffd1f2b3ca3c5251ff85be6dee25, 1, 3, '2024-12-02 22:34:07', NULL);
+(1, 0x505958b6f8f20bb3e5cabf6c0567e94c, 0x1666c19eab0cdab1aa2d6fb966ca660d, 0x4441125f1c1c69e9737f258fcf757b13, 1, 3, '2024-12-03 21:10:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -82,17 +82,6 @@ CREATE TABLE `tb_categoria` (
   `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `tb_categoria`
---
-
-INSERT INTO `tb_categoria` (`id`, `categoria`, `ativo`, `imagem`, `dateCreate`, `dateModify`) VALUES
-(1, 'Ração de gato', 1, '1_Ração_de_gato_1.jpg', '2024-12-02 22:36:39', '2024-12-02 23:08:06'),
-(2, 'Brinquedo de gato', 1, '5_Brinquedo_de_gato_1.jpg', '2024-12-02 22:37:01', '2024-12-02 23:08:09'),
-(3, 'Ração de cachorro', 1, '2_Ração_de_cachorro_1.jpg', '2024-12-02 22:37:53', '2024-12-02 23:08:13'),
-(4, 'Brinquedo de cachorro', 1, '3_Brinquedo_de_cachorro_1.jpg', '2024-12-02 22:38:18', '2024-12-02 23:08:17'),
-(5, 'Medicamento', 1, '6_Medicamento_1.jpg', '2024-12-02 22:38:37', '2024-12-02 23:08:20');
 
 -- --------------------------------------------------------
 
@@ -170,7 +159,7 @@ CREATE TABLE `tb_cliente_favorito` (
 
 CREATE TABLE `tb_cliente_notificacao` (
   `id` int(11) NOT NULL,
-  `data` datetime NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
   `itemVenda` int(11) DEFAULT NULL,
   `venda` int(11) DEFAULT NULL,
   `tipo` int(11) NOT NULL,
@@ -206,20 +195,6 @@ INSERT INTO `tb_cliente_notificacao_tipo` (`id`, `tipo`, `dateCreate`, `dateModi
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tb_cliente_telefone`
---
-
-CREATE TABLE `tb_cliente_telefone` (
-  `id` int(11) NOT NULL,
-  `telefone` varbinary(28) NOT NULL,
-  `cliente` int(11) NOT NULL,
-  `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
-  `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `tb_fornecedor`
 --
 
@@ -228,6 +203,7 @@ CREATE TABLE `tb_fornecedor` (
   `nome` varbinary(300) NOT NULL,
   `cnpj` varbinary(28) NOT NULL,
   `telefone` varbinary(28) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT 1,
   `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -289,6 +265,7 @@ CREATE TABLE `tb_produto` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_produto_comentario`
@@ -298,23 +275,9 @@ CREATE TABLE `tb_produto_comentario` (
   `id` int(11) NOT NULL,
   `avaliacao` int(1) NOT NULL,
   `comentario` varchar(255) NOT NULL,
+  `nomeCliente` varchar(255) NOT NULL,
   `produtoTamanho` int(11) DEFAULT NULL,
-  `produtoCor` int(11) DEFAULT NULL,
   `itemvenda` int(11) NOT NULL,
-  `produto` int(11) NOT NULL,
-  `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
-  `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `tb_produto_cor`
---
-
-CREATE TABLE `tb_produto_cor` (
-  `id` int(11) NOT NULL,
-  `cor` varchar(50) NOT NULL,
   `produto` int(11) NOT NULL,
   `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
@@ -334,6 +297,7 @@ CREATE TABLE `tb_produto_estoque` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_produto_imagem`
@@ -347,6 +311,7 @@ CREATE TABLE `tb_produto_imagem` (
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tb_produto_tamanho`
@@ -361,7 +326,6 @@ CREATE TABLE `tb_produto_tamanho` (
   `dateCreate` datetime NOT NULL DEFAULT current_timestamp(),
   `dateModify` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 
 -- --------------------------------------------------------
 
@@ -385,7 +349,7 @@ CREATE TABLE `tb_usuario` (
 --
 
 INSERT INTO `tb_usuario` (`id`, `email`, `senha`, `sub`, `token`, `expiry`, `dateCreate`, `dateModify`) VALUES
-(1, 'xistopet@gmail.com', NULL, '109395935496376993579', NULL, NULL, '2024-09-02 19:49:31', NULL);
+(1, 'xistopet@gmail.com', '$2y$10$HgXNb9Kor1q7bQjb5Ny25OGznud/HeHFxXjkmsWJe0OsfKm4I98C.', NULL, NULL, NULL, '2024-12-03 21:01:50', '2024-12-03 23:42:08');
 
 -- --------------------------------------------------------
 
@@ -475,31 +439,39 @@ ALTER TABLE `tb_categoria`
 -- Índices de tabela `tb_cliente`
 --
 ALTER TABLE `tb_cliente`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `usuario` (`usuario`);
 
 --
 -- Índices de tabela `tb_cliente_cartao`
 --
 ALTER TABLE `tb_cliente_cartao`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cliente` (`cliente`);
 
 --
 -- Índices de tabela `tb_cliente_endereco`
 --
 ALTER TABLE `tb_cliente_endereco`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cliente` (`cliente`);
 
 --
 -- Índices de tabela `tb_cliente_favorito`
 --
 ALTER TABLE `tb_cliente_favorito`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cliente` (`cliente`);
 
 --
 -- Índices de tabela `tb_cliente_notificacao`
 --
 ALTER TABLE `tb_cliente_notificacao`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cliente` (`cliente`),
+  ADD KEY `venda` (`venda`),
+  ADD KEY `itemVenda` (`itemVenda`),
+  ADD KEY `tipo` (`tipo`);
 
 --
 -- Índices de tabela `tb_cliente_notificacao_tipo`
@@ -508,16 +480,18 @@ ALTER TABLE `tb_cliente_notificacao_tipo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `tb_cliente_telefone`
---
-ALTER TABLE `tb_cliente_telefone`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices de tabela `tb_fornecedor`
 --
 ALTER TABLE `tb_fornecedor`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `tb_fornecedor_fornecimento`
+--
+ALTER TABLE `tb_fornecedor_fornecimento`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fornecedor` (`fornecedor`),
+  ADD KEY `estoque` (`estoque`);
 
 --
 -- Índices de tabela `tb_metodo_pagamento`
@@ -529,7 +503,8 @@ ALTER TABLE `tb_metodo_pagamento`
 -- Índices de tabela `tb_produto`
 --
 ALTER TABLE `tb_produto`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `categoria` (`categoria`);
 
 --
 -- Índices de tabela `tb_produto_comentario`
@@ -537,15 +512,8 @@ ALTER TABLE `tb_produto`
 ALTER TABLE `tb_produto_comentario`
   ADD PRIMARY KEY (`id`),
   ADD KEY `produtoTamanho` (`produtoTamanho`),
-  ADD KEY `produtoCor` (`produtoCor`),
-  ADD KEY `produto` (`produto`);
-
---
--- Índices de tabela `tb_produto_cor`
---
-ALTER TABLE `tb_produto_cor`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `produto` (`produto`);
+  ADD KEY `produto` (`produto`),
+  ADD KEY `itemvenda` (`itemvenda`);
 
 --
 -- Índices de tabela `tb_produto_estoque`
@@ -589,7 +557,9 @@ ALTER TABLE `tb_venda`
 -- Índices de tabela `tb_venda_item`
 --
 ALTER TABLE `tb_venda_item`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `produto` (`produto`),
+  ADD KEY `venda` (`venda`);
 
 --
 -- Índices de tabela `tb_venda_status`
@@ -605,49 +575,49 @@ ALTER TABLE `tb_venda_status`
 -- AUTO_INCREMENT de tabela `tb_administrador`
 --
 ALTER TABLE `tb_administrador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tb_administrador_nivel`
 --
 ALTER TABLE `tb_administrador_nivel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tb_categoria`
 --
 ALTER TABLE `tb_categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cliente`
 --
 ALTER TABLE `tb_cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cliente_cartao`
 --
 ALTER TABLE `tb_cliente_cartao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cliente_endereco`
 --
 ALTER TABLE `tb_cliente_endereco`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cliente_favorito`
 --
 ALTER TABLE `tb_cliente_favorito`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cliente_notificacao`
 --
 ALTER TABLE `tb_cliente_notificacao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cliente_notificacao_tipo`
@@ -656,82 +626,76 @@ ALTER TABLE `tb_cliente_notificacao_tipo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de tabela `tb_cliente_telefone`
---
-ALTER TABLE `tb_cliente_telefone`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tb_fornecedor`
 --
 ALTER TABLE `tb_fornecedor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `tb_fornecedor_fornecimento`
+--
+ALTER TABLE `tb_fornecedor_fornecimento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `tb_metodo_pagamento`
 --
 ALTER TABLE `tb_metodo_pagamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto`
 --
 ALTER TABLE `tb_produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto_comentario`
 --
 ALTER TABLE `tb_produto_comentario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de tabela `tb_produto_cor`
---
-ALTER TABLE `tb_produto_cor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto_estoque`
 --
 ALTER TABLE `tb_produto_estoque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto_imagem`
 --
 ALTER TABLE `tb_produto_imagem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_produto_tamanho`
 --
 ALTER TABLE `tb_produto_tamanho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_venda`
 --
 ALTER TABLE `tb_venda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_venda_item`
 --
 ALTER TABLE `tb_venda_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_venda_status`
 --
 ALTER TABLE `tb_venda_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para tabelas despejadas
@@ -745,18 +709,58 @@ ALTER TABLE `tb_administrador`
   ADD CONSTRAINT `tb_administrador_ibfk_2` FOREIGN KEY (`nivel`) REFERENCES `tb_administrador_nivel` (`id`);
 
 --
+-- Restrições para tabelas `tb_cliente`
+--
+ALTER TABLE `tb_cliente`
+  ADD CONSTRAINT `tb_cliente_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `tb_usuario` (`id`);
+
+--
+-- Restrições para tabelas `tb_cliente_cartao`
+--
+ALTER TABLE `tb_cliente_cartao`
+  ADD CONSTRAINT `tb_cliente_cartao_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `tb_cliente` (`id`);
+
+--
+-- Restrições para tabelas `tb_cliente_endereco`
+--
+ALTER TABLE `tb_cliente_endereco`
+  ADD CONSTRAINT `tb_cliente_endereco_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `tb_cliente` (`id`);
+
+--
+-- Restrições para tabelas `tb_cliente_favorito`
+--
+ALTER TABLE `tb_cliente_favorito`
+  ADD CONSTRAINT `tb_cliente_favorito_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `tb_cliente` (`id`);
+
+--
+-- Restrições para tabelas `tb_cliente_notificacao`
+--
+ALTER TABLE `tb_cliente_notificacao`
+  ADD CONSTRAINT `tb_cliente_notificacao_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `tb_cliente` (`id`),
+  ADD CONSTRAINT `tb_cliente_notificacao_ibfk_3` FOREIGN KEY (`itemVenda`) REFERENCES `tb_venda_item` (`id`),
+  ADD CONSTRAINT `tb_cliente_notificacao_ibfk_4` FOREIGN KEY (`itemVenda`) REFERENCES `tb_venda_item` (`id`),
+  ADD CONSTRAINT `tb_cliente_notificacao_ibfk_5` FOREIGN KEY (`tipo`) REFERENCES `tb_cliente_notificacao_tipo` (`id`);
+
+--
+-- Restrições para tabelas `tb_fornecedor_fornecimento`
+--
+ALTER TABLE `tb_fornecedor_fornecimento`
+  ADD CONSTRAINT `tb_fornecedor_fornecimento_ibfk_1` FOREIGN KEY (`fornecedor`) REFERENCES `tb_fornecedor` (`id`),
+  ADD CONSTRAINT `tb_fornecedor_fornecimento_ibfk_2` FOREIGN KEY (`estoque`) REFERENCES `tb_produto_estoque` (`id`);
+
+--
+-- Restrições para tabelas `tb_produto`
+--
+ALTER TABLE `tb_produto`
+  ADD CONSTRAINT `tb_produto_ibfk_1` FOREIGN KEY (`categoria`) REFERENCES `tb_categoria` (`id`);
+
+--
 -- Restrições para tabelas `tb_produto_comentario`
 --
 ALTER TABLE `tb_produto_comentario`
   ADD CONSTRAINT `tb_produto_comentario_ibfk_1` FOREIGN KEY (`produtoTamanho`) REFERENCES `tb_produto_tamanho` (`id`),
-  ADD CONSTRAINT `tb_produto_comentario_ibfk_2` FOREIGN KEY (`produtoCor`) REFERENCES `tb_produto_cor` (`id`),
-  ADD CONSTRAINT `tb_produto_comentario_ibfk_3` FOREIGN KEY (`produto`) REFERENCES `tb_produto` (`id`);
-
---
--- Restrições para tabelas `tb_produto_cor`
---
-ALTER TABLE `tb_produto_cor`
-  ADD CONSTRAINT `tb_produto_cor_ibfk_1` FOREIGN KEY (`produto`) REFERENCES `tb_produto` (`id`);
+  ADD CONSTRAINT `tb_produto_comentario_ibfk_3` FOREIGN KEY (`produto`) REFERENCES `tb_produto` (`id`),
+  ADD CONSTRAINT `tb_produto_comentario_ibfk_4` FOREIGN KEY (`itemvenda`) REFERENCES `tb_venda_item` (`id`);
 
 --
 -- Restrições para tabelas `tb_produto_estoque`
@@ -785,6 +789,13 @@ ALTER TABLE `tb_venda`
   ADD CONSTRAINT `tb_venda_ibfk_3` FOREIGN KEY (`metodo`) REFERENCES `tb_metodo_pagamento` (`id`),
   ADD CONSTRAINT `tb_venda_ibfk_4` FOREIGN KEY (`endereco`) REFERENCES `tb_cliente_endereco` (`id`),
   ADD CONSTRAINT `tb_venda_ibfk_5` FOREIGN KEY (`cartao`) REFERENCES `tb_cliente_cartao` (`id`);
+
+--
+-- Restrições para tabelas `tb_venda_item`
+--
+ALTER TABLE `tb_venda_item`
+  ADD CONSTRAINT `tb_venda_item_ibfk_1` FOREIGN KEY (`produto`) REFERENCES `tb_produto_tamanho` (`id`),
+  ADD CONSTRAINT `tb_venda_item_ibfk_2` FOREIGN KEY (`venda`) REFERENCES `tb_venda` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
