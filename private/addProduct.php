@@ -52,6 +52,7 @@ else{
       
       $error = $product->addProduct($data);
       $header = 'produtoAdd.php';
+      $controler = 1;
       break;
     
     case 'alter':
@@ -69,10 +70,14 @@ else{
       break;
   }
 }
-
+if(isset($error['idProduct'])){
+  header('Location: ../public/estoque.php?idProduct='.$error['idProduct']);
+  die();
+}
 if($error){
   $_SESSION['ERROR'] = $error; 
   header('Location: ../public/'.$header);
   die();
 }
+
 header('Location: ../'.$header);

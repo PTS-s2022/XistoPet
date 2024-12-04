@@ -643,10 +643,13 @@ Class DisplayProduct
       $i = 0;
       foreach ($data['form']['image'] as $k => $image) {
         $i++;
+        
         $value = [
           'type' => $image['type']
         ];
-
+        if(!$value['type']){
+          continue;
+        }
 
         $varifyType = $this->verifyMimeTypes($value);
         if($varifyType){
@@ -674,8 +677,10 @@ Class DisplayProduct
       }
     }
     
-    header('Location: ../public/estoque.php?idProduct='. $foundProduct[0]->id);
-    die();
+    return [
+      'idProduct' => $foundProduct[0]->id
+    ];
+
   }
 
 

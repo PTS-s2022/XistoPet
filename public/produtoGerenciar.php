@@ -74,7 +74,7 @@ $data['category'] = $product->displayCategories();
                 <div class="square">
                     <a href="produtoAdd.php?idCategory=<?= $category['id']?>" class="btn-adic">Adicionar produto</a> <!-- BTN ADICIONAR PRODUTO-->
                 </div>
-                <?php if(isset($data['product'])):?>
+                <?php if($data['product']):?>
                   <?php foreach($data['product'] as $k => $product):?>
                     <?php if($product['category'] == $category['id']):?>
                       <div class="square">
