@@ -48,6 +48,7 @@ if(isset($_SESSION['user']['client'])){
     }
     
 }
+
 ?>
 
 
@@ -237,7 +238,7 @@ if(isset($_SESSION['user']['client'])){
         <?php foreach ($data['comment'] as $k => $comment):?>    
             <div class="coment">  <!-- DIV DE CADA COMENTARIO -->
                 <div class="flex">
-                    <p class="nome">João</p> <!-- NOME DO USUARIO -->
+                    <p class="nome"><?= $comment['nameClient']?></p> <!-- NOME DO USUARIO -->
                     <div> <!--  DIV DAS ESTRELAS -->
                         <?php for ($i=1; $i <= 5; $i++):?>
                             <?php if ($comment['assess'] >= $i):?>

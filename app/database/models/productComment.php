@@ -12,23 +12,23 @@ class ProductComment extends Model
     {
         try {
             $connect = Connect::connect();
-            $prepare = $connect->prepare("insert into $this->table(avaliacao, comentario, produtoTamanho, produtoCor, itemVenda, produto) 
+            $prepare = $connect->prepare("insert into $this->table(avaliacao, comentario, produtoTamanho, itemVenda, produto, nomeCliente) 
                                 values(
                                     :avaliacao,
                                     :comentario,
                                     :produtoTamanho,
-                                    :produtoCor,
                                     :itemVenda,
-                                    :produto
+                                    :produto,
+                                    :nameClient
                                 )");
 
             return $prepare->execute([
                 ':avaliacao' =>  $data['assess'],
                 ':comentario' => $data['comment'],
                 ':produtoTamanho' =>  $data['productSize'],
-                ':produtoCor' => $data['productColor'],
                 ':itemVenda' =>  $data['saleItem'],
                 ':produto' => $data['product'],
+                ':nameClient' => $data['nameClient']
             ]);
         } catch (\PDOException $th) {
             var_dump($th->getMessage());

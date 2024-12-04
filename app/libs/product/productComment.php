@@ -6,6 +6,7 @@ use app\libs\product\DisplayProduct as Product;
 use app\database\models\Product as ModelsProduct;
 use app\database\models\ProductComment as ModelsProductComment;
 use app\database\models\ProductSize as ModelsProductSize;
+use app\libs\client\Client;
 use app\libs\sale\Sale;
 
 class ProductComment
@@ -15,6 +16,7 @@ class ProductComment
   public readonly Sale $sale;
   public readonly ModelsProductSize $productSize;
   public readonly ModelsProductComment $productComment;
+  public readonly Client $client;
 
   public function __construct()
   {
@@ -23,6 +25,7 @@ class ProductComment
     $this->product = new ModelsProduct;
     $this->productSize = new ModelsProductSize;
     $this->productComment = new ModelsProductComment;
+    $this->client = new Client;
 
   }
 
@@ -41,14 +44,19 @@ class ProductComment
     $data['assess'] = $this->displayAssess($value);
 
     $value = [
+      'idClient' => $data['idClient']
+    ];
+    $data['client'] = $this->client->dataClient($value);
+
+    $value = [
       'assess' => $data['form']['assess'],
       'comment' => $data['form']['comment'],
       'saleItem' => $data['form']['saleItem'],
-      'productSize' => $data['assess']['product']['size'],
-      'productColor' => null,
+      'productSize' => $data['assess']['product']['size']['id'],
+      'nameClient' => $data['client']['name'],
       'product' => $data['assess']['product']['id']
     ];
-    
+
     $this->productComment->insert($value);
 
     $value = [

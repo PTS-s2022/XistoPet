@@ -280,7 +280,8 @@ Class DisplayProduct
       $data['comment'][$k] = [
         "id" => $comment->id,
         "assess" => $comment->avaliacao,
-        "comment" => $comment->comentario
+        "comment" => $comment->comentario,
+        "nameClient" => $comment->nomeCliente
       ];
     }
 
@@ -345,6 +346,7 @@ Class DisplayProduct
       return false;
     }
 
+    $i = 0;
     $data['selectProduct'][0] = 0;
     foreach ($selectProduct as $k => $product) {
       if(isset($data['idProduct'])){
@@ -353,13 +355,15 @@ Class DisplayProduct
           continue;
         }
       }
+      
       if($k == 0 ){
         $data['selectProduct'] = [];
       }
+      
       $image['idProduct'] =  $product->id;
       $selectProductSize = $this->productSize->selectProductSize($product->id);
       $productImage = $this->dataImage($image);
-      $data['selectProduct'][$k] = [
+      $data['selectProduct'][$i] = [
         "id" => $product->id,
         "name" => $product->nome,
         "assess" => $product->avaliacao,
@@ -369,6 +373,7 @@ Class DisplayProduct
             'min' => $selectProductSize[0]->min
           ]
       ];
+      $i++;
     }
     if(!$data['selectProduct']){
       return false;  

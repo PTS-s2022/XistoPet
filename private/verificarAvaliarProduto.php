@@ -30,5 +30,5 @@ $data['idClient'] = $_SESSION['user']['client'];
 
 $verifyComment = $productComment->comment($data); 
 
-header("Location: ../public/produto.php?idProduct=". $data['form']['idProduct']);
+// header("Location: ../public/produto.php?idProduct=". $data['form']['idProduct']);
 die();
