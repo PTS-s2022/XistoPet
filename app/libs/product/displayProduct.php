@@ -415,6 +415,7 @@ Class DisplayProduct
       "name" => $foundProduct[0]->nome,
       "image" => $productImage[0],
       "assess" => $foundProduct[0]->avaliacao,
+      "category" => $foundProduct[0]->categoria,
       "price" => [
           'max' => $selectProductSize[0]->max,
           'min' => $selectProductSize[0]->min
