@@ -96,12 +96,12 @@ switch ($data['nivel']) {
                 <?php else:?>
                     <li><a class="item" href="../public/produtoGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar Produtos</a></li><br>
                     <li><a class="item" href="../public/vendaGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar Pedidos</a></li><br>
-                    <li><a class="item" href="../public/fornecedorGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar fornecedor</a></li><br>
+                    <li><a class="item" href="../public/fornecedorGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar Fornecedor</a></li><br>
                     <?php if($data['nivel'] == 3):?>
                         <li><a class="item" href="../public/adminGerenciar.php"><img src="../assets/css/profile/icones/box-svgrepo-com.svg" id="img">Gerenciar Admintradores</a></li><br>
                     <?php endif;?>
                 <?php endif;?>
-                <div><a class="item" href="../public/senhaAlterar.php"><img src="../assets/css/profile/icones/edit-solid-24.png" id="img">Alterar senha</a></div><br>
+                <div><a class="item" href="../public/senhaAlterar.php"><img src="../assets/css/profile/icones/edit-solid-24.png" id="img">Alterar Senha</a></div><br>
                 <li><a id="sair" class="item"><img src="../assets/css/profile/icones/logout-svgrepo-com.svg"  id="img">Sair</a></li><br>
             </ul>
         </main>
