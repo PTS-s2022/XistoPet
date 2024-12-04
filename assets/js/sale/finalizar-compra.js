@@ -34,12 +34,12 @@ function carregado() {
         verificar.addEventListener("click", function (){
             if (cartao.checked) {
                 aparecer.style.display = "flex";
-                botao.style.bottom = "6%";
+                botao.style.bottom = "3%";
                 aparecer.style.height = "auto";
             }
             else{
                 aparecer.style.display = "none";
-                botao.style.bottom = "none";
+                botao.style.bottom = "auto";
                 aparecer.style.height = "0";
             }
         });

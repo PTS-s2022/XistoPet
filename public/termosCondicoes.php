@@ -63,15 +63,14 @@
                     
                 </ul>
         
-                <p class="subtitulo">SEÇÃO 7 - CONSENTIMENTO</p>
-                <p class="texto">Ao utilizar os serviços e fornecer as informações pessoais na plataforma, o usuário está consentindo com a presente Política de Privacidade.</p>
-                <p class="texto">O usuário, ao cadastrar-se, manifesta conhecer e pode exercitar seus direitos de cancelar seu cadastro, acessar e atualizar seus dados pessoais e garante a veracidade das informações por ele disponibilizadas.</p>
-                <p class="texto">O usuário tem direito de retirar o seu consentimento a qualquer tempo, para tanto deve entrar em contato através do e-mail xistopet@gmail.com.</p>
+                <p class="subtitulo">7. Entregas</p>
+                <ul>
+                    <li><p class="subtitulo2">Prazos e Custos: </p>O prazo e o custo da entrega são calculados com base no endereço informado e exibidos antes da finalização do pedido.</li>
+                    <li><p class="subtitulo2">Atrasos: </p>A XistoPet não se responsabiliza por atrasos causados por fatores externos, como greves, desastres naturais ou problemas logísticos de transportadoras.</li>
+                </ul>
         
-                <p class="subtitulo">SEÇÃO 8 - ALTERAÇÕES PARA ESSA POLÍTICA DE PRIVACIDADE</p>
-                <p class="texto">Reservamos o direito de modificar essa Política de Privacidade a qualquer momento, então, é recomendável que o usuário e visitante revise-a com frequência.</p>
-                <p class="texto">As alterações e esclarecimentos vão surtir efeito imediatamente após sua publicação na plataforma. Quando realizadas alterações os usuários serão notificados. Ao utilizar o serviço ou fornecer informações pessoais após eventuais modificações, o usuário e visitante demonstra sua concordância com as novas normas.</p>
-                <p class="texto">Diante da fusão ou venda da plataforma à outra empresa os dados dos usuários podem ser transferidos para os novos proprietários para que a permanência dos serviços oferecidos.</p>
+                <p class="subtitulo">8. Privacidade e Proteção de Dados</p>
+                <p class="texto">O XIstoPet coleta e utiliza dados pessoais em conformidade com sua Política de Privacidade, garantindo a segurança e confidencialidade das informações fornecidas pelos usuários.</p>
         </div>
     </div>
     
