@@ -97,6 +97,9 @@ var_dump($data['product'][0]);
                             <a href="produtoAlterar.php?idProduct=<?= $product['id']?>" class="btn-edit">Editar</a> <!-- BTN EDITAR PRODUTO -->
                             <button class="btn-excluir">Excluir</button> <!-- BTN EXCLUIR PRODUTO -->
                           </form>
+                          <div class="edt-estoque">
+                            <a href="" class="a-estoque">Estoque</a>
+                          </div>
                       </div>
                     <?php endif;?>
                   <?php endforeach;?>
