@@ -7,7 +7,7 @@
       <div class="flex-relacionados">
           <?php foreach($selectProduct as $k => $product):?>     
               <div class="products" <?php  if ($k == 1): ?>id="first" <?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
-                <div class="star"><i class='bx bxs-star'></i><span>5</span></div>   <!-- inserir as avaliacoes -->
+                <div class="star"><i class='bx bxs-star'></i><span><?= $product['assess']?></span></div>   <!-- inserir as avaliacoes -->
                 <div class="img-products"><img src="../imagem/<?= $product['image'] ?>" ></div>
                   <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
                   <div class="preco-flex">

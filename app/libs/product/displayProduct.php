@@ -351,6 +351,7 @@ Class DisplayProduct
       $data['selectProduct'][$k] = [
         "id" => $product->id,
         "name" => $product->nome,
+        "assess" => $product->avaliacao,
         "image" => $productImage[0],
         "price" => [
             'max' => $selectProductSize[0]->max,
