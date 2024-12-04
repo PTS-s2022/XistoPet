@@ -22,10 +22,7 @@ $data['product'] = $product->displayProducts();
 
 $data['category'] = $product->displayCategories();
 
-var_dump($data['product'][0]);
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
