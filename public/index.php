@@ -287,7 +287,7 @@ $data['toy'] = $product->selectProducts($value);
           <div class="flex-relacionados">
             <?php foreach ($data['animalFood'] as $k => $product): ?>
               <div class="products" <?php if ($k == 0): ?>id="first-1" <?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
-              <div class="star"><i class='bx bxs-star'></i><span>5</span></div>   <!-- inserir as avaliacoes -->
+              <div class="star"><i class='bx bxs-star'></i><span><?= $product['assess'] ?></span></div>   <!-- inserir as avaliacoes -->
               <div class="img-products"><img src="../imagem/<?= $product['image'] ?>"></div>
               <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
               <div class="preco-flex">
@@ -364,7 +364,7 @@ $data['toy'] = $product->selectProducts($value);
             <?php foreach ($data['toy'] as $k => $product): ?>
               <div class="products" <?php if ($k == 0): ?>id="first-2" <?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
               <div class="img-products"><img src="../imagem/<?= $product['image'] ?>"></div>
-              <div class="star"><i class='bx bxs-star'></i><span>5</span></div>   <!-- inserir as avaliacoes -->
+              <div class="star"><i class='bx bxs-star'></i><span><?= $product['assess'] ?></span></div>   <!-- inserir as avaliacoes -->
               <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
               <div class="preco-flex">
                 <p class="preco formatar-preco"><?= $product['price']['min'] ?></p>
@@ -400,7 +400,7 @@ $data['toy'] = $product->selectProducts($value);
           <div class="flex-relacionados">
             <?php foreach ($data['hygieneProduct'] as $k => $product): ?>
               <div class="products" <?php if ($k == 0): ?>id="first-3"<?php endif; ?> > <!-- PRODUTOS -----  o primeiro produto tem q ter o id first obrigatoriamente, mas só ele-->
-                <div class="star"><i class='bx bxs-star'></i><span>5</span></div>   <!-- inserir as avaliacoes -->
+                <div class="star"><i class='bx bxs-star'></i><span><?= $product['assess'] ?></span></div>   <!-- inserir as avaliacoes -->
                 <div class="img-products"><img src="../imagem/<?= $product['image'] ?>"></div>
                 <p> <?= $product['name'] ?></p> <!-- Nome do produto  -->
                 <div class="preco-flex">
