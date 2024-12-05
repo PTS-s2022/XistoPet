@@ -215,9 +215,18 @@ switch ($data['nivel']) {
 
 <script>
 $("#CEP").mask("00000-000");
-$(".cpf").mask("000.000.000-00");
+// $(".cpf").mask("000.000.000-00");
 $("#cartao").mask("0000 0000 0000 0000");
 $('.telefone').mask('(00) 00000-0000');
+
+
+let cpfElement = document.querySelector("#cpf");
+let cpf = cpfElement.innerHTML;
+
+cpf = cpf.replace(/\D/g, "");
+let cpfMascara = cpf.replace(/^(\d{3})\d{3}\d{3}(\d{2})$/, "$1.***.***-$2");
+cpfElement.innerHTML = cpfMascara;
+
                         
 </script>
 
