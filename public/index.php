@@ -13,13 +13,13 @@ session_start();
 
 
 $value = [
-  'category' => 1
+  'category' => 2
 ];
 
 $data['animalFood'] = $product->selectProducts($value);
 
 $value = [
-  'category' => 2
+  'category' => 5
 ];
 
 $data['hygieneProduct'] = $product->selectProducts($value);
@@ -395,7 +395,7 @@ $data['toy'] = $product->selectProducts($value);
 
         <div class="relacionados"> <!-- nos prudutos relacionados são 14 produtos, o 15 é o botão de ver mais -->
           <h2 class="h2 section-title">
-            <span class="span">Top</span> Produtos de Higiene
+            <span class="span">Top</span> Medicamentos
           </h2>
           <div class="flex-relacionados">
             <?php foreach ($data['hygieneProduct'] as $k => $product): ?>
