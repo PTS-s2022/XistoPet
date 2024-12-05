@@ -70,7 +70,7 @@ $controler = 0;
     <?php if($data['category']):?>
       <?php foreach ($data['category'] as $key => $category):?>
         <div>  <!-- Aqui vai ser cada categoria -->
-            <p class="title">Gerenciar produtos da categoria <?= $category['name']?></p>
+            <p class="title">Produtos da categoria <?= $category['name']?></p>
             <div class="list">
                 <div class="square">
                     <a href="produtoAdd.php?idCategory=<?= $category['id']?>" class="btn-adic">Adicionar produto</a> <!-- BTN ADICIONAR PRODUTO-->
@@ -115,7 +115,7 @@ $controler = 0;
     <?php if($controler):?>
 
       <div>  <!-- Aqui vai ser cada categoria -->
-          <p class="title">Gerenciar produtos sem categoria</p>
+          <p class="title">Produtos sem categoria</p>
           <div class="list">
               <div class="square">
                   <a href="produtoAdd.php?idCategory=<?= $category['id']?>" class="btn-adic">Adicionar produto</a> <!-- BTN ADICIONAR PRODUTO-->
