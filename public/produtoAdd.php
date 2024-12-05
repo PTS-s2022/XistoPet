@@ -123,6 +123,9 @@ $data['category'] = $displayProduct->displayCategories();
            <button class="btn-salvar">Salvar</button> <!-- BTN SALVAR -->
         </form>
     </div> <!-- FIM DA DIV PRINCIPAL -->
+    <?php 
+    require_once('../libs/footer.php'); 
+    ?>
 </body>
 <script src='../assets/js/productManager/add-produto.js'></script>  <!-- script da cor -->
 <script src='../assets/js/error/erro.js'></script>  <!-- script do erro -->
