@@ -132,7 +132,7 @@ $data['sale'] = $sale->payment($data);
                 <hr class="divisor">
                 <div><span class="s2">Frete</span><span class="s1">Grátis</span></div>
                 <hr class="divisor">
-                <div><span class="s2">Total</span><span class="s2 formatar-preco"><?= $data['sale']['totalPrice']?></span></div>
+                <div><span class="s2">Total</span><span class="formatar-preco s2"><?= $data['sale']['totalPrice']?></span></div>
                 </div>
             </div>
         </aside>
@@ -143,6 +143,16 @@ $data['sale'] = $sale->payment($data);
 <script src="../assets/js/sale/realizar-pagamento.js"></script>
 
 </body>
+<script>
+    let formatarPreco = document.querySelectorAll(".formatar-preco");
+
+    formatarPreco.forEach(function(Numpreco, index){
+    let valorPreco = Numpreco.innerHTML;
+    let precoFormatado = Number(valorPreco)
+
+    Numpreco.innerHTML = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(precoFormatado);
+})
+</script>
 </html>
                 
 
