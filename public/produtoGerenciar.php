@@ -142,7 +142,7 @@ $controler = 0;
                           <button class="btn-excluir">Excluir</button> <!-- BTN EXCLUIR PRODUTO -->
                         </form>
                         <div class="edt-estoque">
-                          <a href="" class="a-estoque">Estoque</a>
+                          <a href="estoque.php?idProduct=<?= $product['id'] ?>" class="a-estoque">Estoque</a>
                         </div>
                     </div>
                   <?php endif;?>
