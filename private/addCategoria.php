@@ -54,5 +54,5 @@ if($error){
   die();
 }
 
-// header('Location: ../public/produtoGerenciar.php');
+header('Location: ../public/produtoGerenciar.php');
 
