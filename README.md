@@ -1,15 +1,15 @@
 
 # 🐾 XistoPet – Website para Pet Shop
 
-Desenvolvimento de um website completo para a empresa XistoPet, com funcionalidades de venda de produtos, agendamento de serviços e gerenciamento de usuários, visando otimizar o atendimento ao cliente e expandir a presença online da empresa.
+Sistema web completo desenvolvido como Trabalho de Conclusão de Curso para a empresa XistoPet, com funcionalidades de e-commerce e gerenciamento de serviços pet, visando melhorar o atendimento ao cliente, facilitar compras e agendamentos, e expandir o alcance online da empresa.
 
 ---
 
 ## 📘 Sobre o Projeto
 
-Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) do curso **Técnico em Desenvolvimento de Sistemas** na **ETEC Terezinha Monteiro dos Santos**, parte do **Centro Paula Souza**.
+Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) do curso **Técnico em Desenvolvimento de Sistemas** da **ETEC Terezinha Monteiro dos Santos**, pertencente ao **Centro Paula Souza**.
 
-A proposta consiste na criação de um sistema web para a empresa XistoPet, localizada em Coronel Macedo - SP, que atua no setor de banho, tosa e venda de produtos pet. O objetivo é modernizar os processos internos da empresa e oferecer aos clientes um canal digital prático, eficiente e funcional.
+A proposta consiste em criar um sistema web para a empresa XistoPet, situada em Coronel Macedo - SP, que oferece serviços de banho, tosa e venda de produtos pet. A plataforma contempla funcionalidades como área do cliente, carrinho de compras, painel de administração e controle de pedidos.
 
 ---
 
@@ -26,15 +26,26 @@ Marcus Vinicius do Amaral Rodrigues
 
 ---
 
+## 🔐 Segurança
+
+O sistema aplica medidas importantes de segurança:
+- Criptografia de dados sensíveis
+- Hashing de senhas
+- Proteção contra SQL Injection e XSS
+- Uso de reCAPTCHA contra ataques brute force
+
+---
+
 ## 🚀 Funcionalidades
 
-- Cadastro e login de usuários
-- Gerenciamento de perfis, cartões e endereços
+- Cadastro/login com validação e captcha
 - Agendamento de serviços
+- Gerenciamento de carrinho e finalização de pedidos
 - Avaliação de produtos
-- Carrinho de compras e finalização de pedidos
-- Painel administrativo com controle de produtos e categorias
-- Painel de administrador master com gestão de administradores
+- Área do cliente com cartões e endereços
+- Painel administrativo (produtos, categorias, pedidos)
+- Painel master (gestão de administradores)
+- Políticas de privacidade e segurança
 
 ---
 
@@ -43,13 +54,8 @@ Marcus Vinicius do Amaral Rodrigues
 - **Frontend:** HTML5, CSS3, JavaScript  
 - **Backend:** PHP  
 - **Banco de Dados:** MySQL  
-- **Ferramentas e Plataformas:**  
-  - Visual Studio Code  
-  - EasyPHP / XAMPP  
-  - phpMyAdmin  
-  - Figma  
-  - Canva  
-  - Draw.io
+- **Ambiente:** EasyPHP / XAMPP  
+- **Ferramentas:** Visual Studio Code, Figma, Canva, phpMyAdmin, Draw.io
 
 ---
 
@@ -57,12 +63,10 @@ Marcus Vinicius do Amaral Rodrigues
 
 ```
 /xistopet/
-├── src/                # Código-fonte (PHP)
 ├── base.sql            # Script do banco de dados
-├── config.php          # Configuração da conexão
-├── docs/               # (opcional) Relatório e apresentação
-├── imagem.rar          # Arquivos gráficos usados
-├── composer.json       # Dependências PHP
+├── config.php          # Configurações do sistema
+├── imagem.rar          # Arquivos de mídia
+├── composer.json       # Dependências do PHP
 ├── LICENSE             # Licença do projeto
 └── README.md           # Este arquivo
 ```
@@ -84,9 +88,9 @@ cd xistopet
    - Acesse `phpMyAdmin`
    - Crie um banco e importe o arquivo `base.sql`
 
-4. Atualize as configurações de conexão em `config.php` se necessário.
+4. Atualize `config.php` com as credenciais corretas do banco.
 
-5. Acesse o sistema via navegador:
+5. Execute no navegador:
 
 ```
 http://localhost/xistopet/
@@ -96,13 +100,13 @@ http://localhost/xistopet/
 
 ## 🧪 Testes
 
-Não há testes automatizados no momento, mas todas as funcionalidades podem ser testadas manualmente por diferentes perfis de usuários (cliente, administrador e administrador master).
+- Testes manuais de todas as funcionalidades por perfis distintos (cliente, administrador, administrador master).
 
 ---
 
 ## 📄 Documentação
 
-- Relatório final e diagramas estão disponíveis na pasta `docs/` ou podem ser solicitados aos autores.
+- Relatório e diagramas completos estão disponíveis na pasta `docs/` ou podem ser solicitados aos autores.
 
 ---
 
