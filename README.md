@@ -39,7 +39,6 @@ O sistema aplica medidas importantes de segurança:
 ## 🚀 Funcionalidades
 
 - Cadastro/login com validação e captcha
-- Agendamento de serviços
 - Gerenciamento de carrinho e finalização de pedidos
 - Avaliação de produtos
 - Área do cliente com cartões e endereços
@@ -108,9 +107,4 @@ http://localhost/xistopet/
 
 - Relatório e diagramas completos estão disponíveis na pasta `docs/` ou podem ser solicitados aos autores.
 
----
-
-## 📜 Licença
-
-Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 
