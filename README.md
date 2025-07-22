@@ -110,10 +110,3 @@ Não há testes automatizados no momento, mas todas as funcionalidades podem ser
 
 Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 
----
-
-## ✉️ Contato
-
-Para dúvidas ou informações:
-
-- xistopet@gmail.com
