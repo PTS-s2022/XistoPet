@@ -1,7 +1,7 @@
 
 # 🐾 XistoPet – Website para Pet Shop
 
-Sistema web completo desenvolvido como Trabalho de Conclusão de Curso para a empresa XistoPet, com funcionalidades de e-commerce e gerenciamento de serviços pet, visando melhorar o atendimento ao cliente, facilitar compras e agendamentos, e expandir o alcance online da empresa.
+Sistema web completo desenvolvido como Trabalho de Conclusão de Curso para a empresa XistoPet, com funcionalidades de e-commerce e gerenciamento de serviços pet, visando melhorar o atendimento ao cliente, facilitar compras, e expandir o alcance online da empresa.
 
 ---
 
